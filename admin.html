@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Case Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 20px;
+      background: #f7f7f7;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    select, input, textarea, button {
+      font-size: 14px;
+      padding: 6px;
+      margin: 4px 0;
+      width: 100%;
+    }
+
+    textarea {
+      min-height: 80px;
+    }
+
+    .row {
+      background: #fff;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+    }
+
+    .row small {
+      color: #666;
+    }
+
+    .controls {
+      display: flex;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .controls button {
+      width: auto;
+    }
+
+    .add-block {
+      background: #fff;
+      padding: 12px;
+      border-radius: 4px;
+      margin-top: 20px;
+    }
+
+    pre {
+      background: #111;
+      color: #0f0;
+      padding: 10px;
+      overflow: auto;
+      max-height: 300px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Case Admin</h1>
+
+<label>Projekt auswählen</label>
+<select id="projectSelect"></select>
+
+<div id="blocks"></div>
+
+<div class="add-block">
+  <h3>Block hinzufügen</h3>
+
+  <select id="blockType">
+    <option value="image-full">Bild – Full</option>
+    <option value="image-left">Bild – Links</option>
+    <option value="image-right">Bild – Rechts</option>
+    <option value="images-two">2 Bilder</option>
+    <option value="text">Text</option>
+    <option value="vimeo">Vimeo</option>
+  </select>
+
+  <div id="blockFields"></div>
+
+  <button onclick="addBlock()">Block hinzufügen</button>
+</div>
+
+<h3>Resultierender JSON (kopieren)</h3>
+<pre id="output"></pre>
+
+<script type="module">
+let projects = [];
+
+const select = document.getElementById('projectSelect');
+const blocksEl = document.getElementById('blocks');
+const output = document.getElementById('output');
+const fields = document.getElementById('blockFields');
+
+let currentProject = null;
+
+/* LOAD PROJECTS */
+fetch('/src/data/projects.json')
+  .then(r => r.json())
+  .then(data => {
+    projects = data;
+    init();
+  });
+
+function init() {
+  projects.forEach((p, i) => {
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = `${p.title} (${p.category})`;
+    select.appendChild(opt);
+  });
+
+  select.onchange = () => {
+    currentProject = projects[select.value];
+    currentProject.caseBlocks ??= [];
+    renderBlocks();
+  };
+
+  select.dispatchEvent(new Event('change'));
+}
+
+
+/* RENDER BLOCKS */
+function renderBlocks() {
+  blocksEl.innerHTML = '';
+
+  currentProject.caseBlocks.forEach((b, i) => {
+    const row = document.createElement('div');
+    row.className = 'row';
+
+    row.innerHTML = `
+      <strong>${b.type}</strong><br>
+      <small>${JSON.stringify(b)}</small>
+      <div class="controls">
+        <button onclick="move(${i}, -1)">↑</button>
+        <button onclick="move(${i}, 1)">↓</button>
+        <button onclick="removeBlock(${i})">✕</button>
+      </div>
+    `;
+
+    blocksEl.appendChild(row);
+  });
+
+  output.textContent = JSON.stringify(projects, null, 2);
+}
+
+/* MOVE */
+window.move = (i, dir) => {
+  const a = currentProject.caseBlocks;
+  const b = a[i + dir];
+  if (!b) return;
+  [a[i], a[i + dir]] = [a[i + dir], a[i]];
+  renderBlocks();
+};
+
+/* REMOVE */
+window.removeBlock = i => {
+  currentProject.caseBlocks.splice(i, 1);
+  renderBlocks();
+};
+
+/* BLOCK TYPE UI */
+document.getElementById('blockType').onchange = e => {
+  const t = e.target.value;
+  fields.innerHTML = '';
+
+  if (t.includes('image')) {
+    fields.innerHTML += `<input placeholder="Image URL" id="f1">`;
+    if (t === 'images-two') {
+      fields.innerHTML += `<input placeholder="Second Image URL" id="f2">`;
+    }
+  }
+
+  if (t === 'text') {
+    fields.innerHTML += `<textarea id="f1" placeholder="Text"></textarea>`;
+  }
+
+  if (t === 'vimeo') {
+    fields.innerHTML += `<input placeholder="Vimeo ID" id="f1">`;
+  }
+};
+
+/* ADD BLOCK */
+window.addBlock = () => {
+  const t = document.getElementById('blockType').value;
+  const f1 = document.getElementById('f1')?.value;
+  const f2 = document.getElementById('f2')?.value;
+
+  let block = null;
+
+  if (t === 'image-full') block = { type: 'image', layout: 'full', src: f1 };
+  if (t === 'image-left') block = { type: 'image', layout: 'left', src: f1 };
+  if (t === 'image-right') block = { type: 'image', layout: 'right', src: f1 };
+  if (t === 'images-two') block = { type: 'images', layout: 'two', left: f1, right: f2 };
+  if (t === 'text') block = { type: 'text', text: f1 };
+  if (t === 'vimeo') block = { type: 'vimeo', id: f1 };
+
+  if (!block) return;
+
+  currentProject.caseBlocks.push(block);
+  renderBlocks();
+};
+</script>
+
+</body>
+</html>

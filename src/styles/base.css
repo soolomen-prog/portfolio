@@ -1,0 +1,26 @@
+@import './variables.css';
+@import './header.css';
+
+@font-face {
+  font-family: 'TT Hoves Pro';
+  src: url('../assets/fonts/TT Hoves Pro Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'TT Hoves Pro', sans-serif;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--black);
+  background: #fff;
+}

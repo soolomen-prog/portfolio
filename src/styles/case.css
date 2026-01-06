@@ -1,0 +1,513 @@
+/* ===============================
+   CASE OVERLAY
+================================ */
+
+.case-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: calc(100vh - 46px);
+  width: 50vw;
+  background: #ffffff;
+  opacity: 0;
+  z-index: 20;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+}
+
+.case-overlay.from-left {
+  left: auto;
+  right: 0;
+}
+
+.case-overlay.from-right {
+  left: 0;
+}
+
+.case-overlay.active {
+  opacity: 0.8;
+  pointer-events: auto;
+}
+
+.case-overlay.hidden {
+  display: none;
+}
+
+/* ===============================
+   CASE PANEL
+================================ */
+
+.case-panel {
+  position: fixed;
+  top: 0;
+  height: calc(100vh - 46px);
+  width: 50vw;
+  background: #fff;
+  z-index: 30;
+  transition: transform 0.45s ease;
+}
+
+.case-panel.from-left {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.case-panel.from-right {
+  right: 0;
+  transform: translateX(100%);
+}
+
+.case-panel.active {
+  transform: translateX(0);
+}
+
+/* ===============================
+   INNER
+================================ */
+
+.case-inner {
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* ===============================
+   CASE HEADER
+================================ */
+
+.case-header {
+  position: sticky;
+  top: 0;
+  height: 46px;
+  background: #fff;
+  z-index: 5;
+}
+
+.case-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: var(--gap-xs);
+  right: var(--gap-xs);
+  height: 1px;
+  background: var(--line);
+}
+
+.case-header-inner {
+  height: 100%;
+  padding: 0 var(--gap-xs);
+  display: grid;
+  grid-template-columns: 1fr var(--gap-xs) 1fr;
+  align-items: center;
+}
+
+/* ===============================
+   CLOSE
+================================ */
+
+.case-close {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.case-close-icon {
+  width: 14px;
+  height: 14px;
+  background-color: var(--black);
+  mask: url('/src/assets/icons/arrow.svg') no-repeat center;
+  -webkit-mask: url('/src/assets/icons/arrow.svg') no-repeat center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.case-close:hover {
+  color: var(--hover);
+}
+
+.case-close:hover .case-close-icon {
+  background-color: var(--hover);
+}
+
+.case-panel.from-left .case-close {
+  grid-column: 1;
+  justify-self: start;
+}
+
+.case-panel.from-right .case-close {
+  grid-column: 3;
+  justify-self: end;
+  flex-direction: row-reverse;
+}
+
+.case-panel.from-right .case-close-icon {
+  transform: scaleX(-1);
+}
+
+/* ===============================
+   TITLE
+================================ */
+
+.case-header-title {
+  grid-column: 3;
+  justify-self: start;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--black);
+}
+
+/* ===============================
+   CASE INTRO
+================================ */
+
+.case-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--gap-xs);
+  padding: 46px var(--gap-xs) 0;
+}
+
+/* META */
+
+.case-intro-meta {
+  grid-column: 2;
+}
+
+.case-intro-title {
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 4px;
+}
+
+.case-intro-features {
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 4px;
+}
+
+.case-intro-year {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+/* IMAGES */
+
+.case-intro-images {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: var(--gap-xs);
+  margin-top: 18px;
+}
+
+.case-intro-images > .case-col-left,
+.case-intro-images > .case-col-right {
+  flex: 1;
+}
+
+.case-intro-images img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* TASK TITLE */
+
+.case-intro-task-title {
+  grid-column: 2;
+  margin-top: 18px;
+}
+
+.case-task-heading {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #999999;
+}
+
+/* TASK TEXT */
+
+.case-intro-task-text {
+  grid-column: 2;
+  margin-top: 8px;
+}
+
+.case-task-text {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+/* DIVIDER */
+
+.case-intro-line {
+  grid-column: 2;
+  margin-top: 18px;
+}
+
+.case-intro-divider {
+  height: 1px;
+  background: var(--line);
+  width: 100%;
+}
+
+/* ===============================
+   HELPERS
+================================ */
+
+.hidden {
+  display: none;
+}
+
+/* ===============================
+   ADMIN BLOCKS
+================================ */
+
+.case-admin {
+  display: flex;
+  flex-direction: column;
+}
+
+.case-admin-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--gap-xs);
+  padding: 0 var(--gap-xs);
+  margin: 24px 0;
+}
+
+.case-admin-row.full {
+  grid-template-columns: 1fr;
+}
+
+.case-admin-row img,
+.case-admin-row iframe,
+.case-admin-row video {
+  width: 100%;
+  display: block;
+}
+
+.case-admin-row.full iframe {
+  aspect-ratio: 16 / 9;
+}
+
+.case-admin-text {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.case-admin-text p {
+  margin: 0;
+}
+
+.case-admin-text p + p {
+  margin-top: 14px;
+}
+
+/* ===============================
+   NEXT PROJECT
+================================ */
+
+.case-next {
+  margin-top: 23px;
+}
+
+.case-next .case-intro-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--gap-xs);
+  padding: 0 var(--gap-xs);
+}
+
+.case-next-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--black);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.case-next-icon {
+  width: 14px;
+  height: 14px;
+  background-color: var(--black);
+  mask: url('/src/assets/icons/arrow.svg') no-repeat center;
+  -webkit-mask: url('/src/assets/icons/arrow.svg') no-repeat center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  transform: rotate(-90deg);
+  transition: background-color 0.2s ease;
+}
+
+.case-next-link:hover {
+  color: var(--hover);
+}
+
+.case-next-link:hover .case-next-icon {
+  background-color: var(--hover);
+}
+
+.case-next-meta {
+  margin-top: 18px;
+}
+
+.case-next-title,
+.case-next-features,
+.case-next-year {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.case-next-image {
+  margin-top: 18px;
+}
+
+.case-next-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media (max-width: 1024px) {
+  .case-panel,
+  .case-overlay {
+    width: 100vw;
+    left: 0 !important;
+    right: auto !important;
+  }
+
+  .case-intro,
+  .case-intro-images,
+  .case-next .case-intro-row {
+    grid-template-columns: 1fr;
+  }
+
+  .case-intro-meta,
+  .case-intro-task-title,
+  .case-intro-task-text,
+  .case-intro-line {
+    grid-column: 1;
+  }
+
+
+
+  .case-next-image {
+    cursor: pointer;
+  }
+} /* ← ВОТ ЭТОГО НЕ ХВАТАЛО */
+
+
+
+/* ===============================
+   HIDE SCROLLBAR (CASE)
+================================ */
+
+/* Chrome / Edge / Safari */
+.case-inner::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Firefox */
+.case-inner {
+  scrollbar-width: none;
+}
+
+/* IE / old Edge */
+.case-inner {
+  -ms-overflow-style: none;
+}
+
+.case-close,
+.case-header-title {
+  grid-row: 1;
+}
+
+/* ===============================
+   MOBILE PROJECT CARDS
+   <= 500px
+================================ */
+
+@media (max-width: 500px) {
+
+  /* meta grid → одна колонка */
+  .project-meta {
+    grid-template-columns: 1fr;
+  }
+
+  /* левая колонка — на всю ширину */
+  .project-meta-left {
+    grid-column: 1;
+    margin-bottom: 8px;
+  }
+
+  /* правая колонка переезжает влево */
+  .project-meta-right {
+    grid-column: 1;
+  }
+
+  /* немного компактнее отступы */
+  .project-year {
+    margin-bottom: 8px;
+  }
+
+  .project-description {
+    margin-bottom: 12px;
+  }
+}
+
+/* ===============================
+   CASE INTRO IMAGES – MOBILE
+================================ */
+
+@media (max-width: 500px) {
+
+  /* ряд с картинками */
+  .case-intro-images {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs);
+  }
+
+  /* обе колонки → на всю ширину */
+  .case-intro-images .case-col-left,
+  .case-intro-images .case-col-right {
+    width: 100%;
+  }
+
+}
+
+/* ===============================
+   ADMIN BLOCKS — MOBILE
+   <= 500px
+================================ */
+
+@media (max-width: 500px) {
+  /* делаем одну колонку + отступ */
+  .case-admin-row:not(.full) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs);
+  }
+
+  /* на мобиле пустые колонки не нужны */
+  .case-admin-row > div:empty {
+    display: none;
+  }
+}
+
+

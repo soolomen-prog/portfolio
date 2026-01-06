@@ -1,0 +1,46 @@
+[
+  {
+    "id": "vakio",
+    "category": "web",
+    "title": "VAKIO",
+    "subtitle": "Online-Shop für Klimasysteme",
+    "features": ["UI — UX Design", "Über 20 Seiten"],
+    "year": 2022,
+
+    "coverImage": "/img/vakio/cover.jpg",
+    
+
+    "homeDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porta ex a porta blandit. Suspendisse feugiat justo at mauris molestie molestie. Ut mattis urna sed sem pulvinar, vitae rutrum nulla ultrices. Curabitur laoreet erat et sapien venenatis luctus.",
+
+    "caseIntro": {
+      "innerImage": "/img/vakio/intro.jpg",
+      "taskTitle": "Projectaufgabe",
+      "taskText": "Den Corporate-Website eines Unternehmens für Klimatechnik aktualisieren. Ziel war es, die Website zu modernisieren und die Möglichkeit zum Online-Kauf von Geräten hinzuzufügen, also die Funktionalität eines Online-Shops zu integrieren."
+    },
+
+    "visibleOnHome": true,
+    "order": 1
+  },
+
+  {
+    "id": "has",
+    "category": "branding",
+    "title": "HAS",
+    "subtitle": "Türkisches Trinkwasser",
+    "features": ["Brand Identity", "Landing page", "Packaging", "Catalog"],
+    "year": 2022,
+
+    "coverImage": "/img/has/cover.jpg",
+
+    "homeDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porta ex a porta blandit. Suspendisse feugiat justo at mauris molestie molestie.",
+
+    "caseIntro": {
+      "innerImage": "/img/has/intro.jpg",
+      "taskTitle": "Projectaufgabe",
+      "taskText": "Entwicklung einer Markenidentität für hydrogenreiches Trinkwasser. Gestaltung von Design und Form der Wasserflasche. Konzeption und Umsetzung einer Landingpage, die die Vorteile des Produkts kommuniziert, sowie die Entwicklung verschiedener Printmaterialien — vom Präsentationskatalog bis hin zu Visitenkarten und Werbeartikeln. Umsetzung einer vollständigen Markenverpackung"
+    },
+
+    "visibleOnHome": true,
+    "order": 1
+  }
+]

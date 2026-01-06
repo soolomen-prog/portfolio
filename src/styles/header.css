@@ -1,0 +1,86 @@
+.site-header {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 46px; /* ВАЖНО */
+  background: #fff;
+  z-index: 10;
+}
+
+.site-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--gap-xs);
+  right: var(--gap-xs);
+  height: 1px;
+  background: var(--line);
+}
+
+
+/* === ОСНОВА === */
+.header-inner {
+  position: relative;
+  height: 100%;
+  padding: 0 var(--gap-xs);
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+/* левая зона */
+.header-left {
+  justify-self: start;
+}
+
+.author-name {
+  color: var(--black);
+  white-space: nowrap;
+}
+
+/* правая зона */
+.header-right {
+  justify-self: end;
+  display: flex;
+}
+
+/* центр — привязан к центральной линии */
+.header-center {
+  position: absolute;
+  top: 50%;
+
+  /* центральная линия + системный отступ */
+  left: calc(50% + var(--gap-xs));
+
+  transform: translateY(-50%);
+}
+
+
+/* nav item */
+.nav-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-xs);
+
+  height: 16px;
+  line-height: 16px;
+
+  text-decoration: none;
+  color: var(--black);
+  cursor: pointer;
+}
+
+/* hover и для текста, и для svg */
+.nav-item:hover {
+  color: var(--hover);
+}
+
+/* иконка */
+.talk-icon {
+  width: 14px;
+  height: 14px;
+  display: block;
+  flex-shrink: 0;
+}

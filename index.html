@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>work</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <!-- header.html подключается через JS -->
+
+    <!-- MAIN CONTENT -->
+    <main class="projects">
+
+      <!-- LEFT COLUMN -->
+      <section class="projects-column">
+        <div class="projects-header">
+          <h2 class="projects-title">Web design</h2>
+        </div>
+        <div id="web-projects"></div>
+      </section>
+
+      <!-- RIGHT COLUMN -->
+      <section class="projects-column">
+        <div class="projects-header">
+          <h2 class="projects-title">Branding</h2>
+        </div>
+        <div id="branding-projects"></div>
+      </section>
+
+    </main>
+
+    <!-- CASE OVERLAY -->
+    <div id="case-overlay" class="case-overlay hidden"></div>
+
+    <!-- CASE PANEL -->
+    <div id="case-panel" class="case-panel hidden">
+      <div class="case-inner">
+
+        <!-- CASE HEADER -->
+        <header class="case-header">
+          <div class="case-header-inner">
+
+            <button class="case-close" type="button">
+              <span class="case-close-icon"></span>
+              <span class="case-close-text">Close project</span>
+            </button>
+
+            <div class="case-header-title">
+              <span class="case-title-text"></span>
+            </div>
+
+          </div>
+        </header>
+
+        <!-- CASE CONTENT -->
+        <div class="case-content">
+
+          <!-- ===============================
+               CASE INTRO (FIXED – НЕ ТРОГАЕМ)
+          =============================== -->
+
+          <section class="case-intro">
+
+            <!-- META -->
+            <div class="case-intro-row case-intro-meta">
+              <div class="case-col-left"></div>
+              <div class="case-col-right">
+                <div class="case-intro-title"></div>
+                <div class="case-intro-features"></div>
+                <div class="case-intro-year"></div>
+              </div>
+            </div>
+
+            <!-- IMAGES -->
+            <div class="case-intro-row case-intro-images">
+              <div class="case-col-left">
+                <div class="case-intro-cover"></div>
+              </div>
+              <div class="case-col-right">
+                <div class="case-intro-image"></div>
+              </div>
+            </div>
+
+            <!-- TASK TITLE -->
+            <div class="case-intro-row case-intro-task-title">
+              <div class="case-col-left"></div>
+              <div class="case-col-right">
+                <h3 class="case-task-heading">Projectaufgabe</h3>
+              </div>
+            </div>
+
+            <!-- TASK TEXT -->
+            <div class="case-intro-row case-intro-task-text">
+              <div class="case-col-left"></div>
+              <div class="case-col-right">
+                <div class="case-task-text"></div>
+              </div>
+            </div>
+
+            <!-- DIVIDER -->
+            <div class="case-intro-row case-intro-line">
+              <div class="case-col-left"></div>
+              <div class="case-col-right">
+                <div class="case-intro-divider"></div>
+              </div>
+            </div>
+
+          </section>
+
+          <!-- ===============================
+               ADMIN BLOCKS (DYNAMIC)
+          =============================== -->
+
+          <div class="case-admin"></div>
+
+          <!-- ===============================
+               NEXT PROJECT (STATIC)
+          =============================== -->
+
+          <section class="case-next">
+            <div class="case-intro-row">
+
+              <div class="case-col-left"></div>
+
+              <div class="case-col-right">
+
+                <!-- LINK -->
+                <a href="#" class="case-next-link">
+                  <span class="case-next-icon"></span>
+                  <span class="case-next-text">Nächstes Projekt</span>
+                </a>
+
+                <!-- META -->
+                <div class="case-next-meta">
+                  <div class="case-next-title"></div>
+                  <div class="case-next-features"></div>
+                  <div class="case-next-year"></div>
+                </div>
+
+                <!-- IMAGE -->
+                <div class="case-next-image"></div>
+
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- APP ENTRY -->
+    <script type="module" src="/src/main.js"></script>
+
+  </body>
+</html>

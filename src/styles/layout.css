@@ -1,0 +1,99 @@
+/* ===============================
+   PROJECTS GRID
+================================ */
+
+.projects {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  /* расстояние между колонками = 2 * боковой отступ */
+  gap: calc(var(--gap-xs) * 2);
+
+  /* ТОЛЬКО боковые отступы */
+  padding: 0 var(--gap-xs);
+
+  /* ===== CENTRAL VERTICAL LINE ===== */
+  background-image: linear-gradient(
+    to right,
+    transparent calc(50% - 0.5px),
+    var(--line) calc(50% - 0.5px),
+    var(--line) calc(50% + 0.5px),
+    transparent calc(50% + 0.5px)
+  );
+  background-repeat: no-repeat;
+
+  /* отступ линии сверху = как у контента */
+  background-position: 0 var(--gap-xs);
+
+  /* линия не заходит в нижнюю шапку */
+  background-size: 100% calc(100% - var(--gap-xs));
+}
+
+/* ===============================
+   COLUMN (INDEPENDENT SCROLL)
+================================ */
+
+.projects-column {
+  position: relative;
+
+  /* каждая колонка — свой скролл */
+  height: calc(100vh - 40px);
+  overflow-y: auto;
+
+  /* отступ до нижней шапки ВНУТРИ скролла */
+  padding-bottom: 40px;
+
+  /* скрываем скроллбар */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.projects-column::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===============================
+   TOP HEADER (SCROLLS WITH CONTENT)
+================================ */
+
+.projects-header {
+  height: 46px;
+  display: flex;
+  align-items: center;
+
+  /* линия под заголовком */
+  background-image: linear-gradient(
+    to bottom,
+    transparent calc(100% - 1px),
+    var(--line) calc(100% - 1px)
+  );
+  background-repeat: no-repeat;
+}
+
+/* ===============================
+   TITLE
+================================ */
+
+.projects-title {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+}
+
+/* ===============================
+   PROJECT CARDS
+================================ */
+
+.project-card {
+  margin-top: 24px;
+}
+
+.project-placeholder {
+  width: 100%;
+  height: 200px;
+  background: #eee;
+  margin-bottom: 12px;
+}
