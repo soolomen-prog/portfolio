@@ -510,16 +510,4 @@
   }
 }
 
-@media (max-width: 1024px) {
-  .case-panel,
-  .case-overlay {
-    height: auto;
-    min-height: 100svh;
-  }
-
-  .case-inner {
-    height: auto;
-    overflow-y: visible;
-  }
-}
 
