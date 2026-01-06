@@ -12,7 +12,7 @@ window.t = de
 import './projects.js'
 
 // header
-fetch('/src/components/header.html')
+fetch('/components/header.html')
   .then(res => res.text())
   .then(html => {
     document.body.insertAdjacentHTML('beforeend', html)
