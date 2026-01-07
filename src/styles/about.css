@@ -1,73 +1,30 @@
-/* ===============================
-   ABOUT PAGE — SAFE VERSION
-   Does NOT touch global layout
-================================ */
+/* ABOUT content only */
 
-/* Контейнер страницы */
-.page-about .about {
+.page-about .projects-column {
   padding: 0 var(--gap-xs);
 }
 
-/* Контентная зона (правая половина) */
-.about-content {
-  max-width: 920px;
-  margin-left: auto; /* сдвиг вправо как в макете */
-}
-
-/* Две колонки внутри контента */
-.about-columns {
+.page-about .about-columns {
   display: grid;
-  grid-template-columns: 240px 1fr; /* слева labels, справа текст */
+  grid-template-columns: 240px 1fr;
   column-gap: 40px;
 }
 
-/* Секции */
-.about-section {
+.page-about .about-section {
   border-top: 1px solid var(--line);
   padding-top: 8px;
-  padding-bottom: 46px; /* как на главной */
+  padding-bottom: 46px;
 }
 
-/* Имя */
-.about-name {
+.page-about h3,
+.page-about .about-label {
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
-  margin: 0;
 }
 
-/* Текст */
-.about-text,
-.about-intro {
+.page-about .about-text,
+.page-about p {
   font-size: 14px;
   line-height: 20px;
-}
-
-/* Ссылки */
-.about-links a,
-.about-cv-link {
-  font-size: 14px;
-  line-height: 20px;
-  color: var(--black);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-}
-
-/* Отступ перед PDF */
-.about-cv-link {
-  display: inline-block;
-  margin-top: 60px;
-}
-
-/* Мобилка */
-@media (max-width: 1024px) {
-  .about-content {
-    margin-left: 0;
-  }
-
-  .about-columns {
-    grid-template-columns: 1fr;
-    row-gap: 32px;
-  }
 }
