@@ -44,10 +44,29 @@
   padding-bottom: var(--gap-lg);
 }
 
-/* 🔴 ВАЖНО: у первого блока НЕТ линии сверху */
-.about-section:first-child {
+/* CV: в макете НЕТ линии сверху, ЕСТЬ линия снизу под "CV" */
+.about-section--cv {
   border-top: none;
+  border-bottom: 1px solid var(--line);
   padding-top: 0;
+  padding-bottom: 8px;
+}
+
+/* Блок сразу под CV: не должен рисовать свою верхнюю линию (т.к. линия уже под CV) */
+.about-section--cv + .about-section--cv-content {
+  border-top: none;
+  padding-top: 8px;
+}
+
+/* В CV-контенте слева у нас текст (имя + ссылки), поэтому наследуем типографику */
+.about-section--cv-content .about-label {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--black);
+}
+
+.about-section--cv-content .about-label p {
+  margin: 0;
 }
 
 .about-section--last {
