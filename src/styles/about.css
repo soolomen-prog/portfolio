@@ -1,10 +1,8 @@
 /* ===============================
    ABOUT PAGE
    Pixel-perfect по макету
-   + центральная линия как на главной (.projects)
 ================================ */
 
-/* Центральная вертикальная линия — 1:1 как в src/styles/layout.css (.projects) */
 .page-about {
   background-image: linear-gradient(
     to right,
@@ -13,23 +11,14 @@
     var(--line) calc(50% + 0.5px),
     transparent calc(50% + 0.5px)
   );
-  background-repeat: no-repeat;
-
-  /* отступ линии сверху = как у главной */
-  background-position: 0 var(--gap-xs);
-
-  /* линия не заходит в область нижней шапки (46px) */
-  background-size: 100% calc(100% - var(--gap-xs));
 }
 
 /* Основная сетка 50 / 50 */
 .about-layout {
   min-height: calc(100vh - 46px);
+  padding-bottom: 46px; /* чтобы fixed header снизу никогда не перекрывал контент */
   display: grid;
   grid-template-columns: 1fr 1fr;
-
-  /* ВЕРХНИЙ ОТСТУП как ты просил (на главной он есть визуально через background-position и внутренние ритмы) */
-  padding-top: var(--gap-xs);
 }
 
 .about-left {
@@ -60,7 +49,7 @@
   padding-bottom: 0;
 }
 
-/* Текст */
+/* Левая и правая колонка */
 .about-label,
 .about-text {
   font-size: 14px;
@@ -77,7 +66,7 @@
   margin-top: 14px;
 }
 
-/* Ссылки (возвращаем стиль как в макете: underline) */
+/* Ссылки */
 .about-links {
   margin: 18px 0;
   display: grid;
@@ -102,15 +91,19 @@
 /* Download */
 .about-download {
   margin-top: 60px;
-  padding-bottom: calc(60px + 46px);
+  padding-bottom: 60px;
   display: flex;
   justify-content: center;
 }
 
-/* Адаптив */
+/* Responsive */
 @media (max-width: 1024px) {
   .about-layout {
     grid-template-columns: 1fr;
+  }
+
+  .about-right {
+    padding: 0 var(--gap-xs);
   }
 
   .about-section {

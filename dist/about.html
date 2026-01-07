@@ -5,24 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About — Andrei Solomin</title>
     <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
-    <script type="module" crossorigin src="/assets/main-BF6Galr4.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-DU7qclXm.css">
+    <script type="module" crossorigin src="/assets/main-Dq--DY_Y.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-cuxJGl-w.css">
   </head>
 
   <body class="page-about">
-    <!-- HEADER -->
-    <!-- header.html подключается через JS (src/main.js) -->
-
+    <!-- MAIN CONTENT -->
     <main class="about-layout" aria-label="About">
-      <!-- LEFT HALF (EMPTY) -->
       <div class="about-left" aria-hidden="true"></div>
 
-      <!-- RIGHT HALF (CV) -->
       <section class="about-right">
-        <!-- CV -->
         <div class="about-section">
           <div class="about-label">CV</div>
-
           <div class="about-text">
             <p>Andrei Solomin</p>
 
@@ -34,13 +28,11 @@
 
             <p>
               Web- und Grafikdesigner mit über 10 Jahren Berufserfahrung aus Russland.
-              Er arbeitete in renommierten Designstudios, wo er Erfahrung in der Umsetzung
-              großer Projekte sammelte.
+              Er arbeitete in renommierten Designstudios, wo er Erfahrung in der Umsetzung großer Projekte sammelte.
             </p>
           </div>
         </div>
 
-        <!-- Languages -->
         <div class="about-section">
           <div class="about-label">Sprachen / Sprachkenntnisse</div>
           <div class="about-text">
@@ -49,13 +41,12 @@
           </div>
         </div>
 
-        <!-- Education -->
         <div class="about-section">
           <div class="about-label">Studium / Weiterbildungen</div>
           <div class="about-text">
             <p>
-              Britische Hochschule für Design (BHSAD), Moskau — Kurse: „Design Thinking“ und „Strategien zur
-              Entwicklung des idealen Produkts“<br />
+              Britische Hochschule für Design (BHSAD), Moskau — Kurse: „Design Thinking“ und „Strategien zur Entwicklung
+              des idealen Produkts“<br />
               2017
             </p>
             <p>
@@ -66,7 +57,6 @@
           </div>
         </div>
 
-        <!-- Experience -->
         <div class="about-section">
           <div class="about-label">Berufserfahrung</div>
           <div class="about-text">
@@ -78,7 +68,6 @@
           </div>
         </div>
 
-        <!-- Work style -->
         <div class="about-section">
           <div class="about-label">Arbeitsweise</div>
           <div class="about-text">
@@ -88,7 +77,6 @@
           </div>
         </div>
 
-        <!-- Skills -->
         <div class="about-section">
           <div class="about-label">Kenntnisse / Skills</div>
           <div class="about-text">
@@ -111,7 +99,6 @@
           </div>
         </div>
 
-        <!-- Interests -->
         <div class="about-section about-section--last">
           <div class="about-label">Interessen</div>
           <div class="about-text">
@@ -123,13 +110,36 @@
           </div>
         </div>
 
-        <!-- Download -->
         <div class="about-download">
           <a href="/lebenslauf_Andrei.pdf" download>Lebenslauf als PDF herunterladen</a>
         </div>
       </section>
     </main>
 
-    <!-- APP ENTRY (как на главной) -->
+    <!-- STATIC HEADER FALLBACK (точно как public/components/header.html) -->
+    <header class="site-header" data-static-header>
+      <div class="header-inner">
+        <div class="header-left">
+          <span class="author-name">Andrei Solomin</span>
+        </div>
+
+        <div class="header-center">
+          <a href="#" class="nav-item">
+            <svg class="talk-icon" viewBox="0 0 14 14" fill="currentColor">
+              <path
+                d="M14 7C14 6.83436 13.9137 6.63421 13.6722 6.56692C11.6983 6.01479 10.4612 5.38501 9.53808 4.46192C8.61499 3.53883 7.98349 2.3017 7.43308 0.327828C7.36579 0.0862706 7.16564 0 7 0C6.83436 0 6.63421 0.0862706 6.56692 0.327828C6.01651 2.3017 5.38501 3.53883 4.46192 4.46192C3.53883 5.38501 2.3017 6.01651 0.327828 6.56692C0.0862706 6.63421 0 6.83436 0 7C0 7.16564 0.0862706 7.36579 0.327828 7.43308C2.3017 7.98349 3.53883 8.61499 4.46192 9.53808C5.38501 10.4612 6.01651 11.6983 6.56692 13.6722C6.63421 13.9137 6.83436 14 7 14C7.16564 14 7.36579 13.9137 7.43308 13.6722C7.98349 11.6983 8.61499 10.4612 9.53808 9.53808C10.4612 8.61499 11.6983 7.98349 13.6722 7.43308C13.9137 7.36579 14 7.16564 14 7Z"
+              />
+            </svg>
+            <span>Let’s talk</span>
+          </a>
+        </div>
+
+        <div class="header-right">
+          <a href="#" class="nav-item">About</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- APP ENTRY -->
   </body>
 </html>
