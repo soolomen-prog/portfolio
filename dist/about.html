@@ -4,152 +4,136 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About — Andrei Solomin</title>
+
+    <!-- общие стили сайта -->
+    <link rel="stylesheet" href="/src/style.css" />
+    <!-- стили about -->
+    <link rel="stylesheet" href="/src/about.css" />
     <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
-    <script type="module" crossorigin src="/assets/main-B9Zq9HiY.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-CYT498FI.css">
+    <script type="module" crossorigin src="/assets/main-9_8hO86Z.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-C_4U_e8D.css">
   </head>
-  <body class="page-about">
+
+  <body class="page-about" data-page="about">
+    <!-- нижняя фиксированная шапка подключается динамически -->
     <div id="header"></div>
 
     <main class="about-layout" aria-label="About">
+      <!-- левая половина — пустая -->
       <div class="about-left" aria-hidden="true"></div>
 
+      <!-- правая половина -->
       <section class="about-right">
-        <!-- CV (top) -->
+        <!-- CV -->
         <div class="about-section">
-          <div class="about-row">
-            <div class="about-col">
-              <div class="about-section-title">CV</div>
+          <div class="about-label">CV</div>
+          <div class="about-text">
+            <p>Andrei Solomin</p>
 
-              <div class="about-name">Andrei Solomin</div>
-              <div class="about-links">
-                <a class="about-link" href="mailto:hi@andreisolomin.com">hi@andreisolomin.com</a>
-                <a class="about-link" href="https://www.linkedin.com/in/reysolomin" target="_blank" rel="noopener noreferrer">Linkedin</a>
-                <a class="about-link" href="https://www.behance.net/Solomindesign" target="_blank" rel="noopener noreferrer">Behance</a>
-              </div>
+            <div class="about-links">
+              <a href="mailto:hi@andreisolomin.com">hi@andreisolomin.com</a>
+              <a href="https://www.linkedin.com/in/reysolomin" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://www.behance.net/Solomindesign" target="_blank" rel="noopener">Behance</a>
             </div>
 
-            <div class="about-col">
-              <p class="about-text">
-                Web- und Grafikdesigner mit über 10 Jahren Berufserfahrung aus Russland. Er arbeitete in renommierten
-                Designstudios, wo er Erfahrung in der Umsetzung großer Projekte sammelte.
-              </p>
-            </div>
+            <p>
+              Web- und Grafikdesigner mit über 10 Jahren Berufserfahrung aus Russland.
+              Er arbeitete in renommierten Designstudios, wo er Erfahrung in der Umsetzung
+              großer Projekte sammelte.
+            </p>
           </div>
         </div>
 
-        <!-- Languages -->
+        <!-- Sprachen -->
         <div class="about-section">
-          <div class="about-row">
-            <div class="about-col">
-              <div class="about-section-title">Sprachen / Sprachkenntnisse</div>
-            </div>
-            <div class="about-col">
-              <p class="about-text">Deutsch — Niveau B2 (laufender Kurs)</p>
-              <p class="about-text">Englisch — Grundkenntnisse (A2)</p>
-            </div>
+          <div class="about-label">Sprachen / Sprachkenntnisse</div>
+          <div class="about-text">
+            <p>Deutsch — Niveau B2 (laufender Kurs)</p>
+            <p>Englisch — Grundkenntnisse (A2)</p>
           </div>
         </div>
 
-        <!-- Education -->
+        <!-- Studium -->
         <div class="about-section">
-          <div class="about-row">
-            <div class="about-col">
-              <div class="about-section-title">Studium / Weiterbildungen</div>
-            </div>
-            <div class="about-col">
-              <p class="about-text">
-                Britische Hochschule für Design (BHSAD), Moskau — Kurse: „Design Thinking“ und „Strategien zur
-                Entwicklung des idealen Produkts“<br />
-                2017
-              </p>
-              <p class="about-text">
-                Abschluss an der Omsker Staatlichen Technischen Universität (OmGTU)<br />
-                Fachrichtung: Grafikdesign<br />
-                2006 – 2012
-              </p>
-            </div>
+          <div class="about-label">Studium / Weiterbildungen</div>
+          <div class="about-text">
+            <p>
+              Britische Hochschule für Design (BHSAD), Moskau — Kurse:
+              „Design Thinking“ und „Strategien zur Entwicklung des idealen Produkts“<br />
+              2017
+            </p>
+            <p>
+              Abschluss an der Omsker Staatlichen Technischen Universität (OmGTU)<br />
+              Fachrichtung: Grafikdesign<br />
+              2006 – 2012
+            </p>
           </div>
         </div>
 
-        <!-- Experience -->
+        <!-- Berufserfahrung -->
         <div class="about-section">
-          <div class="about-row">
-            <div class="about-col">
-              <div class="about-section-title">Berufserfahrung</div>
-            </div>
-            <div class="about-col">
-              <p class="about-text">Freiberufliche Tätigkeit als Web- und Grafikdesigner<br />2024 – heute</p>
-              <p class="about-text">Senior Designer in der Kreativagentur SmartHeart (Moskau)<br />2022 – 2024</p>
-              <p class="about-text">Senior Designer im Designstudio Pinkman (Moskau)<br />2018 – 2021</p>
-              <p class="about-text">Designstudio FERMA — Aufstieg zum Art Director (Omsk)<br />2013 – 2017</p>
-              <p class="about-text">Designer im Designstudio „Zwei Giraffen“ (Omsk)<br />2011 – 2013</p>
-            </div>
+          <div class="about-label">Berufserfahrung</div>
+          <div class="about-text">
+            <p>Freiberufliche Tätigkeit als Web- und Grafikdesigner<br />2024 – heute</p>
+            <p>Senior Designer in der Kreativagentur SmartHeart (Moskau)<br />2022 – 2024</p>
+            <p>Senior Designer im Designstudio Pinkman (Moskau)<br />2018 – 2021</p>
+            <p>Designstudio FERMA — Aufstieg zum Art Director (Omsk)<br />2013 – 2017</p>
+            <p>Designer im Designstudio „Zwei Giraffen“ (Omsk)<br />2011 – 2013</p>
           </div>
         </div>
 
-        <!-- Work style -->
+        <!-- Arbeitsweise -->
         <div class="about-section">
-          <div class="about-row">
-            <div class="about-col">
-              <div class="about-section-title">Arbeitsweise</div>
-            </div>
-            <div class="about-col">
-              <p class="about-text">Strukturierte und konzeptionelle Arbeitsweise</p>
-              <p class="about-text">Hohe Eigenverantwortung</p>
-              <p class="about-text">Erfahrung in Agenturumgebungen</p>
-            </div>
+          <div class="about-label">Arbeitsweise</div>
+          <div class="about-text">
+            <p>Strukturierte und konzeptionelle Arbeitsweise</p>
+            <p>Hohe Eigenverantwortung</p>
+            <p>Erfahrung in Agenturumgebungen</p>
           </div>
         </div>
 
         <!-- Skills -->
         <div class="about-section">
-          <div class="about-row">
-            <div class="about-col">
-              <div class="about-section-title">Kenntnisse / Skills</div>
-            </div>
-            <div class="about-col">
-              <p class="about-text">
-                Branding<br />
-                Corporate Design<br />
-                Logo Design<br />
-                Webdesign (UX/UI)<br />
-                Editorial &amp; Print Design<br />
-                Typografie
-              </p>
-              <p class="about-text">
-                Figma<br />
-                Photoshop<br />
-                Illustrator<br />
-                InDesign<br />
-                After Effects<br />
-                Cinema 4D
-              </p>
-            </div>
+          <div class="about-label">Kenntnisse / Skills</div>
+          <div class="about-text">
+            <p>
+              Branding<br />
+              Corporate Design<br />
+              Logo Design<br />
+              Webdesign (UX/UI)<br />
+              Editorial &amp; Print Design<br />
+              Typografie
+            </p>
+            <p>
+              Figma<br />
+              Photoshop<br />
+              Illustrator<br />
+              InDesign<br />
+              After Effects<br />
+              Cinema 4D
+            </p>
           </div>
         </div>
 
-        <!-- Interests -->
+        <!-- Interessen -->
         <div class="about-section about-section--last">
-          <div class="about-row">
-            <div class="about-col">
-              <div class="about-section-title">Interessen</div>
-            </div>
-            <div class="about-col">
-              <p class="about-text">Volleyball</p>
-              <p class="about-text">RetroGaming</p>
-              <p class="about-text">RetroPC</p>
-              <p class="about-text">KI-Automatisierung</p>
-              <p class="about-text">Bot-Entwicklung</p>
-            </div>
+          <div class="about-label">Interessen</div>
+          <div class="about-text">
+            <p>Volleyball</p>
+            <p>RetroGaming</p>
+            <p>RetroPC</p>
+            <p>KI-Automatisierung</p>
+            <p>Bot-Entwicklung</p>
           </div>
+        </div>
 
-          <div class="about-download">
-            <a class="about-download-link" href="/lebenslauf_Andrei.pdf" download>Lebenslauf als PDF herunterladen</a>
-          </div>
+        <!-- Download -->
+        <div class="about-download">
+          <a href="/lebenslauf_Andrei.pdf" download>Lebenslauf als PDF herunterladen</a>
         </div>
       </section>
     </main>
 
+    <!-- подключение шапки / навигации -->
   </body>
 </html>

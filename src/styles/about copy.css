@@ -1,6 +1,6 @@
 /* ===============================
    ABOUT PAGE
-   Pixel-perfect по макету
+   Matches layout: left half empty, right half content in 2 columns
 ================================ */
 
 .page-about {
@@ -13,7 +13,7 @@
   );
 }
 
-/* Основная сетка 50 / 50 */
+/* Main layout */
 
 .about-layout {
   min-height: calc(100vh - 46px);
@@ -22,14 +22,14 @@
 }
 
 .about-left {
-  /* пусто по макету */
+  /* intentionally empty */
 }
 
 .about-right {
   padding: 0 var(--gap-xs);
 }
 
-/* Секции CV */
+/* Sections */
 
 .about-section {
   display: grid;
@@ -37,8 +37,9 @@
   column-gap: var(--gap-xs);
 
   border-top: 1px solid var(--line);
-  padding-top: 8px;
-  padding-bottom: var(--gap-lg);
+
+  padding-top: 8px;                /* distance from line to text */
+  padding-bottom: var(--gap-lg);   /* distance to next line */
 }
 
 .about-section:first-child {
@@ -46,11 +47,7 @@
   padding-top: 0;
 }
 
-.about-section--last {
-  padding-bottom: 0;
-}
-
-/* Левая и правая колонка */
+/* Labels and text */
 
 .about-label,
 .about-text {
@@ -68,15 +65,43 @@
   margin-top: 14px;
 }
 
-/* Ссылки */
+/* CV top block */
+
+.about-name {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
 
 .about-links {
-  margin: 18px 0;
+  margin-top: var(--gap-sm); /* 18px from name to links */
   display: grid;
   gap: 2px;
 }
 
-.about-links a,
+.about-links a {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--black);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.about-links a:hover {
+  color: var(--hover);
+}
+
+/* Download link */
+
+.about-download {
+  margin-top: 60px;                  /* space after interests */
+  padding-bottom: calc(60px + 46px); /* space to bottom header */
+
+  display: flex;
+  justify-content: center;
+}
+
 .about-download a {
   font-size: 14px;
   line-height: 20px;
@@ -86,25 +111,19 @@
   text-underline-offset: 2px;
 }
 
-.about-links a:hover,
 .about-download a:hover {
   color: var(--hover);
 }
 
-/* Download */
-
-.about-download {
-  margin-top: 60px;
-  padding-bottom: calc(60px + 46px);
-  display: flex;
-  justify-content: center;
-}
-
-/* Адаптив */
+/* Responsive */
 
 @media (max-width: 1024px) {
   .about-layout {
     grid-template-columns: 1fr;
+  }
+
+  .about-right {
+    padding: 0 var(--gap-xs);
   }
 
   .about-section {
