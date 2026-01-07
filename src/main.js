@@ -17,13 +17,16 @@ fetch('/components/header.html')
   .then(html => {
     document.body.insertAdjacentHTML('beforeend', html)
 
-    // ===== ABOUT PAGE FOOTER LOGIC =====
-    if (document.body.classList.contains('page-about')) {
-      const footerLink = document.getElementById('footer-link')
+    // ===== HEADER RIGHT LINK LOGIC =====
+    const rightNavLink = document.querySelector('.header-right .nav-item')
 
-      if (footerLink) {
-        footerLink.textContent = 'Projekte'
-        footerLink.href = '/projects.html'
-      }
+    if (!rightNavLink) return
+
+    if (document.body.classList.contains('page-about')) {
+      rightNavLink.textContent = 'Projekte'
+      rightNavLink.href = '/projects.html'
+    } else {
+      rightNavLink.textContent = 'About'
+      rightNavLink.href = '/about.html'
     }
   })
