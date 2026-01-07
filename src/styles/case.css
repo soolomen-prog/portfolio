@@ -510,4 +510,28 @@
   }
 }
 
+@media (max-width: 1024px) {
+
+  .case-panel {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none !important;
+    width: 100vw;
+    height: auto;
+    min-height: 100svh;
+  }
+
+  .case-overlay {
+    display: none;
+  }
+
+  .case-inner {
+    height: auto;
+    overflow: visible;
+  }
+
+}
+
 
