@@ -97,3 +97,20 @@
   background: #eee;
   margin-bottom: 12px;
 }
+
+/* ABOUT PAGE */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.about-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+}
+
+.about-empty {
+  /* пустая колонка, без стилей */
+}

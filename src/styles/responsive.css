@@ -1,0 +1,20 @@
+/* =========================================
+   ABOUT PAGE — RESPONSIVE
+========================================= */
+
+@media (max-width: 1024px) {
+  .about-columns {
+    grid-template-columns: 1fr;
+    gap: var(--gap-m);
+  }
+}
+
+@media (max-width: 500px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-empty {
+    display: none;
+  }
+}

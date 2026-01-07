@@ -24,3 +24,26 @@ body {
   color: var(--black);
   background: #fff;
 }
+
+/* ABOUT — sections */
+
+.about-section {
+  border-top: 1px solid currentColor;
+}
+
+.about-name {
+  margin-bottom: 18px;
+}
+
+.about-text,
+.about-intro {
+  font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 46px;
+}
+
+.about-cv-link {
+  display: inline-block;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}

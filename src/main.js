@@ -8,7 +8,7 @@ import './styles/case.css'
 import de from './i18n/de.js'
 window.t = de
 
-// projects (ВАЖНО)
+// projects
 import './projects.js'
 
 // header
@@ -16,4 +16,14 @@ fetch('/components/header.html')
   .then(res => res.text())
   .then(html => {
     document.body.insertAdjacentHTML('beforeend', html)
+
+    // ===== ABOUT PAGE FOOTER LOGIC =====
+    if (document.body.classList.contains('page-about')) {
+      const footerLink = document.getElementById('footer-link')
+
+      if (footerLink) {
+        footerLink.textContent = 'Projekte'
+        footerLink.href = '/projects.html'
+      }
+    }
   })
