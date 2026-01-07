@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <title>About — Andrei Solomin</title>
-  <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 
 <body class="page-about">
@@ -23,8 +22,8 @@
 
         <div class="about-links">
           <a href="mailto:hi@andreisolomin.com">hi@andreisolomin.com</a><br>
-          <a href="https://www.linkedin.com/in/reysolomin" target="_blank">LinkedIn</a><br>
-          <a href="https://www.behance.net/Solomindesign" target="_blank">Behance</a>
+          <a href="https://www.linkedin.com/in/reysolomin" target="_blank" rel="noopener">LinkedIn</a><br>
+          <a href="https://www.behance.net/Solomindesign" target="_blank" rel="noopener">Behance</a>
         </div>
 
         <p class="about-intro">
@@ -128,10 +127,8 @@
   </div>
 </main>
 
-<footer class="footer">
-  <a id="footer-link" href="/projects.html">Projekte</a>
-</footer>
+<!-- ВАЖНО: подключаем общий entry -->
+<script type="module" src="/src/main.js"></script>
 
-<script src="/assets/js/main.js"></script>
 </body>
 </html>
