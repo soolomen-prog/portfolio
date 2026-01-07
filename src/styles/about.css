@@ -1,0 +1,116 @@
+/* ===============================
+   ABOUT PAGE
+   Matches layout: left half empty, right half content in 2 columns
+================================ */
+
+.page-about {
+  background-image: linear-gradient(
+    to right,
+    transparent calc(50% - 0.5px),
+    var(--line) calc(50% - 0.5px),
+    var(--line) calc(50% + 0.5px),
+    transparent calc(50% + 0.5px)
+  );
+}
+
+.about-layout {
+  min-height: calc(100vh - 46px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.about-left {
+  /* intentionally empty */
+}
+
+.about-right {
+  padding: 0 var(--gap-xs);
+}
+
+/* Sections */
+
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--gap-xs);
+  border-top: 1px solid var(--line);
+  padding-top: 8px;              /* 8px from line to text */
+  padding-bottom: var(--gap-lg);  /* 46px to next line */
+}
+
+.about-section:first-child {
+  margin-top: 0;
+}
+
+.about-label,
+.about-text {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--black);
+}
+
+.about-label {
+  font-weight: 400;
+}
+
+.about-text p {
+  margin: 0;
+}
+
+.about-text p + p {
+  margin-top: 14px;
+}
+
+/* CV top block specifics */
+
+.about-name {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.about-links {
+  margin-top: var(--gap-sm); /* 18px from name to links */
+  display: grid;
+  gap: 2px;
+}
+
+.about-links a,
+.about-download a {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--black);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.about-links a:hover,
+.about-download a:hover {
+  color: var(--hover);
+}
+
+/* Download link */
+
+.about-download {
+  margin-top: 60px;                 /* 60px from interests to link */
+  padding-bottom: calc(60px + 46px); /* 60px to header + header height */
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about-right {
+    padding: 0 var(--gap-xs);
+  }
+
+  .about-section {
+    grid-template-columns: 1fr;
+    row-gap: var(--gap-xs);
+  }
+}

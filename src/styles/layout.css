@@ -8,9 +8,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 
+  /* расстояние между колонками = 2 * боковой отступ */
   gap: calc(var(--gap-xs) * 2);
+
+  /* ТОЛЬКО боковые отступы */
   padding: 0 var(--gap-xs);
 
+  /* ===== CENTRAL VERTICAL LINE ===== */
   background-image: linear-gradient(
     to right,
     transparent calc(50% - 0.5px),
@@ -19,7 +23,11 @@
     transparent calc(50% + 0.5px)
   );
   background-repeat: no-repeat;
+
+  /* отступ линии сверху = как у контента */
   background-position: 0 var(--gap-xs);
+
+  /* линия не заходит в нижнюю шапку */
   background-size: 100% calc(100% - var(--gap-xs));
 }
 
@@ -29,10 +37,15 @@
 
 .projects-column {
   position: relative;
+
+  /* каждая колонка — свой скролл */
   height: calc(100vh - 40px);
   overflow-y: auto;
+
+  /* отступ до нижней шапки ВНУТРИ скролла */
   padding-bottom: 40px;
 
+  /* скрываем скроллбар */
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -42,7 +55,7 @@
 }
 
 /* ===============================
-   TOP HEADER
+   TOP HEADER (SCROLLS WITH CONTENT)
 ================================ */
 
 .projects-header {
@@ -50,6 +63,7 @@
   display: flex;
   align-items: center;
 
+  /* линия под заголовком */
   background-image: linear-gradient(
     to bottom,
     transparent calc(100% - 1px),
@@ -82,94 +96,4 @@
   height: 200px;
   background: #eee;
   margin-bottom: 12px;
-}
-
-/* ===============================
-   ABOUT PAGE — FINAL LAYOUT
-================================ */
-
-/* Страница */
-.page-about {
-  --content-width: 920px;
-}
-
-/* Основная сетка как в макете */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr var(--content-width) 1fr;
-}
-
-/* Пустые зоны слева и справа */
-.about-empty {
-  /* намеренно пусто */
-}
-
-/* Контентная колонка */
-.about-content {
-  padding-top: var(--gap-xs);
-}
-
-/* Две колонки внутри контента */
-.about-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 40px;
-}
-
-/* ===============================
-   SECTIONS
-================================ */
-
-.about-section {
-  padding-top: 24px;
-  margin-bottom: 32px;
-
-  background-image: linear-gradient(
-    to bottom,
-    var(--line) 1px,
-    transparent 1px
-  );
-  background-repeat: no-repeat;
-  background-position: top left;
-}
-
-/* ===============================
-   TYPOGRAPHY
-================================ */
-
-.about-name {
-  font-size: 16px;
-  font-weight: 400;
-  margin: 0 0 8px 0;
-}
-
-.about-section h3 {
-  font-size: 14px;
-  font-weight: 400;
-  margin: 0 0 8px 0;
-}
-
-.about-intro,
-.about-text {
-  font-size: 13px;
-  line-height: 1.4;
-  margin: 0;
-}
-
-/* ===============================
-   LINKS
-================================ */
-
-.about-links a {
-  font-size: 13px;
-}
-
-/* ===============================
-   CV LINK
-================================ */
-
-.about-cv-link {
-  display: inline-block;
-  margin-top: 24px;
-  font-size: 13px;
 }

@@ -4,6 +4,7 @@ import './styles/project.css'
 import './styles/header.css' 
 import './styles/responsive.css'
 import './styles/case.css'
+import './styles/about.css'
 
 // language
 import de from './i18n/de.js'
