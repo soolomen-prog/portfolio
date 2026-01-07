@@ -150,3 +150,12 @@ body::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
+
+.about-text .about-intro {
+  margin-bottom: 46px;
+}
+
+/* обычные строки внутри секций — без нижнего отступа */
+.about-section .about-text p {
+  margin-bottom: 0;
+}
