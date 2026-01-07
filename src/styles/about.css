@@ -1,33 +1,37 @@
-/* ===============================
-   ABOUT PAGE
-   Подчиняется общей сетке сайта
-================================ */
-
-/* ВАЖНО: НИКАКИХ background-image тут больше нет */
-
-/* Основная сетка 50 / 50 */
+/* === ABOUT LAYOUT === */
 
 .about-layout {
+  position: relative;
   min-height: calc(100vh - 46px);
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-.about-left {
-  /* пусто по макету */
+/* ЦЕНТРАЛЬНАЯ ЛИНИЯ — ЧАСТЬ МАКЕТА */
+.about-layout::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--line);
+  pointer-events: none;
 }
 
+/* левая колонка пустая */
+.about-left {}
+
+/* правая колонка */
 .about-right {
   padding: 0 var(--gap-xs);
 }
 
-/* Секции CV */
-
+/* секции */
 .about-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: var(--gap-xs);
-
   border-top: 1px solid var(--line);
   padding-top: 8px;
   padding-bottom: var(--gap-lg);
@@ -35,21 +39,17 @@
 
 .about-section:first-child {
   border-top: none;
-  padding-top: 0;
 }
 
 .about-section--last {
   padding-bottom: 0;
 }
 
-/* Текст */
-
+/* текст */
 .about-label,
 .about-text {
   font-size: 14px;
   line-height: 20px;
-  color: var(--black);
-  font-weight: 400;
 }
 
 .about-text p {
@@ -60,8 +60,7 @@
   margin-top: 14px;
 }
 
-/* Ссылки */
-
+/* ссылки */
 .about-links {
   margin: 18px 0;
   display: grid;
@@ -71,20 +70,10 @@
 .about-links a,
 .about-download a {
   font-size: 14px;
-  line-height: 20px;
-  color: var(--black);
   text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
 }
 
-.about-links a:hover,
-.about-download a:hover {
-  color: var(--hover);
-}
-
-/* Download */
-
+/* download */
 .about-download {
   margin-top: 60px;
   padding-bottom: calc(60px + 46px);
@@ -92,11 +81,14 @@
   justify-content: center;
 }
 
-/* Адаптив */
-
+/* mobile */
 @media (max-width: 1024px) {
   .about-layout {
     grid-template-columns: 1fr;
+  }
+
+  .about-layout::before {
+    display: none;
   }
 
   .about-section {
