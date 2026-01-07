@@ -26,6 +26,6 @@ fetch('/components/header.html')
       rightNavLink.href = '/'
     } else {
       rightNavLink.textContent = 'About'
-      rightNavLink.href = '/about/'
+      rightNavLink.href = '/about.html'
     }
   })
