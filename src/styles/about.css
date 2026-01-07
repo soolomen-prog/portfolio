@@ -120,12 +120,14 @@
   }
 }
 
-/* скрываем визуальный scrollbar, как на главной */
-body.page-about {
-  scrollbar-width: none;      /* Firefox */
+/* скрываем визуальный scrollbar (как на главной) */
+html,
+body {
+  scrollbar-width: none; /* Firefox */
 }
 
-body.page-about::-webkit-scrollbar {
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
