@@ -112,11 +112,15 @@
 
 /* DOWNLOAD */
 .about-download {
-  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--gap-xs);
+
+  border-top: 1.5px solid var(--line);
+  padding-top: 8px;
   padding-bottom: 60px;
-  display: flex;
-  justify-content: center;
 }
+
 
 /* MOBILE */
 @media (max-width: 1024px) {
@@ -150,3 +154,10 @@ body::-webkit-scrollbar {
   height: 0;
 }
 
+.about-download a {
+  grid-column: 2;
+  justify-self: start;
+
+  font-size: 14px;
+  line-height: 20px;
+}
