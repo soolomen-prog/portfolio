@@ -8,9 +8,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 
+  /* расстояние между колонками = 2 * боковой отступ */
   gap: calc(var(--gap-xs) * 2);
+
+  /* ТОЛЬКО боковые отступы */
   padding: 0 var(--gap-xs);
 
+  /* ===== CENTRAL VERTICAL LINE ===== */
   background-image: linear-gradient(
     to right,
     transparent calc(50% - 0.5px),
@@ -19,7 +23,11 @@
     transparent calc(50% + 0.5px)
   );
   background-repeat: no-repeat;
+
+  /* отступ линии сверху = как у контента */
   background-position: 0 var(--gap-xs);
+
+  /* линия не заходит в нижнюю шапку */
   background-size: 100% calc(100% - var(--gap-xs));
 }
 
@@ -30,10 +38,14 @@
 .projects-column {
   position: relative;
 
+  /* каждая колонка — свой скролл */
   height: calc(100vh - 40px);
   overflow-y: auto;
+
+  /* отступ до нижней шапки ВНУТРИ скролла */
   padding-bottom: 40px;
 
+  /* скрываем скроллбар */
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -43,7 +55,7 @@
 }
 
 /* ===============================
-   TOP HEADER
+   TOP HEADER (SCROLLS WITH CONTENT)
 ================================ */
 
 .projects-header {
@@ -51,6 +63,7 @@
   display: flex;
   align-items: center;
 
+  /* линия под заголовком */
   background-image: linear-gradient(
     to bottom,
     transparent calc(100% - 1px),
@@ -85,54 +98,19 @@
   margin-bottom: 12px;
 }
 
-/* ===============================
-   ABOUT PAGE
-================================ */
+/* ABOUT PAGE */
 
-/* общий контейнер страницы */
-.about {
-  width: 100%;
-  padding: 24px 40px;
-}
-
-/* основная сетка */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 40px;
 }
 
-/* пустая левая колонка (как в макете) */
-.about-empty {
-  min-width: 120px;
-}
-
-/* ограничение ширины контента */
-.about-content {
-  max-width: 980px;
-}
-
-/* две колонки с текстом */
 .about-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 40px;
 }
 
-/* секции */
-.about-section {
-  margin-bottom: 32px;
-}
-
-/* основной текст */
-.about-text {
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-/* ссылка на CV */
-.about-cv-link {
-  display: inline-block;
-  margin-top: 24px;
-  font-size: 14px;
+.about-empty {
+  /* пустая колонка, без стилей */
 }
