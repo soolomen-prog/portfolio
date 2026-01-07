@@ -11,8 +11,7 @@ import de from './i18n/de.js'
 window.t = de
 
 function updateHeaderLink() {
-  // ищем именно ссылку на about
-  const link = document.querySelector('.site-header a[href="/about.html"]');
+  const link = document.querySelector('.site-header .header-right a');
   if (!link) return;
 
   const isAbout =
@@ -28,18 +27,27 @@ function updateHeaderLink() {
   }
 }
 
+// === HEADER INIT (ROBUST) ===
+const headerObserver = new MutationObserver(() => {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  updateHeaderLink();
+  headerObserver.disconnect(); // 🔴 важно: один раз и всё
+});
+
+headerObserver.observe(document.body, {
+  childList: true,
+  subtree: true,
+});
+
+// вставка header как и было
 fetch('/components/header.html', { cache: 'no-store' })
   .then(res => res.text())
   .then(html => {
     if (!document.querySelector('.site-header')) {
       document.body.insertAdjacentHTML('beforeend', html);
     }
-
-    // ⬅️ ВАЖНО: вызываем ТОЛЬКО ПОСЛЕ вставки
-    updateHeaderLink();
-  })
-  .catch(() => {
-    // если header уже был в DOM
-    updateHeaderLink();
   });
+
 
