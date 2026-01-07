@@ -13,11 +13,17 @@ window.t = de
 // projects
 import './projects.js'
 
-function applyHeaderLogic() {
+function applyHeaderRightLinkLogic() {
   const rightNavLink = document.querySelector('.header-right .nav-item')
   if (!rightNavLink) return
 
-  if (document.body.classList.contains('page-about')) {
+  const path = (window.location.pathname || '').toLowerCase()
+  const isAbout =
+    document.body.classList.contains('page-about') ||
+    path.endsWith('/about.html') ||
+    path.includes('/about')
+
+  if (isAbout) {
     rightNavLink.textContent = 'Projekte'
     rightNavLink.href = '/'
   } else {
@@ -26,24 +32,17 @@ function applyHeaderLogic() {
   }
 }
 
-// HEADER INIT (без ранних return)
-;(async () => {
-  try {
-    // если шапка уже есть — просто применяем логику
-    if (document.querySelector('.site-header')) {
-      applyHeaderLogic()
-      return
+// header
+fetch('/components/header.html', { cache: 'no-store' })
+  .then(res => res.text())
+  .then(html => {
+    // не дублируем, если вдруг уже есть (fallback / кеш)
+    if (!document.querySelector('.site-header')) {
+      document.body.insertAdjacentHTML('beforeend', html)
     }
-
-    const res = await fetch('/components/header.html', { cache: 'no-store' })
-    if (!res.ok) throw new Error(res.status)
-
-    const html = await res.text()
-    document.body.insertAdjacentHTML('beforeend', html)
-
-    applyHeaderLogic()
-  } catch (e) {
-    console.warn('[header] fallback used', e)
-    applyHeaderLogic()
-  }
-})()
+    applyHeaderRightLinkLogic()
+  })
+  .catch(() => {
+    // даже если fetch упал — попробуем применить логику к уже существующему header
+    applyHeaderRightLinkLogic()
+  })

@@ -1,14 +1,14 @@
 /* ===============================
    ABOUT PAGE
-   Final fixes
+   Final (pixel-perfect)
 ================================ */
 
-/* Убираем лишний скролл справа */
+/* Убираем лишний скролл у body (скролл будет у контента справа) */
 body.page-about {
   overflow: hidden;
 }
 
-/* Центральная линия */
+/* Центральная вертикальная линия */
 .page-about {
   background-image: linear-gradient(
     to right,
@@ -24,46 +24,45 @@ body.page-about {
   min-height: calc(100vh - 46px);
   display: grid;
   grid-template-columns: 1fr 1fr;
-
-  /* ВАЖНО: отступ сверху как на главной */
-  padding-top: 8px;
 }
 
-.about-left {
-  /* пусто по макету */
-}
+/* левая колонка пустая */
+.about-left {}
 
+/* правая колонка */
 .about-right {
   padding: 0 var(--gap-xs);
-  overflow-y: auto; /* скролл только тут */
+  overflow-y: auto; /* скролл только здесь */
 }
 
-/* CV sections */
+/* Секции CV */
+/* ВАЖНО: первая секция ТОЖЕ с линией сверху, как в макете */
 .about-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: var(--gap-xs);
 
   border-top: 1px solid var(--line);
+
+  /* вот эти 8px — то, что ты просишь “как на главной/макете” */
   padding-top: 8px;
   padding-bottom: var(--gap-lg);
 }
 
-.about-section:first-child {
-  border-top: none;
-  padding-top: 0;
-}
+/* больше НЕ убираем линию у первой секции */
+/* .about-section:first-child { border-top: none; padding-top: 0; } */
 
 .about-section--last {
   padding-bottom: 0;
 }
 
-/* Text */
+/* Текст */
 .about-label,
 .about-text {
   font-size: 14px;
   line-height: 20px;
   color: var(--black);
+  font-weight: 400;
 }
 
 .about-text p {
@@ -74,7 +73,7 @@ body.page-about {
   margin-top: 14px;
 }
 
-/* Links */
+/* Ссылки */
 .about-links {
   margin: 18px 0;
   display: grid;
