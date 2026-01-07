@@ -41,7 +41,6 @@
 
   border-top: 1.5px solid var(--line);
   padding-top: 8px;
-  padding-bottom: var(--gap-lg);
 }
 
 /* CV: в макете НЕТ линии сверху, ЕСТЬ линия снизу под "CV" */
@@ -151,11 +150,3 @@ body::-webkit-scrollbar {
   height: 0;
 }
 
-.about-text .about-intro {
-  margin-bottom: 46px;
-}
-
-/* обычные строки внутри секций — без нижнего отступа */
-.about-section .about-text p {
-  margin-bottom: 0;
-}
