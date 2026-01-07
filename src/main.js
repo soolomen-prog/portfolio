@@ -11,20 +11,20 @@ import de from './i18n/de.js'
 window.t = de
 
 function updateHeaderLink() {
-  // РЕАЛЬНЫЙ селектор
-  const link = document.querySelector('.site-header .header-right a')
-  if (!link) return
+  // ищем именно ссылку на about
+  const link = document.querySelector('.site-header a[href="/about.html"]');
+  if (!link) return;
 
   const isAbout =
     window.location.pathname.endsWith('/about.html') ||
-    document.body.classList.contains('page-about')
+    window.location.pathname === '/about';
 
   if (isAbout) {
-    link.textContent = 'Projekte'
-    link.href = '/'
+    link.textContent = 'Projekte';
+    link.setAttribute('href', '/');
   } else {
-    link.textContent = 'About'
-    link.href = '/about.html'
+    link.textContent = 'About';
+    link.setAttribute('href', '/about.html');
   }
 }
 
@@ -32,10 +32,14 @@ fetch('/components/header.html', { cache: 'no-store' })
   .then(res => res.text())
   .then(html => {
     if (!document.querySelector('.site-header')) {
-      document.body.insertAdjacentHTML('beforeend', html)
+      document.body.insertAdjacentHTML('beforeend', html);
     }
-    updateHeaderLink()
+
+    // ⬅️ ВАЖНО: вызываем ТОЛЬКО ПОСЛЕ вставки
+    updateHeaderLink();
   })
   .catch(() => {
-    updateHeaderLink()
-  })
+    // если header уже был в DOM
+    updateHeaderLink();
+  });
+
