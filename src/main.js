@@ -11,43 +11,36 @@ import de from './i18n/de.js'
 window.t = de
 
 function updateHeaderLink() {
-  const link = document.querySelector('.site-header .header-right a');
-  if (!link) return;
+  // БЕРЁМ ИМЕННО ПРАВЫЙ ПУНКТ
+  const link = document.querySelector('.site-header .header-right .nav-item')
+  if (!link) return
 
+  const path = window.location.pathname
   const isAbout =
-    window.location.pathname.endsWith('/about.html') ||
-    window.location.pathname === '/about';
+    path === '/about.html' ||
+    path === '/about' ||
+    path.endsWith('/about.html')
 
   if (isAbout) {
-    link.textContent = 'Projekte';
-    link.setAttribute('href', '/');
+    link.textContent = 'Projekte'
+    link.setAttribute('href', '/')
   } else {
-    link.textContent = 'About';
-    link.setAttribute('href', '/about.html');
+    link.textContent = 'About'
+    link.setAttribute('href', '/about.html')
   }
 }
 
-// === HEADER INIT (ROBUST) ===
-const headerObserver = new MutationObserver(() => {
-  const header = document.querySelector('.site-header');
-  if (!header) return;
-
-  updateHeaderLink();
-  headerObserver.disconnect(); // 🔴 важно: один раз и всё
-});
-
-headerObserver.observe(document.body, {
-  childList: true,
-  subtree: true,
-});
-
-// вставка header как и было
+// === HEADER INIT (ПРОСТО И НАДЁЖНО) ===
 fetch('/components/header.html', { cache: 'no-store' })
   .then(res => res.text())
   .then(html => {
     if (!document.querySelector('.site-header')) {
-      document.body.insertAdjacentHTML('beforeend', html);
+      document.body.insertAdjacentHTML('beforeend', html)
     }
-  });
 
-
+    // 🔴 ВАЖНО: вызываем ПОСЛЕ вставки
+    updateHeaderLink()
+  })
+  .catch(err => {
+    console.warn('[header] load failed', err)
+  })
