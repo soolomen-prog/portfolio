@@ -1,36 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About — Andrei Solomin</title>
-
-    <link rel="stylesheet" href="/src/style.css" />
-    <link rel="stylesheet" href="/src/about.css" />
     <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
-    <script type="module" crossorigin src="/assets/main-CFQcbItD.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-dCuY8WD5.css">
+    <script type="module" crossorigin src="/assets/main-BF6Galr4.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-DU7qclXm.css">
   </head>
 
-  <body data-page="about">
-    <!-- header подключается через main.js, КАК НА ГЛАВНОЙ -->
+  <body class="page-about">
+    <!-- HEADER -->
+    <!-- header.html подключается через JS (src/main.js) -->
 
     <main class="about-layout" aria-label="About">
-      <!-- левая половина (пусто по макету) -->
+      <!-- LEFT HALF (EMPTY) -->
       <div class="about-left" aria-hidden="true"></div>
 
-      <!-- правая половина -->
+      <!-- RIGHT HALF (CV) -->
       <section class="about-right">
-
+        <!-- CV -->
         <div class="about-section">
           <div class="about-label">CV</div>
+
           <div class="about-text">
             <p>Andrei Solomin</p>
 
             <div class="about-links">
               <a href="mailto:hi@andreisolomin.com">hi@andreisolomin.com</a>
-              <a href="https://www.linkedin.com/in/reysolomin" target="_blank" rel="noopener">LinkedIn</a>
-              <a href="https://www.behance.net/Solomindesign" target="_blank" rel="noopener">Behance</a>
+              <a href="https://www.linkedin.com/in/reysolomin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://www.behance.net/Solomindesign" target="_blank" rel="noopener noreferrer">Behance</a>
             </div>
 
             <p>
@@ -41,6 +40,7 @@
           </div>
         </div>
 
+        <!-- Languages -->
         <div class="about-section">
           <div class="about-label">Sprachen / Sprachkenntnisse</div>
           <div class="about-text">
@@ -49,54 +49,87 @@
           </div>
         </div>
 
+        <!-- Education -->
         <div class="about-section">
           <div class="about-label">Studium / Weiterbildungen</div>
           <div class="about-text">
             <p>
-              Britische Hochschule für Design (BHSAD), Moskau — „Design Thinking“<br />
+              Britische Hochschule für Design (BHSAD), Moskau — Kurse: „Design Thinking“ und „Strategien zur
+              Entwicklung des idealen Produkts“<br />
               2017
             </p>
             <p>
-              Omsker Staatliche Technische Universität (OmGTU)<br />
-              Grafikdesign, 2006–2012
+              Abschluss an der Omsker Staatlichen Technischen Universität (OmGTU)<br />
+              Fachrichtung: Grafikdesign<br />
+              2006 – 2012
             </p>
           </div>
         </div>
 
+        <!-- Experience -->
         <div class="about-section">
           <div class="about-label">Berufserfahrung</div>
           <div class="about-text">
-            <p>Freiberuflich — Web- & Grafikdesign<br />2024 – heute</p>
-            <p>SmartHeart — Senior Designer<br />2022 – 2024</p>
-            <p>Pinkman — Senior Designer<br />2018 – 2021</p>
+            <p>Freiberufliche Tätigkeit als Web- und Grafikdesigner<br />2024 – heute</p>
+            <p>Senior Designer in der Kreativagentur SmartHeart (Moskau)<br />2022 – 2024</p>
+            <p>Senior Designer im Designstudio Pinkman (Moskau)<br />2018 – 2021</p>
+            <p>Designstudio FERMA — Aufstieg zum Art Director (Omsk)<br />2013 – 2017</p>
+            <p>Designer im Designstudio „Zwei Giraffen“ (Omsk)<br />2011 – 2013</p>
           </div>
         </div>
 
+        <!-- Work style -->
         <div class="about-section">
           <div class="about-label">Arbeitsweise</div>
           <div class="about-text">
-            <p>Strukturiert</p>
-            <p>Eigenverantwortlich</p>
-            <p>Agenturerfahrung</p>
+            <p>Strukturierte und konzeptionelle Arbeitsweise</p>
+            <p>Hohe Eigenverantwortung</p>
+            <p>Erfahrung in Agenturumgebungen</p>
           </div>
         </div>
 
+        <!-- Skills -->
+        <div class="about-section">
+          <div class="about-label">Kenntnisse / Skills</div>
+          <div class="about-text">
+            <p>
+              Branding<br />
+              Corporate Design<br />
+              Logo Design<br />
+              Webdesign (UX/UI)<br />
+              Editorial &amp; Print Design<br />
+              Typografie
+            </p>
+            <p>
+              Figma<br />
+              Photoshop<br />
+              Illustrator<br />
+              InDesign<br />
+              After Effects<br />
+              Cinema 4D
+            </p>
+          </div>
+        </div>
+
+        <!-- Interests -->
         <div class="about-section about-section--last">
           <div class="about-label">Interessen</div>
           <div class="about-text">
             <p>Volleyball</p>
             <p>RetroGaming</p>
             <p>RetroPC</p>
+            <p>KI-Automatisierung</p>
+            <p>Bot-Entwicklung</p>
           </div>
         </div>
 
+        <!-- Download -->
         <div class="about-download">
           <a href="/lebenslauf_Andrei.pdf" download>Lebenslauf als PDF herunterladen</a>
         </div>
-
       </section>
     </main>
 
-    <!-- ВАЖНО: тот же entry, что и на главной -->
+    <!-- APP ENTRY (как на главной) -->
   </body>
 </html>

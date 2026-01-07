@@ -1,37 +1,51 @@
-/* === ABOUT LAYOUT === */
+/* ===============================
+   ABOUT PAGE
+   Pixel-perfect по макету
+   + центральная линия как на главной (.projects)
+================================ */
 
+/* Центральная вертикальная линия — 1:1 как в src/styles/layout.css (.projects) */
+.page-about {
+  background-image: linear-gradient(
+    to right,
+    transparent calc(50% - 0.5px),
+    var(--line) calc(50% - 0.5px),
+    var(--line) calc(50% + 0.5px),
+    transparent calc(50% + 0.5px)
+  );
+  background-repeat: no-repeat;
+
+  /* отступ линии сверху = как у главной */
+  background-position: 0 var(--gap-xs);
+
+  /* линия не заходит в область нижней шапки (46px) */
+  background-size: 100% calc(100% - var(--gap-xs));
+}
+
+/* Основная сетка 50 / 50 */
 .about-layout {
-  position: relative;
   min-height: calc(100vh - 46px);
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  /* ВЕРХНИЙ ОТСТУП как ты просил (на главной он есть визуально через background-position и внутренние ритмы) */
+  padding-top: var(--gap-xs);
 }
 
-/* ЦЕНТРАЛЬНАЯ ЛИНИЯ — ЧАСТЬ МАКЕТА */
-.about-layout::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 1px;
-  background: var(--line);
-  pointer-events: none;
+.about-left {
+  /* пусто по макету */
 }
 
-/* левая колонка пустая */
-.about-left {}
-
-/* правая колонка */
 .about-right {
   padding: 0 var(--gap-xs);
 }
 
-/* секции */
+/* Секции CV */
 .about-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: var(--gap-xs);
+
   border-top: 1px solid var(--line);
   padding-top: 8px;
   padding-bottom: var(--gap-lg);
@@ -39,17 +53,20 @@
 
 .about-section:first-child {
   border-top: none;
+  padding-top: 0;
 }
 
 .about-section--last {
   padding-bottom: 0;
 }
 
-/* текст */
+/* Текст */
 .about-label,
 .about-text {
   font-size: 14px;
   line-height: 20px;
+  color: var(--black);
+  font-weight: 400;
 }
 
 .about-text p {
@@ -60,7 +77,7 @@
   margin-top: 14px;
 }
 
-/* ссылки */
+/* Ссылки (возвращаем стиль как в макете: underline) */
 .about-links {
   margin: 18px 0;
   display: grid;
@@ -70,10 +87,19 @@
 .about-links a,
 .about-download a {
   font-size: 14px;
+  line-height: 20px;
+  color: var(--black);
   text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 
-/* download */
+.about-links a:hover,
+.about-download a:hover {
+  color: var(--hover);
+}
+
+/* Download */
 .about-download {
   margin-top: 60px;
   padding-bottom: calc(60px + 46px);
@@ -81,14 +107,10 @@
   justify-content: center;
 }
 
-/* mobile */
+/* Адаптив */
 @media (max-width: 1024px) {
   .about-layout {
     grid-template-columns: 1fr;
-  }
-
-  .about-layout::before {
-    display: none;
   }
 
   .about-section {
