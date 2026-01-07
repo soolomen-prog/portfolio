@@ -1,33 +1,36 @@
 /* ===============================
-   ABOUT PAGE — FINAL
+   ABOUT PAGE — FINAL, CLEAN
 ================================ */
-
-/* ЦЕНТРАЛЬНАЯ ЛИНИЯ */
-.page-about {
-  background-image: linear-gradient(
-    to right,
-    transparent calc(50% - 0.5px),
-    var(--line) calc(50% - 0.5px),
-    var(--line) calc(50% + 0.5px),
-    transparent calc(50% + 0.5px)
-  );
-}
 
 /* ОСНОВНАЯ СЕТКА */
 .about-layout {
+  position: relative;
   min-height: calc(100vh - 46px);
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  /* ТОТ САМЫЙ ОТСТУП СВЕРХУ */
+  padding-top: 8px;
+}
+
+/* ЦЕНТРАЛЬНАЯ ЛИНИЯ — ТЕПЕРЬ ПРАВИЛЬНО */
+.about-layout::before {
+  content: '';
+  position: absolute;
+  top: 8px;              /* НЕ от края */
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--line);
+  pointer-events: none;
 }
 
 .about-left {
-  /* пусто */
+  /* пусто по макету */
 }
 
-/* 🔴 ВАЖНО:
-   8px ОТСТУП СВЕРХУ — ИМЕННО ТУТ */
 .about-right {
-  padding: 8px var(--gap-xs) 0;
+  padding: 0 var(--gap-xs);
 }
 
 /* СЕКЦИИ */
@@ -41,12 +44,17 @@
   padding-bottom: var(--gap-lg);
 }
 
-/* первую секцию НЕ выключаем */
+/* 🔴 ВАЖНО: у первого блока НЕТ линии сверху */
+.about-section:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
 .about-section--last {
   padding-bottom: 0;
 }
 
-/* ТИПОГРАФИЯ */
+/* ТЕКСТ */
 .about-label,
 .about-text {
   font-size: 14px;
@@ -98,8 +106,12 @@
     grid-template-columns: 1fr;
   }
 
+  .about-layout::before {
+    display: none;
+  }
+
   .about-right {
-    padding: 8px var(--gap-xs);
+    padding: 0 var(--gap-xs);
   }
 
   .about-section {

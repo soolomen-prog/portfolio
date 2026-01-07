@@ -11,8 +11,8 @@ import de from './i18n/de.js'
 window.t = de
 
 function updateHeaderLink() {
-  // РЕАЛЬНЫЙ селектор из header.html
-  const link = document.querySelector('.site-header .header-link')
+  // РЕАЛЬНЫЙ селектор
+  const link = document.querySelector('.site-header .header-right a')
   if (!link) return
 
   const isAbout =
@@ -28,7 +28,6 @@ function updateHeaderLink() {
   }
 }
 
-// header init
 fetch('/components/header.html', { cache: 'no-store' })
   .then(res => res.text())
   .then(html => {
@@ -38,6 +37,5 @@ fetch('/components/header.html', { cache: 'no-store' })
     updateHeaderLink()
   })
   .catch(() => {
-    // если header уже есть
     updateHeaderLink()
   })
