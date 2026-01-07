@@ -1,6 +1,7 @@
 import './styles/base.css'
 import './styles/layout.css'
 import './styles/project.css'
+import './styles/header.css' 
 import './styles/responsive.css'
 import './styles/case.css'
 
