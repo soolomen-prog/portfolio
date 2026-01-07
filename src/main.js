@@ -13,7 +13,7 @@ window.t = de
 // projects
 import './projects.js'
 
-function applyHeaderRightLinkLogic() {
+function applyHeaderLogic() {
   const rightNavLink = document.querySelector('.header-right .nav-item')
   if (!rightNavLink) return
 
@@ -26,27 +26,24 @@ function applyHeaderRightLinkLogic() {
   }
 }
 
-// header (robust)
+// HEADER INIT (без ранних return)
 ;(async () => {
-  // Если шапка уже есть (мы вставили fallback в about.html) — просто применяем логику и выходим
-  if (document.querySelector('.site-header')) {
-    applyHeaderRightLinkLogic()
-    return
-  }
-
   try {
-    const res = await fetch('/components/header.html', { cache: 'no-store' })
-    if (!res.ok) throw new Error(`header.html fetch failed: ${res.status}`)
-    const html = await res.text()
-
-    // На всякий случай — не вставляем второй раз
-    if (!document.querySelector('.site-header')) {
-      document.body.insertAdjacentHTML('beforeend', html)
+    // если шапка уже есть — просто применяем логику
+    if (document.querySelector('.site-header')) {
+      applyHeaderLogic()
+      return
     }
 
-    applyHeaderRightLinkLogic()
+    const res = await fetch('/components/header.html', { cache: 'no-store' })
+    if (!res.ok) throw new Error(res.status)
+
+    const html = await res.text()
+    document.body.insertAdjacentHTML('beforeend', html)
+
+    applyHeaderLogic()
   } catch (e) {
-    // если по какой-то причине components/header.html не доступен на сервере
-    console.warn('[header] not loaded:', e)
+    console.warn('[header] fallback used', e)
+    applyHeaderLogic()
   }
 })()

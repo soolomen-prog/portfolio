@@ -1,8 +1,14 @@
 /* ===============================
    ABOUT PAGE
-   Pixel-perfect по макету
+   Final fixes
 ================================ */
 
+/* Убираем лишний скролл справа */
+body.page-about {
+  overflow: hidden;
+}
+
+/* Центральная линия */
 .page-about {
   background-image: linear-gradient(
     to right,
@@ -16,9 +22,11 @@
 /* Основная сетка 50 / 50 */
 .about-layout {
   min-height: calc(100vh - 46px);
-  padding-bottom: 46px; /* чтобы fixed header снизу никогда не перекрывал контент */
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  /* ВАЖНО: отступ сверху как на главной */
+  padding-top: 8px;
 }
 
 .about-left {
@@ -27,9 +35,10 @@
 
 .about-right {
   padding: 0 var(--gap-xs);
+  overflow-y: auto; /* скролл только тут */
 }
 
-/* Секции CV */
+/* CV sections */
 .about-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -49,13 +58,12 @@
   padding-bottom: 0;
 }
 
-/* Левая и правая колонка */
+/* Text */
 .about-label,
 .about-text {
   font-size: 14px;
   line-height: 20px;
   color: var(--black);
-  font-weight: 400;
 }
 
 .about-text p {
@@ -66,7 +74,7 @@
   margin-top: 14px;
 }
 
-/* Ссылки */
+/* Links */
 .about-links {
   margin: 18px 0;
   display: grid;
@@ -96,14 +104,18 @@
   justify-content: center;
 }
 
-/* Responsive */
+/* Mobile */
 @media (max-width: 1024px) {
+  body.page-about {
+    overflow: auto;
+  }
+
   .about-layout {
     grid-template-columns: 1fr;
   }
 
   .about-right {
-    padding: 0 var(--gap-xs);
+    overflow: visible;
   }
 
   .about-section {
