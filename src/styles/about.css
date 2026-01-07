@@ -1,116 +1,90 @@
 /* ===============================
-   ABOUT PAGE
-   Matches layout: left half empty, right half content in 2 columns
+   ABOUT PAGE — EXACT LAYOUT
 ================================ */
 
 .page-about {
-  background-image: linear-gradient(
-    to right,
-    transparent calc(50% - 0.5px),
-    var(--line) calc(50% - 0.5px),
-    var(--line) calc(50% + 0.5px),
-    transparent calc(50% + 0.5px)
-  );
+  --content-width: 920px;
 }
 
-.about-layout {
-  min-height: calc(100vh - 46px);
+/* Внешняя сетка — как на главной */
+.about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr var(--content-width) 1fr;
 }
 
-.about-left {
+/* пустые поля */
+.about-empty {
   /* intentionally empty */
 }
 
-.about-right {
-  padding: 0 var(--gap-xs);
+/* центральный контент */
+.about-content {
+  display: block;
 }
 
-/* Sections */
+/* ===============================
+   INNER TWO-COLUMN LAYOUT
+   (CV labels / Content)
+================================ */
+
+.about-columns {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  column-gap: 40px;
+}
+
+/* ===============================
+   SECTIONS
+================================ */
 
 .about-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: var(--gap-xs);
-  border-top: 1px solid var(--line);
-  padding-top: 8px;              /* 8px from line to text */
-  padding-bottom: var(--gap-lg);  /* 46px to next line */
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  background-image: linear-gradient(
+    to bottom,
+    transparent calc(100% - 1px),
+    var(--line) calc(100% - 1px)
+  );
+  background-repeat: no-repeat;
 }
 
-.about-section:first-child {
-  margin-top: 0;
-}
-
-.about-label,
-.about-text {
-  font-size: 14px;
-  line-height: 20px;
-  color: var(--black);
-}
-
-.about-label {
-  font-weight: 400;
-}
-
-.about-text p {
-  margin: 0;
-}
-
-.about-text p + p {
-  margin-top: 14px;
-}
-
-/* CV top block specifics */
+/* ===============================
+   TYPOGRAPHY (NO REINVENTION)
+================================ */
 
 .about-name {
   font-size: 14px;
-  line-height: 20px;
+  font-weight: 400;
+  margin: 0 0 8px 0;
 }
 
-.about-links {
-  margin-top: var(--gap-sm); /* 18px from name to links */
-  display: grid;
-  gap: 2px;
+.about-section h3 {
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0;
 }
+
+.about-text,
+.about-intro {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* ===============================
+   LINKS
+================================ */
 
 .about-links a,
-.about-download a {
-  font-size: 14px;
-  line-height: 20px;
-  color: var(--black);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
+.about-cv-link {
+  font-size: 13px;
 }
 
-.about-links a:hover,
-.about-download a:hover {
-  color: var(--hover);
-}
+/* ===============================
+   CV LINK
+================================ */
 
-/* Download link */
-
-.about-download {
-  margin-top: 60px;                 /* 60px from interests to link */
-  padding-bottom: calc(60px + 46px); /* 60px to header + header height */
-  display: flex;
-  justify-content: center;
-}
-
-/* Responsive */
-
-@media (max-width: 1024px) {
-  .about-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .about-right {
-    padding: 0 var(--gap-xs);
-  }
-
-  .about-section {
-    grid-template-columns: 1fr;
-    row-gap: var(--gap-xs);
-  }
+.about-cv-link {
+  display: inline-block;
+  margin-top: 24px;
 }
