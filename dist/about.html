@@ -10,13 +10,14 @@
     <!-- стили about -->
     <link rel="stylesheet" href="/src/about.css" />
     <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
-    <script type="module" crossorigin src="/assets/main-9_8hO86Z.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-C_4U_e8D.css">
+    <script type="module" crossorigin src="/assets/main-Bp3cqgT7.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-ijt0CEVK.css">
   </head>
 
-  <body class="page-about" data-page="about">
-    <!-- нижняя фиксированная шапка подключается динамически -->
-    <div id="header"></div>
+  <!-- ВАЖНО: тот же page-класс, что и на главной -->
+  <body class="page page-about" data-page="about">
+    <!-- footer подключается так же, как на главной -->
+    <div id="footer"></div>
 
     <main class="about-layout" aria-label="About">
       <!-- левая половина — пустая -->
@@ -134,6 +135,7 @@
       </section>
     </main>
 
-    <!-- подключение шапки / навигации -->
+    <!-- ТОТ ЖЕ СКРИПТ, ЧТО НА ГЛАВНОЙ -->
+    <script src="/assets/footer.js"></script>
   </body>
 </html>

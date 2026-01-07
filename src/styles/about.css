@@ -1,17 +1,9 @@
 /* ===============================
    ABOUT PAGE
-   Pixel-perfect по макету
+   Подчиняется общей сетке сайта
 ================================ */
 
-.page-about {
-  background-image: linear-gradient(
-    to right,
-    transparent calc(50% - 0.5px),
-    var(--line) calc(50% - 0.5px),
-    var(--line) calc(50% + 0.5px),
-    transparent calc(50% + 0.5px)
-  );
-}
+/* ВАЖНО: НИКАКИХ background-image тут больше нет */
 
 /* Основная сетка 50 / 50 */
 
@@ -50,7 +42,7 @@
   padding-bottom: 0;
 }
 
-/* Левая и правая колонка */
+/* Текст */
 
 .about-label,
 .about-text {
