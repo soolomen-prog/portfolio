@@ -6,43 +6,38 @@ import './styles/responsive.css'
 import './styles/case.css'
 import './styles/about.css'
 
-// language
+import './projects.js'
 import de from './i18n/de.js'
 window.t = de
 
-// projects
-import './projects.js'
+function updateHeaderLink() {
+  // РЕАЛЬНЫЙ селектор из header.html
+  const link = document.querySelector('.site-header .header-link')
+  if (!link) return
 
-function applyHeaderRightLinkLogic() {
-  const rightNavLink = document.querySelector('.header-right .nav-item')
-  if (!rightNavLink) return
-
-  const path = (window.location.pathname || '').toLowerCase()
   const isAbout =
-    document.body.classList.contains('page-about') ||
-    path.endsWith('/about.html') ||
-    path.includes('/about')
+    window.location.pathname.endsWith('/about.html') ||
+    document.body.classList.contains('page-about')
 
   if (isAbout) {
-    rightNavLink.textContent = 'Projekte'
-    rightNavLink.href = '/'
+    link.textContent = 'Projekte'
+    link.href = '/'
   } else {
-    rightNavLink.textContent = 'About'
-    rightNavLink.href = '/about.html'
+    link.textContent = 'About'
+    link.href = '/about.html'
   }
 }
 
-// header
+// header init
 fetch('/components/header.html', { cache: 'no-store' })
   .then(res => res.text())
   .then(html => {
-    // не дублируем, если вдруг уже есть (fallback / кеш)
     if (!document.querySelector('.site-header')) {
       document.body.insertAdjacentHTML('beforeend', html)
     }
-    applyHeaderRightLinkLogic()
+    updateHeaderLink()
   })
   .catch(() => {
-    // даже если fetch упал — попробуем применить логику к уже существующему header
-    applyHeaderRightLinkLogic()
+    // если header уже есть
+    updateHeaderLink()
   })

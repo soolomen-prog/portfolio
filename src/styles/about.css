@@ -1,14 +1,8 @@
 /* ===============================
-   ABOUT PAGE
-   Final (pixel-perfect)
+   ABOUT PAGE — FINAL
 ================================ */
 
-/* Убираем лишний скролл у body (скролл будет у контента справа) */
-body.page-about {
-  overflow: hidden;
-}
-
-/* Центральная вертикальная линия */
+/* ЦЕНТРАЛЬНАЯ ЛИНИЯ */
 .page-about {
   background-image: linear-gradient(
     to right,
@@ -19,50 +13,45 @@ body.page-about {
   );
 }
 
-/* Основная сетка 50 / 50 */
+/* ОСНОВНАЯ СЕТКА */
 .about-layout {
   min-height: calc(100vh - 46px);
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-/* левая колонка пустая */
-.about-left {}
-
-/* правая колонка */
-.about-right {
-  padding: 0 var(--gap-xs);
-  overflow-y: auto; /* скролл только здесь */
+.about-left {
+  /* пусто */
 }
 
-/* Секции CV */
-/* ВАЖНО: первая секция ТОЖЕ с линией сверху, как в макете */
+/* 🔴 ВАЖНО:
+   8px ОТСТУП СВЕРХУ — ИМЕННО ТУТ */
+.about-right {
+  padding: 8px var(--gap-xs) 0;
+}
+
+/* СЕКЦИИ */
 .about-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: var(--gap-xs);
 
   border-top: 1px solid var(--line);
-
-  /* вот эти 8px — то, что ты просишь “как на главной/макете” */
   padding-top: 8px;
   padding-bottom: var(--gap-lg);
 }
 
-/* больше НЕ убираем линию у первой секции */
-/* .about-section:first-child { border-top: none; padding-top: 0; } */
-
+/* первую секцию НЕ выключаем */
 .about-section--last {
   padding-bottom: 0;
 }
 
-/* Текст */
+/* ТИПОГРАФИЯ */
 .about-label,
 .about-text {
   font-size: 14px;
   line-height: 20px;
   color: var(--black);
-  font-weight: 400;
 }
 
 .about-text p {
@@ -73,7 +62,7 @@ body.page-about {
   margin-top: 14px;
 }
 
-/* Ссылки */
+/* ССЫЛКИ */
 .about-links {
   margin: 18px 0;
   display: grid;
@@ -95,7 +84,7 @@ body.page-about {
   color: var(--hover);
 }
 
-/* Download */
+/* DOWNLOAD */
 .about-download {
   margin-top: 60px;
   padding-bottom: 60px;
@@ -103,18 +92,14 @@ body.page-about {
   justify-content: center;
 }
 
-/* Mobile */
+/* MOBILE */
 @media (max-width: 1024px) {
-  body.page-about {
-    overflow: auto;
-  }
-
   .about-layout {
     grid-template-columns: 1fr;
   }
 
   .about-right {
-    overflow: visible;
+    padding: 8px var(--gap-xs);
   }
 
   .about-section {
