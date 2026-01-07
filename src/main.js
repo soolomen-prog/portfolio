@@ -19,14 +19,13 @@ fetch('/components/header.html')
 
     // ===== HEADER RIGHT LINK LOGIC =====
     const rightNavLink = document.querySelector('.header-right .nav-item')
-
     if (!rightNavLink) return
 
     if (document.body.classList.contains('page-about')) {
       rightNavLink.textContent = 'Projekte'
-      rightNavLink.href = '/projects.html'
+      rightNavLink.href = '/'
     } else {
       rightNavLink.textContent = 'About'
-      rightNavLink.href = '/about.html'
+      rightNavLink.href = '/about/'
     }
   })
