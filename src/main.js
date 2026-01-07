@@ -10,10 +10,11 @@ import './projects.js'
 import de from './i18n/de.js'
 window.t = de
 
-function updateHeaderLink() {
-  // БЕРЁМ ИМЕННО ПРАВЫЙ ПУНКТ
-  const link = document.querySelector('.site-header .header-right .nav-item')
-  if (!link) return
+function updateHeader() {
+  const navLink = document.querySelector('.site-header .header-right .nav-item')
+  const nameLink = document.querySelector('.site-header .author-name')
+
+  if (!navLink) return
 
   const path = window.location.pathname
   const isAbout =
@@ -21,26 +22,31 @@ function updateHeaderLink() {
     path === '/about' ||
     path.endsWith('/about.html')
 
+  // правый пункт
   if (isAbout) {
-    link.textContent = 'Projekte'
-    link.setAttribute('href', '/')
+    navLink.textContent = 'Projekte'
+    navLink.setAttribute('href', '/')
   } else {
-    link.textContent = 'About'
-    link.setAttribute('href', '/about.html')
+    navLink.textContent = 'About'
+    navLink.setAttribute('href', '/about.html')
+  }
+
+  // имя всегда ведёт на главную
+  if (nameLink && nameLink.tagName !== 'A') {
+    const a = document.createElement('a')
+    a.href = '/'
+    a.className = 'author-name'
+    a.textContent = nameLink.textContent
+    nameLink.replaceWith(a)
   }
 }
 
-// === HEADER INIT (ПРОСТО И НАДЁЖНО) ===
+// загрузка header
 fetch('/components/header.html', { cache: 'no-store' })
   .then(res => res.text())
   .then(html => {
     if (!document.querySelector('.site-header')) {
       document.body.insertAdjacentHTML('beforeend', html)
     }
-
-    // 🔴 ВАЖНО: вызываем ПОСЛЕ вставки
-    updateHeaderLink()
-  })
-  .catch(err => {
-    console.warn('[header] load failed', err)
+    updateHeader()
   })

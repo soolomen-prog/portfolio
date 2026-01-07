@@ -84,3 +84,12 @@
   display: block;
   flex-shrink: 0;
 }
+
+.site-header .author-name {
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-header .author-name:hover {
+  color: var(--accent-color); /* тот самый розовый */
+}
