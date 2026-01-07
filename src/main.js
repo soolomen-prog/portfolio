@@ -11,42 +11,38 @@ import de from './i18n/de.js'
 window.t = de
 
 function updateHeader() {
-  const navLink = document.querySelector('.site-header .header-right .nav-item')
-  const nameLink = document.querySelector('.site-header .author-name')
+  const header = document.querySelector('.site-header');
+  if (!header) return;
 
-  if (!navLink) return
+  const navLink = header.querySelector('.header-right .nav-item');
+  const nameEl = header.querySelector('.author-name');
 
-  const path = window.location.pathname
+  const path = window.location.pathname;
   const isAbout =
     path === '/about.html' ||
     path === '/about' ||
-    path.endsWith('/about.html')
+    path.endsWith('/about.html');
 
-  // правый пункт
-  if (isAbout) {
-    navLink.textContent = 'Projekte'
-    navLink.setAttribute('href', '/')
-  } else {
-    navLink.textContent = 'About'
-    navLink.setAttribute('href', '/about.html')
+  // Правый пункт
+  if (navLink) {
+    if (isAbout) {
+      navLink.textContent = 'Projekte';
+      navLink.href = '/';
+    } else {
+      navLink.textContent = 'About';
+      navLink.href = '/about.html';
+    }
   }
 
-  // имя всегда ведёт на главную
-  if (nameLink && nameLink.tagName !== 'A') {
-    const a = document.createElement('a')
-    a.href = '/'
-    a.className = 'author-name'
-    a.textContent = nameLink.textContent
-    nameLink.replaceWith(a)
+  // Имя → ссылка на главную
+  if (nameEl && nameEl.tagName !== 'A') {
+    const a = document.createElement('a');
+    a.href = '/';
+    a.className = 'author-name';
+    a.textContent = nameEl.textContent;
+    nameEl.replaceWith(a);
   }
 }
 
-// загрузка header
-fetch('/components/header.html', { cache: 'no-store' })
-  .then(res => res.text())
-  .then(html => {
-    if (!document.querySelector('.site-header')) {
-      document.body.insertAdjacentHTML('beforeend', html)
-    }
-    updateHeader()
-  })
+document.addEventListener('DOMContentLoaded', updateHeader);
+
