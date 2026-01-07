@@ -88,8 +88,9 @@
 .site-header .author-name {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 .site-header .author-name:hover {
-  color: var(--accent-color); /* тот самый розовый */
+  color: var(--hover);
 }
