@@ -86,53 +86,75 @@
 }
 
 /* ===============================
-   ABOUT PAGE
+   ABOUT PAGE LAYOUT — FINAL
 ================================ */
 
-/* общий контейнер страницы */
-.about {
-  width: 100%;
-  padding: 24px 40px;
+/* Вся страница */
+.page-about {
+  --content-width: 920px;
 }
 
-/* основная сетка */
+/* Основная сетка */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 40px;
+  grid-template-columns: 1fr var(--content-width) 1fr;
 }
 
-/* пустая левая колонка (как в макете) */
+/* Левая и правая пустые зоны */
 .about-empty {
-  min-width: 120px;
+  /* намеренно пусто */
 }
 
-/* ограничение ширины контента */
+/* Контент */
 .about-content {
-  max-width: 980px;
+  display: block;
 }
 
-/* две колонки с текстом */
+/* Две колонки внутри контента */
 .about-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 40px;
 }
 
-/* секции */
+/* Секции */
 .about-section {
+  padding-top: 24px;
   margin-bottom: 32px;
+
+  background-image: linear-gradient(
+    to top,
+    var(--line) 1px,
+    transparent 1px
+  );
+  background-repeat: no-repeat;
+  background-position: top left;
 }
 
-/* основной текст */
-.about-text {
+/* Заголовки */
+.about-name {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0 8px 0;
+}
+
+.about-section h3 {
   font-size: 14px;
+  font-weight: 400;
+  margin: 0 0 8px 0;
+}
+
+/* Текст */
+.about-text,
+.about-intro {
+  font-size: 13px;
   line-height: 1.4;
 }
 
-/* ссылка на CV */
+/* CV link */
 .about-cv-link {
   display: inline-block;
   margin-top: 24px;
-  font-size: 14px;
+  font-size: 13px;
 }
+
