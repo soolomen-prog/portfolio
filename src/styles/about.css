@@ -110,21 +110,6 @@
   color: var(--hover);
 }
 
-/* DOWNLOAD */
-.about-download {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: var(--gap-xs);
-
-  /* НИКАКИХ ЛИНИЙ */
-  border: none;
-
-  /* ТОЧНЫЕ ОТСТУПЫ ПО МАКЕТУ */
-  padding-bottom: 100px;
-}
-
-
-
 /* MOBILE */
 @media (max-width: 1024px) {
   .about-layout {
@@ -162,10 +147,13 @@ body::-webkit-scrollbar {
   height: 0;
 }
 
-.about-download a {
-  grid-column: 2;
-  justify-self: start;
-
-  font-size: 14px;
-  line-height: 20px;
+.about-section--download {
+  border-top: none;
+  padding-top: 0;
+  padding-bottom: 100px;
 }
+
+.about-download a {
+  justify-self: start;
+}
+
