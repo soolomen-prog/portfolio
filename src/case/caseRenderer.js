@@ -4,10 +4,8 @@ import vakio from '../cases/webdesign/vakio.js';
 
 /**
  * ВАЖНО:
- * Сейчас мы подключаем ТОЛЬКО vakio как первый эталон.
- * Остальные кейсы добавим позже через registry.
+ * Сейчас подключаем только vakio как эталон
  */
-
 const casesMap = {
   vakio,
 };
@@ -38,7 +36,7 @@ function renderHeader(data) {
 }
 
 /* ===============================
-   META / INTRO
+   INTRO
 ================================ */
 
 function renderIntro(data) {
@@ -54,11 +52,11 @@ function renderIntro(data) {
   const imageEl = document.querySelector('.case-intro-image');
 
   if (coverEl) {
-    coverEl.innerHTML = `<img src="${data.intro.cover}" alt="" />`;
+    coverEl.innerHTML = `<img src="${data.intro.cover}" alt="">`;
   }
 
   if (imageEl) {
-    imageEl.innerHTML = `<img src="${data.intro.image}" alt="" />`;
+    imageEl.innerHTML = `<img src="${data.intro.image}" alt="">`;
   }
 }
 
@@ -75,7 +73,7 @@ function renderTask(data) {
 }
 
 /* ===============================
-   BLOCKS
+   ADMIN BLOCKS
 ================================ */
 
 function renderBlocks(blocks) {
@@ -114,12 +112,15 @@ function renderBlocks(blocks) {
 
 function createTextRight(block) {
   const section = document.createElement('section');
-  section.className = 'case-intro-row';
+  section.className = 'case-admin-row';
 
   section.innerHTML = `
-    <div class="case-col-left"></div>
-    <div class="case-col-right">
-      <div class="case-task-text">${block.text}</div>
+    <div></div>
+    <div class="case-admin-text">
+      ${block.text
+        .split('\n')
+        .map(p => `<p>${p.trim()}</p>`)
+        .join('')}
     </div>
   `;
 
@@ -128,13 +129,10 @@ function createTextRight(block) {
 
 function createImageFull(block) {
   const section = document.createElement('section');
-  section.className = 'case-intro-row';
+  section.className = 'case-admin-row full';
 
   section.innerHTML = `
-    <div class="case-col-left"></div>
-    <div class="case-col-right">
-      <img src="${block.src}" alt="" />
-    </div>
+    <img src="${block.src}" alt="">
   `;
 
   return section;
@@ -142,20 +140,15 @@ function createImageFull(block) {
 
 function createVideoFull(block) {
   const section = document.createElement('section');
-  section.className = 'case-intro-row';
+  section.className = 'case-admin-row full';
 
   section.innerHTML = `
-    <div class="case-col-left"></div>
-    <div class="case-col-right">
-      <div class="video-wrapper">
-        <iframe
-          src="https://player.vimeo.com/video/${block.vimeoId}"
-          frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
+    <iframe
+      src="https://player.vimeo.com/video/${block.vimeoId}"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen
+    ></iframe>
   `;
 
   return section;
