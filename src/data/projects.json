@@ -32,7 +32,12 @@
     "category": "branding",
     "title": "HAS",
     "subtitle": "Türkisches Trinkwasser",
-    "features": ["Brand Identity, Landing page, Packaging, Catalog"],
+    "features": [
+      "Brand Identity",
+      "Landing page",
+      "Packaging",
+      "Catalog"
+    ],
     "year": 2022,
     "coverImage": "/img/has/cover.jpg",
     "homeDescription": "Brand Identity und Verpackungsdesign für Trinkwasser.",
