@@ -519,10 +519,12 @@
 
 }
 
-.case-admin-row img {
+.case-admin-row.full img {
   width: 100%;
   height: auto;
-  image-rendering: auto;
+  max-width: 100%;
+  image-rendering: -webkit-optimize-contrast;
+  backface-visibility: hidden;
   transform: translateZ(0);
 }
 
