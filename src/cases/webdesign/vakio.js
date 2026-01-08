@@ -108,7 +108,8 @@ Illustrationen sowie der visuellen Darstellung der Produkt-Renderings im Katalog
     {
       type: 'text-right',
       text: `Um die Einsatz- und Anwendungsschemata der Geräte in Wohnräumen sowie in Geschäftsräumen anschaulich darzustellen, wurde ein einheitlicher Visualisierungsstil für diese схемы entwickelt. In einer stilisierten und minimalistischen 3D-Darstellung wurden die korrekten Platzierungsschemata der Geräte in den Räumen gezeigt.
-Darüber hinaus wurde ein eigener grafischer Corporate-Stil entwickelt, der in Anleitungen sowie in verschiedenen Gestaltungselementen der Website eingesetzt wird — sei es in Blogartikeln oder auf Informationsseiten`,
+
+      Darüber hinaus wurde ein eigener grafischer Corporate-Stil entwickelt, der in Anleitungen sowie in verschiedenen Gestaltungselementen der Website eingesetzt wird — sei es in Blogartikeln oder auf Informationsseiten`,
     },
 
     // 14 — IMAGE FULL
