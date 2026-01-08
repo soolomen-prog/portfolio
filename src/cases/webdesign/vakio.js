@@ -18,7 +18,7 @@ export default {
     title: 'Projectaufgabe',
     text: `Den Corporate-Website eines Unternehmens für Klimatechnik aktualisieren.
 Ziel war es, die Website zu modernisieren und die Möglichkeit zum Online-Kauf von Geräten hinzuzufügen,
-also die Funktionalität eines Online-Shops zu integrieren.`,
+also die Funktionalität eines Online-Shops zu integrieren`,
   },
 
   blocks: [
@@ -30,7 +30,7 @@ Nutzer häufiger auf die Produktseiten zu führen und sie so zum Kauf zu motivie
 In der neuen Seitenstruktur wurde für jede Zielgruppe eine eigene Landingpage erstellt,
 die die für diese Zielgruppe besonders relevanten Vorteile der Produkte und des Unternehmens beschreibt.
 Für den Business-Bereich wurden separate Seiten für Hotels, Bauträger und kleine Unternehmen erstellt,
-während für Privatkunden eine eigene Seite „Für Zuhause“ vorgesehen wurde.`,
+während für Privatkunden eine eigene Seite „Für Zuhause“ vorgesehen wurde`,
     },
 
     // 2 — IMAGE FULL
@@ -45,7 +45,7 @@ während für Privatkunden eine eigene Seite „Für Zuhause“ vorgesehen wurde
       text: `Es wurden über 20 Seiten der Website gestaltet, wobei Struktur und Funktionalität vollständig
 überarbeitet wurden. Alle Seiten wurden mit einem starken Fokus auf Storytelling konzipiert
 und erzählen die Geschichte der Produkte des Unternehmens,
-mit besonderem Augenmerk auf deren Vorteile gegenüber den Wettbewerbern.`,
+mit besonderem Augenmerk auf deren Vorteile gegenüber den Wettbewerbern`,
     },
 
     // 4 — IMAGE FULL
@@ -59,7 +59,7 @@ mit besonderem Augenmerk auf deren Vorteile gegenüber den Wettbewerbern.`,
       type: 'text-right',
       text: `Im nächsten Schritt wurde ein visuelles Gestaltungskonzept für die Website entwickelt —
 von der Auswahl der Farbpalette, Formen und Schriften bis hin zum Stil der Grafiken,
-Illustrationen sowie der visuellen Darstellung der Produkt-Renderings im Katalog.`,
+Illustrationen sowie der visuellen Darstellung der Produkt-Renderings im Katalog`,
     },
 
     // 6 — IMAGE FULL (добавленный)
@@ -83,8 +83,7 @@ Illustrationen sowie der visuellen Darstellung der Produkt-Renderings im Katalog
     // 9 — TEXT RIGHT
     {
       type: 'text-right',
-      text: `Das finale Design verbindet technische Präzision mit einer klaren visuellen Sprache,
-die Vertrauen schafft und die Produkte als hochwertige Lösungen im Bereich Klimatechnik positioniert.`,
+      text: `Eine leichte, klare und verständliche Produktseite vermittelt ein Gefühl von Innovation und modernen Technologien. Jede Produktseite ist eine kurze Geschichte über die Werte und Vorteile des Produkts, ergänzt durch Visualisierungen, die zeigen, wie das Produkt in einem realen Wohninterieur aussieht`,
     },
 
     // 10 — IMAGE FULL
@@ -108,8 +107,8 @@ die Vertrauen schafft und die Produkte als hochwertige Lösungen im Bereich Klim
     // 13 — TEXT RIGHT
     {
       type: 'text-right',
-      text: `Das Projekt resultierte in einer modernen, skalierbaren Website-Struktur,
-die sowohl den Anforderungen von Geschäftskunden als auch von Privatkunden gerecht wird.`,
+      text: `Um die Einsatz- und Anwendungsschemata der Geräte in Wohnräumen sowie in Geschäftsräumen anschaulich darzustellen, wurde ein einheitlicher Visualisierungsstil für diese схемы entwickelt. In einer stilisierten und minimalistischen 3D-Darstellung wurden die korrekten Platzierungsschemata der Geräte in den Räumen gezeigt.
+Darüber hinaus wurde ein eigener grafischer Corporate-Stil entwickelt, der in Anleitungen sowie in verschiedenen Gestaltungselementen der Website eingesetzt wird — sei es in Blogartikeln oder auf Informationsseiten`,
     },
 
     // 14 — IMAGE FULL
