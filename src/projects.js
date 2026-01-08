@@ -82,12 +82,11 @@ function openCase(side, project) {
   caseOverlay.classList.add('active');
 
   // 2. ⬆️ СКРОЛЛИМ РЕАЛЬНЫЙ СКРОЛЛ-КОНТЕЙНЕР
-  requestAnimationFrame(() => {
-    const content = casePanel.querySelector('.case-content');
-    if (content) {
-      content.scrollTop = 0;
-    }
-  });
+  setTimeout(() => {
+  const inner = casePanel.querySelector('.case-inner');
+  if (inner) inner.scrollTop = 0;
+}, 0);
+
 
 
   /* ===============================
