@@ -117,10 +117,7 @@ function createTextRight(block) {
   section.innerHTML = `
     <div></div>
     <div class="case-admin-text">
-      ${block.text
-        .split('\n')
-        .map(p => `<p>${p.trim()}</p>`)
-        .join('')}
+      <p>${block.text.replace(/\n+/g, ' ')}</p>
     </div>
   `;
 

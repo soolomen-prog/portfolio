@@ -15,8 +15,7 @@ die Vertrauen schafft und die Produkte als hochwertige Lösungen im Bereich Klim
 die sowohl den Anforderungen von Geschäftskunden als auch von Privatkunden gerecht wird.`},{type:"image-full",src:"/img/vakio/08.jpg"}]},v={vakio:p};function k(e){const t=v[e];if(!t){console.warn(`Case "${e}" not found`);return}y(t),b(t),x(t),w(t.blocks)}function y(e){const t=document.querySelector(".case-title-text");t&&(t.textContent=e.header.title)}function b(e){const t=document.querySelector(".case-intro-title"),n=document.querySelector(".case-intro-features"),i=document.querySelector(".case-intro-year");t&&(t.textContent=e.header.subtitle),n&&(n.textContent=e.header.info),i&&(i.textContent=e.header.year);const a=document.querySelector(".case-intro-cover"),r=document.querySelector(".case-intro-image");a&&(a.innerHTML=`<img src="${e.intro.cover}" alt="">`),r&&(r.innerHTML=`<img src="${e.intro.image}" alt="">`)}function x(e){const t=document.querySelector(".case-task-heading"),n=document.querySelector(".case-task-text");t&&(t.textContent=e.task.title),n&&(n.textContent=e.task.text)}function w(e){const t=document.querySelector(".case-admin");t&&(t.innerHTML="",e.forEach(n=>{let i=null;switch(n.type){case"text-right":i=j(n);break;case"image-full":i=S(n);break;case"video-full":i=L(n);break;default:console.warn("Unknown block type:",n.type)}i&&t.appendChild(i)}))}function j(e){const t=document.createElement("section");return t.className="case-admin-row",t.innerHTML=`
     <div></div>
     <div class="case-admin-text">
-      ${e.text.split(`
-`).map(n=>`<p>${n.trim()}</p>`).join("")}
+      <p>${e.text.replace(/\n+/g," ")}</p>
     </div>
   `,t}function S(e){const t=document.createElement("section");return t.className="case-admin-row full",t.innerHTML=`
     <img src="${e.src}" alt="">
