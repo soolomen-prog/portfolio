@@ -66,14 +66,10 @@ const casePanel   = document.getElementById('case-panel');
 const caseOverlay = document.getElementById('case-overlay');
 
 function openCase(side, project) {
-  // ⬆️ ВСЕГДА СКРОЛЛИМ ВВЕРХ ПРИ СМЕНЕ КЕЙСА
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: 'instant'
-  });
+  // ⬆️ ВСЕГДА СКРОЛЛИМ КЕЙС ВВЕРХ
+  casePanel.scrollTop = 0;
 
-  /* 👉 НОВОЕ: рендер кейса из отдельного файла */
+  /* 👉 НОВОЕ: рендер кейса */
   openCaseById(project.id);
 
   casePanel.classList.remove('hidden', 'from-left', 'from-right', 'active');
