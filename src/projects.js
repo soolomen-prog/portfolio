@@ -1,3 +1,4 @@
+import { openCaseById, closeCaseRoute, initCaseRouter } from './case/caseRouter.js';
 import projects from './data/projects.json';
 import { renderCase } from './case/caseRenderer.js';
 
@@ -67,7 +68,7 @@ const caseOverlay = document.getElementById('case-overlay');
 function openCase(side, project) {
 
   /* 👉 НОВОЕ: рендер кейса из отдельного файла */
-  renderCase(project.id);
+  openCaseById(project.id);
 
   casePanel.classList.remove('hidden', 'from-left', 'from-right', 'active');
   caseOverlay.classList.remove('hidden', 'from-left', 'from-right', 'active');
@@ -123,6 +124,8 @@ function openCase(side, project) {
 }
 
 function closeCase() {
+  closeCaseRoute();
+
   casePanel.classList.remove('active');
   caseOverlay.classList.remove('active');
   setTimeout(() => {
@@ -130,6 +133,7 @@ function closeCase() {
     caseOverlay.classList.add('hidden');
   }, 450);
 }
+
 
 caseOverlay.addEventListener('click', closeCase);
 document.addEventListener('click', e => {
@@ -157,3 +161,4 @@ function bindProjectClicks() {
 ================================ */
 
 renderProjects();
+initCaseRouter();
