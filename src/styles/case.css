@@ -520,16 +520,18 @@
 }
 
 /* ===============================
-   TEMP FIX — IMAGE SHARPNESS TEST
-   (проверка влияния transform)
+   TEMP FIX — FORCE NATURAL SIZE
 ================================ */
 
-/* принудительно даём браузеру понять,
-   что изображения не нужно сглаживать
-   как bitmap */
-.case-panel img {
-  image-rendering: auto;
-  backface-visibility: hidden;
-  transform: translateZ(0);
+.case-admin-row.full {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.case-admin-row.full img {
+  height: auto !important;
+  max-height: none !important;
+  object-fit: unset !important;
 }
 
