@@ -519,35 +519,5 @@
 
 }
 
-/* ===============================
-   ADMIN BLOCKS — FIX (NEW STRUCTURE)
-   НЕ УДАЛЯЕТ СТАРОЕ, ТОЛЬКО ФИКСИТ
-================================ */
-
-/* гарантируем 2 колонки */
-.case-admin-row {
-  box-sizing: border-box;
-}
-
-/* full-блоки: всегда с боковыми отступами */
-.case-admin-row.full {
-  padding-left: var(--gap-xs);
-  padding-right: var(--gap-xs);
-}
-
-/* текст ВСЕГДА в правой колонке */
-.case-admin-row .case-admin-text {
-  grid-column: 2;
-}
-
-/* защита от растягивания текста на всю ширину */
-.case-admin-row:not(.full) > img {
-  max-width: 100%;
-}
-
-/* на всякий — чтобы iframe не вылазил */
-.case-admin-row iframe {
-  max-width: 100%;
-}
 
 
