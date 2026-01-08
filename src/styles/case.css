@@ -519,4 +519,17 @@
 
 }
 
+/* ===============================
+   TEMP FIX — IMAGE SHARPNESS TEST
+   (проверка влияния transform)
+================================ */
+
+/* принудительно даём браузеру понять,
+   что изображения не нужно сглаживать
+   как bitmap */
+.case-panel img {
+  image-rendering: auto;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
 
