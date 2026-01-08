@@ -114,15 +114,23 @@ function createTextRight(block) {
   const section = document.createElement('section');
   section.className = 'case-admin-row';
 
+  const paragraphs = block.text
+    .split(/\n\s*\n/)          // делим ТОЛЬКО по пустым строкам
+    .map(p => p.replace(/\n/g, ' ').trim()) // склеиваем переносы внутри
+    .filter(Boolean)
+    .map(p => `<p>${p}</p>`)
+    .join('');
+
   section.innerHTML = `
     <div></div>
     <div class="case-admin-text">
-      <p>${block.text.replace(/\n+/g, ' ')}</p>
+      ${paragraphs}
     </div>
   `;
 
   return section;
 }
+
 
 function createImageFull(block) {
   const section = document.createElement('section');
