@@ -1,10 +1,10 @@
 [
   {
     "id": "vakio",
-    "category": "webdesign",
+    "category": "web",
     "title": "VAKIO",
     "subtitle": "Online-Shop für Klimasysteme",
-    "info": "UI — UX Design / Über 20 Seiten",
+    "features": ["UI — UX Design", "Über 20 Seiten"],
     "year": 2022,
     "coverImage": "/img/vakio/cover.jpg",
     "homeDescription": "Website für Klimatechnik mit integriertem Online-Shop.",
@@ -15,10 +15,10 @@
 
   {
     "id": "dolcevita",
-    "category": "webdesign",
+    "category": "web",
     "title": "Dolcevita",
     "subtitle": "Website für Kosmetologie",
-    "info": "UI-Design / Über 18 Seiten",
+    "features": ["UI-Design", "Über 18 Seiten"],
     "year": 2022,
     "coverImage": "/img/dolcevita/cover.jpg",
     "homeDescription": "Unternehmenswebsite für eine Kosmetikklinik.",
@@ -32,7 +32,7 @@
     "category": "branding",
     "title": "HAS",
     "subtitle": "Türkisches Trinkwasser",
-    "info": "Brand Identity / Packaging",
+    "features": ["Brand Identity", "Packaging"],
     "year": 2022,
     "coverImage": "/img/has/cover.jpg",
     "homeDescription": "Brand Identity und Verpackungsdesign für Trinkwasser.",
