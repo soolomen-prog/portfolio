@@ -519,12 +519,8 @@
 
 }
 
-.case-admin-row.full img {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  image-rendering: -webkit-optimize-contrast;
-  backface-visibility: hidden;
-  transform: translateZ(0);
+.case-admin-row.full,
+.case-admin-row.full * {
+  transform: none !important;
 }
 
