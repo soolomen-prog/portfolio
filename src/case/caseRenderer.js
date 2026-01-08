@@ -1,6 +1,7 @@
 // src/case/caseRenderer.js
 
 import vakio from '../cases/webdesign/vakio.js';
+import dolcevita from '../cases/webdesign/dolcevita.js';
 
 /**
  * ВАЖНО:
@@ -8,6 +9,7 @@ import vakio from '../cases/webdesign/vakio.js';
  */
 const casesMap = {
   vakio,
+  dolcevita,
 };
 
 /**
