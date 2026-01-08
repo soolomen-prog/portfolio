@@ -2,6 +2,7 @@
 
 import vakio from '../cases/webdesign/vakio.js';
 import dolcevita from '../cases/webdesign/dolcevita.js';
+import has from '../cases/branding/has.js';
 
 /**
  * ВАЖНО:
@@ -10,6 +11,7 @@ import dolcevita from '../cases/webdesign/dolcevita.js';
 const casesMap = {
   vakio,
   dolcevita,
+  has,
 };
 
 /**
