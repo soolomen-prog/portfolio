@@ -77,17 +77,16 @@ function openCase(side, project) {
   casePanel.classList.add(dir);
   caseOverlay.classList.add(dir);
 
-  // 2. ФОРСИРУЕМ РЕФЛОУ
   casePanel.offsetHeight;
-
   casePanel.classList.add('active');
   caseOverlay.classList.add('active');
 
-  // 3. ⬆️ СКРОЛЛИМ САМ case-panel
+  // 2. ⬆️ СКРОЛЛИМ РЕАЛЬНЫЙ СКРОЛЛ-КОНТЕЙНЕР
   requestAnimationFrame(() => {
-    setTimeout(() => {
-      casePanel.scrollTop = 0;
-    }, 0);
+    const content = casePanel.querySelector('.case-content');
+    if (content) {
+      content.scrollTop = 0;
+    }
   });
 
 
