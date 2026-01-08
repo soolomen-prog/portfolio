@@ -139,6 +139,11 @@
     padding: 0 var(--gap-xs);
   }
 
+  .about-download a {
+    grid-column: 1;
+    justify-self: start;
+  }
+
   .about-section {
     grid-template-columns: 1fr;
     row-gap: var(--gap-xs);
@@ -158,7 +163,7 @@ body::-webkit-scrollbar {
 }
 
 .about-download a {
-  grid-column: 1;
+  grid-column: 2;
   justify-self: start;
 
   font-size: 14px;
