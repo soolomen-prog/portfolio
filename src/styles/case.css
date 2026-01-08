@@ -519,8 +519,10 @@
 
 }
 
-.case-content img {
+.case-admin-row img {
+  width: 100%;
+  height: auto;
+  image-rendering: auto;
   transform: translateZ(0);
-  backface-visibility: hidden;
 }
 
