@@ -519,19 +519,4 @@
 
 }
 
-/* ===============================
-   TEMP FIX — FORCE NATURAL SIZE
-================================ */
-
-.case-admin-row.full {
-  height: auto !important;
-  max-height: none !important;
-  overflow: visible !important;
-}
-
-.case-admin-row.full img {
-  height: auto !important;
-  max-height: none !important;
-  object-fit: unset !important;
-}
 
