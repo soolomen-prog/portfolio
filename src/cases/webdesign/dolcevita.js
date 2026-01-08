@@ -39,7 +39,7 @@ Daraufhin wurden drei unterschiedliche Designkonzepte für die Website entwickel
     // 3 — IMAGE FULL
     {
       type: 'image-full',
-      src: '/raw/dolcevita/02.jpg',
+      src: '/img/dolcevita/02.jpg',
     },
 
     // 4 — IMAGE FULL
