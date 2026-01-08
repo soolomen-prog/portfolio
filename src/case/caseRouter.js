@@ -9,8 +9,13 @@ let isCaseOpen = false;
  * Открыть кейс и обновить URL
  */
 export function openCaseById(caseId) {
+  console.log('OPEN CASE ROUTER:', caseId);
+
   const project = projects.find(p => p.id === caseId);
-  if (!project) return;
+  if (!project) {
+    console.warn('CASE NOT FOUND:', caseId);
+    return;
+  }
 
   // обновляем URL
   history.pushState(
@@ -34,18 +39,22 @@ export function closeCaseRoute() {
 }
 
 /**
- * Проверка URL при загрузке / навигации
+ * Проверка URL при загрузке
  */
 export function initCaseRouter() {
   const match = location.hash.match(/^#case\/(.+)$/);
+
   if (match) {
     openCaseById(match[1]);
   }
 }
 
-// back / forward
+/**
+ * back / forward
+ */
 window.addEventListener('popstate', () => {
   const match = location.hash.match(/^#case\/(.+)$/);
+
   if (match) {
     openCaseById(match[1]);
   } else {
