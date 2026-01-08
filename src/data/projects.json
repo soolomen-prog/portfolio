@@ -1,66 +1,30 @@
 [
   {
     "id": "vakio",
-    "category": "web",
+    "category": "webdesign",
     "title": "VAKIO",
     "subtitle": "Online-Shop für Klimasysteme",
-    "features": ["UI — UX Design", "Über 20 Seiten"],
+    "info": "UI — UX Design / Über 20 Seiten",
     "year": 2022,
-
     "coverImage": "/img/vakio/cover.jpg",
-
-    "homeDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-
-    "caseIntro": {
-      "innerImage": "/img/vakio/intro.jpg",
-      "taskTitle": "Projectaufgabe",
-      "taskText": "Den Corporate-Website eines Unternehmens für Klimatechnik aktualisieren."
-    },
-
-    "caseBlocks": [
-      {
-        "type": "image",
-        "layout": "full",
-        "src": "/img/vakio/full.jpg"
-      },
-
-      {
-        "type": "video",
-        "layout": "full",
-        "src": "https://player.vimeo.com/video/794384040"
-      },
-
-      {
-        "type": "text",
-        "layout": "right",
-        "content": [
-          "Es wurde eine vollständig neue Sitemap entwickelt.",
-          "Der Fokus lag auf Conversion und Klarheit."
-        ]
-      },
-
-      {
-        "type": "images",
-        "layout": "two",
-        "left": "/img/vakio/2left.jpg",
-        "right": "/img/vakio/2right.jpg"
-      },
-
-      {
-        "type": "image",
-        "layout": "left",
-        "src": "/img/vakio/left.jpg"
-      },
-
-      {
-        "type": "image",
-        "layout": "right",
-        "src": "/img/vakio/right.jpg"
-      }
-    ],
-
+    "homeDescription": "Website für Klimatechnik mit integriertem Online-Shop.",
+    "side": "left",
     "visibleOnHome": true,
     "order": 1
+  },
+
+  {
+    "id": "dolcevita",
+    "category": "webdesign",
+    "title": "Dolcevita",
+    "subtitle": "Website für Kosmetologie",
+    "info": "UI-Design / Über 18 Seiten",
+    "year": 2022,
+    "coverImage": "/img/dolcevita/cover.jpg",
+    "homeDescription": "Unternehmenswebsite für eine Kosmetikklinik.",
+    "side": "left",
+    "visibleOnHome": true,
+    "order": 2
   },
 
   {
@@ -68,42 +32,11 @@
     "category": "branding",
     "title": "HAS",
     "subtitle": "Türkisches Trinkwasser",
-    "features": ["Brand Identity", "Packaging"],
+    "info": "Brand Identity / Packaging",
     "year": 2022,
-
     "coverImage": "/img/has/cover.jpg",
-
-    "homeDescription": "Kurze Beschreibung für die Startseite.",
-
-    "caseIntro": {
-      "innerImage": "/img/has/intro.jpg",
-      "taskTitle": "Projectaufgabe",
-      "taskText": "Entwicklung einer Markenidentität für Trinkwasser."
-    },
-
-    "caseBlocks": [
-      {
-        "type": "image",
-        "layout": "full",
-        "src": "/img/has/full.jpg"
-      },
-
-      {
-        "type": "text",
-        "layout": "right",
-        "content": [
-          "Brand Design von Grund auf.",
-          "Packaging, Print, Digital."
-        ]
-      },
-
-      {
-        "type": "image",
-        "layout": "right",
-        "src": "/img/has/right.jpg"
-      }
-    ],
-
+    "homeDescription": "Brand Identity und Verpackungsdesign für Trinkwasser.",
+    "side": "right",
     "visibleOnHome": true,
     "order": 1
   }
