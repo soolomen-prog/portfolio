@@ -66,10 +66,7 @@ const casePanel   = document.getElementById('case-panel');
 const caseOverlay = document.getElementById('case-overlay');
 
 function openCase(side, project) {
-  // ⬆️ ВСЕГДА СКРОЛЛИМ КЕЙС ВВЕРХ
-  casePanel.scrollTop = 0;
-
-  /* 👉 НОВОЕ: рендер кейса */
+  /* 👉 РЕНДЕР КЕЙСА */
   openCaseById(project.id);
 
   casePanel.classList.remove('hidden', 'from-left', 'from-right', 'active');
@@ -78,6 +75,16 @@ function openCase(side, project) {
   const dir = side === 'left' ? 'from-left' : 'from-right';
   casePanel.classList.add(dir);
   caseOverlay.classList.add(dir);
+
+  /* 👉 АКТИВАЦИЯ (триггер layout) */
+  casePanel.offsetHeight;
+  casePanel.classList.add('active');
+  caseOverlay.classList.add('active');
+
+  /* ✅ СКРОЛЛИМ ПОСЛЕ РЕНДЕРА И АКТИВАЦИИ */
+  requestAnimationFrame(() => {
+    casePanel.scrollTop = 0;
+  });
 
   /* ===============================
      NEXT PROJECT (SAME CATEGORY, LOOP)
