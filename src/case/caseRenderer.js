@@ -92,6 +92,10 @@ function renderBlocks(blocks) {
         el = createTextRight(block);
         break;
 
+      case 'images-two':
+        el = createImagesTwo(block);
+        break;
+
       case 'image-full':
         el = createImageFull(block);
         break;
@@ -156,6 +160,22 @@ function createVideoFull(block) {
       allow="autoplay; fullscreen; picture-in-picture"
       allowfullscreen
     ></iframe>
+  `;
+
+  return section;
+}
+
+function createImagesTwo(block) {
+  const section = document.createElement('section');
+  section.className = 'case-admin-row';
+
+  section.innerHTML = `
+    <div>
+      <img src="${block.left}" alt="">
+    </div>
+    <div>
+      <img src="${block.right}" alt="">
+    </div>
   `;
 
   return section;
