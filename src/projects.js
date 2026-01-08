@@ -66,8 +66,17 @@ const casePanel   = document.getElementById('case-panel');
 const caseOverlay = document.getElementById('case-overlay');
 
 function openCase(side, project) {
-  /* 👉 РЕНДЕР КЕЙСА */
+
+  // 👉 РЕНДЕРИМ КЕЙС
   openCaseById(project.id);
+
+  // 👉 ПОСЛЕ РЕНДЕРА СКРОЛЛИМ КОНТЕНТ ВВЕРХ
+  requestAnimationFrame(() => {
+    const caseContent = casePanel.querySelector('.case-content');
+    if (caseContent) {
+      caseContent.scrollTop = 0;
+    }
+  });
 
   casePanel.classList.remove('hidden', 'from-left', 'from-right', 'active');
   caseOverlay.classList.remove('hidden', 'from-left', 'from-right', 'active');
@@ -76,15 +85,8 @@ function openCase(side, project) {
   casePanel.classList.add(dir);
   caseOverlay.classList.add(dir);
 
-  /* 👉 АКТИВАЦИЯ (триггер layout) */
-  casePanel.offsetHeight;
-  casePanel.classList.add('active');
-  caseOverlay.classList.add('active');
+  /* NEXT PROJECT — дальше без изменений */
 
-  /* ✅ СКРОЛЛИМ ПОСЛЕ РЕНДЕРА И АКТИВАЦИИ */
-  requestAnimationFrame(() => {
-    casePanel.scrollTop = 0;
-  });
 
   /* ===============================
      NEXT PROJECT (SAME CATEGORY, LOOP)
