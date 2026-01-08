@@ -1,5 +1,4 @@
 import projects from './data/projects.json';
-import { renderCase } from './case/caseRenderer.js';
 
 /* ===============================
    PROJECT CARD (HOME)
@@ -66,15 +65,115 @@ const caseOverlay = document.getElementById('case-overlay');
 
 function openCase(side, project) {
 
-  /* 👉 НОВОЕ: рендер кейса из отдельного файла */
-  renderCase(project.id);
-
   casePanel.classList.remove('hidden', 'from-left', 'from-right', 'active');
   caseOverlay.classList.remove('hidden', 'from-left', 'from-right', 'active');
 
   const dir = side === 'left' ? 'from-left' : 'from-right';
   casePanel.classList.add(dir);
   caseOverlay.classList.add(dir);
+
+  /* ---------- HEADER ---------- */
+
+  document.querySelector('.case-title-text').textContent = project.title ?? '';
+
+  /* ---------- INTRO ---------- */
+
+  document.querySelector('.case-intro-title').textContent =
+    project.subtitle ?? '';
+
+  document.querySelector('.case-intro-features').textContent =
+    project.features?.join(' / ') ?? '';
+
+  document.querySelector('.case-intro-year').textContent =
+    project.year ?? '';
+
+  document.querySelector('.case-intro-cover').innerHTML =
+    `<img src="${project.coverImage}" alt="">`;
+
+  document.querySelector('.case-intro-image').innerHTML =
+    `<img src="${project.caseIntro?.innerImage ?? project.coverImage}" alt="">`;
+
+  document.querySelector('.case-task-heading').textContent =
+    project.caseIntro?.taskTitle ?? 'Projectaufgabe';
+
+  document.querySelector('.case-task-text').textContent =
+    project.caseIntro?.taskText ?? '';
+
+  /* ===============================
+     ADMIN BLOCKS (DYNAMIC)
+  ================================ */
+
+  const admin = document.querySelector('.case-admin');
+  admin.innerHTML = '';
+
+  (project.caseBlocks ?? []).forEach(block => {
+
+    /* FULL WIDTH IMAGE */
+    if (block.type === 'image' && block.layout === 'full') {
+      admin.insertAdjacentHTML('beforeend', `
+        <div class="case-admin-row full">
+          <img src="${block.src}" alt="">
+        </div>
+      `);
+    }
+
+    /* FULL WIDTH VIDEO */
+    if (block.type === 'video' && block.layout === 'full') {
+      admin.insertAdjacentHTML('beforeend', `
+        <div class="case-admin-row full">
+          <iframe
+            src="${block.src}"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      `);
+    }
+
+    /* TEXT RIGHT */
+    if (block.type === 'text' && block.layout === 'right') {
+      admin.insertAdjacentHTML('beforeend', `
+        <div class="case-admin-row">
+          <div></div>
+          <div class="case-admin-text">
+            ${block.content.map(p => `<p>${p}</p>`).join('')}
+          </div>
+        </div>
+      `);
+    }
+
+    /* TWO IMAGES */
+    if (block.type === 'images' && block.layout === 'two') {
+      admin.insertAdjacentHTML('beforeend', `
+        <div class="case-admin-row">
+          <img src="${block.left}" alt="">
+          <img src="${block.right}" alt="">
+        </div>
+      `);
+    }
+
+    /* IMAGE LEFT */
+    if (block.type === 'image' && block.layout === 'left') {
+      admin.insertAdjacentHTML('beforeend', `
+        <div class="case-admin-row">
+          <img src="${block.src}" alt="">
+          <div></div>
+        </div>
+      `);
+    }
+
+    /* IMAGE RIGHT */
+    if (block.type === 'image' && block.layout === 'right') {
+      admin.insertAdjacentHTML('beforeend', `
+        <div class="case-admin-row">
+          <div></div>
+          <img src="${block.src}" alt="">
+        </div>
+      `);
+    }
+
+  });
 
   /* ===============================
      NEXT PROJECT (SAME CATEGORY, LOOP)

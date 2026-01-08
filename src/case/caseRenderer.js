@@ -1,0 +1,162 @@
+// src/case/caseRenderer.js
+
+import vakio from '../cases/webdesign/vakio.js';
+
+/**
+ * ВАЖНО:
+ * Сейчас мы подключаем ТОЛЬКО vakio как первый эталон.
+ * Остальные кейсы добавим позже через registry.
+ */
+
+const casesMap = {
+  vakio,
+};
+
+/**
+ * Главная функция рендера кейса
+ */
+export function renderCase(caseId) {
+  const data = casesMap[caseId];
+  if (!data) {
+    console.warn(`Case "${caseId}" not found`);
+    return;
+  }
+
+  renderHeader(data);
+  renderIntro(data);
+  renderTask(data);
+  renderBlocks(data.blocks);
+}
+
+/* ===============================
+   HEADER
+================================ */
+
+function renderHeader(data) {
+  const titleEl = document.querySelector('.case-title-text');
+  if (titleEl) titleEl.textContent = data.header.title;
+}
+
+/* ===============================
+   META / INTRO
+================================ */
+
+function renderIntro(data) {
+  const subtitleEl = document.querySelector('.case-intro-title');
+  const featuresEl = document.querySelector('.case-intro-features');
+  const yearEl = document.querySelector('.case-intro-year');
+
+  if (subtitleEl) subtitleEl.textContent = data.header.subtitle;
+  if (featuresEl) featuresEl.textContent = data.header.info;
+  if (yearEl) yearEl.textContent = data.header.year;
+
+  const coverEl = document.querySelector('.case-intro-cover');
+  const imageEl = document.querySelector('.case-intro-image');
+
+  if (coverEl) {
+    coverEl.innerHTML = `<img src="${data.intro.cover}" alt="" />`;
+  }
+
+  if (imageEl) {
+    imageEl.innerHTML = `<img src="${data.intro.image}" alt="" />`;
+  }
+}
+
+/* ===============================
+   TASK
+================================ */
+
+function renderTask(data) {
+  const titleEl = document.querySelector('.case-task-heading');
+  const textEl = document.querySelector('.case-task-text');
+
+  if (titleEl) titleEl.textContent = data.task.title;
+  if (textEl) textEl.textContent = data.task.text;
+}
+
+/* ===============================
+   BLOCKS
+================================ */
+
+function renderBlocks(blocks) {
+  const container = document.querySelector('.case-admin');
+  if (!container) return;
+
+  container.innerHTML = '';
+
+  blocks.forEach(block => {
+    let el = null;
+
+    switch (block.type) {
+      case 'text-right':
+        el = createTextRight(block);
+        break;
+
+      case 'image-full':
+        el = createImageFull(block);
+        break;
+
+      case 'video-full':
+        el = createVideoFull(block);
+        break;
+
+      default:
+        console.warn('Unknown block type:', block.type);
+    }
+
+    if (el) container.appendChild(el);
+  });
+}
+
+/* ===============================
+   BLOCK FACTORIES
+================================ */
+
+function createTextRight(block) {
+  const section = document.createElement('section');
+  section.className = 'case-intro-row';
+
+  section.innerHTML = `
+    <div class="case-col-left"></div>
+    <div class="case-col-right">
+      <div class="case-task-text">${block.text}</div>
+    </div>
+  `;
+
+  return section;
+}
+
+function createImageFull(block) {
+  const section = document.createElement('section');
+  section.className = 'case-intro-row';
+
+  section.innerHTML = `
+    <div class="case-col-left"></div>
+    <div class="case-col-right">
+      <img src="${block.src}" alt="" />
+    </div>
+  `;
+
+  return section;
+}
+
+function createVideoFull(block) {
+  const section = document.createElement('section');
+  section.className = 'case-intro-row';
+
+  section.innerHTML = `
+    <div class="case-col-left"></div>
+    <div class="case-col-right">
+      <div class="video-wrapper">
+        <iframe
+          src="https://player.vimeo.com/video/${block.vimeoId}"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  `;
+
+  return section;
+}
