@@ -4,7 +4,7 @@
     "category": "web",
     "title": "VAKIO",
     "subtitle": "Online-Shop für Klimasysteme",
-    "features": ["UI — UX Design", "Über 20 Seiten"],
+    "features": ["UI — UX", "20 Seiten"],
     "year": 2022,
     "coverImage": "/img/vakio/cover.jpg",
     "homeDescription": "Website für Klimatechnik mit integriertem Online-Shop.",
@@ -18,7 +18,7 @@
     "category": "web",
     "title": "Dolcevita",
     "subtitle": "Website für Kosmetologie",
-    "features": ["UI-Design", "Über 18 Seiten"],
+    "features": ["UI", "18 Seiten"],
     "year": 2022,
     "coverImage": "/img/dolcevita/cover.jpg",
     "homeDescription": "Unternehmenswebsite für eine Kosmetikklinik.",
@@ -33,8 +33,8 @@
     "title": "HAS",
     "subtitle": "Türkisches Trinkwasser",
     "features": [
-      "Brand Identity",
-      "Landing page",
+      "Identity",
+      "Landing",
       "Packaging",
       "Catalog"
     ],

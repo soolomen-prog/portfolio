@@ -5,7 +5,7 @@ export default {
   header: {
     title: 'VAKIO',
     subtitle: 'Online-Shop für Klimasysteme',
-    info: 'UI — UX Design / Über 20 Seiten',
+    info: 'UI — UX / 20 Seiten',
     year: '2022',
   },
 

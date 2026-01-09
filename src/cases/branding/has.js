@@ -5,7 +5,7 @@ export default {
   header: {
     title: 'HAS',
     subtitle: 'Türkisches Trinkwasser',
-    info: 'Brand Identity / Landing page / Packaging / Catalog',
+    info: 'Identity / Landing / Packaging / Catalog',
     year: '2022',
   },
 

@@ -7,7 +7,7 @@ export default {
   header: {
     title: 'Dolcevita',
     subtitle: 'Website für Kosmetologie',
-    info: 'UI-Design / Über 18 Seiten',
+    info: 'UI / 18 Seiten',
     year: '2022',
   },
 
