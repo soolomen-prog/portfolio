@@ -21,7 +21,7 @@
     "features": ["UI", "18 Seiten"],
     "year": 2022,
     "coverImage": "/img/dolcevita/cover.jpg",
-    "homeDescription": "Unternehmenswebsite für eine Kosmetikklinik.",
+    "homeDescription": "Unternehmenswebsite für eine kosmetologische Klinik mit Fokus auf visuelle Klarheit und Benutzerfreundlichkeit, inklusive der Integration eines Mini-Onlineshops",
     "side": "left",
     "visibleOnHome": true,
     "order": 2
