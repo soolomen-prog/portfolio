@@ -14,15 +14,12 @@ Illustrationen sowie der visuellen Darstellung der Produkt-Renderings im Katalog
 
       Darüber hinaus wurde ein eigener grafischer Corporate-Stil entwickelt, der in Anleitungen sowie in verschiedenen Gestaltungselementen der Website eingesetzt wird — sei es in Blogartikeln oder auf Informationsseiten`},{type:"image-full",src:"/img/vakio/08.jpg"}]},b={id:"dolcevita",category:"webdesign",header:{title:"Dolcevita",subtitle:"Website für Kosmetologie",info:"UI-Design / Über 18 Seiten",year:"2022"},intro:{cover:"/img/dolcevita/cover.jpg",image:"/img/dolcevita/intro.jpg"},task:{title:"Projectaufgabe",text:`Entwicklung einer Unternehmenswebsite für eine Kosmetikklinik, auf deren Seiten die Klinik und das Team der Spezialisten vorgestellt sowie Leistungen und Preise präsentiert werden.
 Ich bin in einer kritischen Phase in das Projekt eingestiegen – zu einem Zeitpunkt, an dem den Auftraggeber keine der zuvor von einem anderen Designer vorgeschlagenen Konzepte überzeugt hat.`},blocks:[{type:"text-right",text:`In der ersten Phase war es notwendig, sich schnell in die Aufgabe einzuarbeiten, zu verstehen, was dem Kunden nicht gefiel, und zu definieren, welches Designkonzept am besten zu diesem Projekt passt.
-Daraufhin wurden drei unterschiedliche Designkonzepte für die Website entwickelt, von denen das stärkste und für das Projekt am besten geeignete ausgewählt wurde – ein minimalistisches Konzept mit klaren Bildern und einer Dominanz von Weiß`},{type:"image-full",src:"/img/dolcevita/01.jpg"},{type:"image-full",src:"/img/dolcevita/02.jpg"},{type:"image-full",src:"/img/dolcevita/03.jpg"},{type:"text-right",text:"Zur Verbesserung der Benutzerfreundlichkeit ist auf der Website der Kosmetikklinik ein Mini-Onlineshop für spezialisierte Kosmetik integriert, mit einem Katalog, Produktseiten sowie einer Funktion zum Kauf und zur Bestellabwicklung"},{type:"image-full",src:"/img/dolcevita/04.jpg"},{type:"image-full",src:"/img/dolcevita/05.jpg"}]},w={id:"has",title:"HAS",meta:{subtitle:"Türkisches Trinkwasser",features:["Brand Identity","Landing page","Packaging","Catalog"],year:2022},intro:{title:"Projectaufgabe",text:`
-Entwicklung einer Markenidentität für hydrogenreiches Trinkwasser.
+Daraufhin wurden drei unterschiedliche Designkonzepte für die Website entwickelt, von denen das stärkste und für das Projekt am besten geeignete ausgewählt wurde – ein minimalistisches Konzept mit klaren Bildern und einer Dominanz von Weiß`},{type:"image-full",src:"/img/dolcevita/01.jpg"},{type:"image-full",src:"/img/dolcevita/02.jpg"},{type:"image-full",src:"/img/dolcevita/03.jpg"},{type:"text-right",text:"Zur Verbesserung der Benutzerfreundlichkeit ist auf der Website der Kosmetikklinik ein Mini-Onlineshop für spezialisierte Kosmetik integriert, mit einem Katalog, Produktseiten sowie einer Funktion zum Kauf und zur Bestellabwicklung"},{type:"image-full",src:"/img/dolcevita/04.jpg"},{type:"image-full",src:"/img/dolcevita/05.jpg"}]},w={id:"has",category:"branding",header:{title:"HAS",subtitle:"Türkisches Trinkwasser",info:"Brand Identity / Landing page / Packaging / Catalog",year:"2022"},intro:{cover:"/img/has/cover.jpg",image:"/img/has/intro.jpg"},task:{title:"Projectaufgabe",text:`Entwicklung einer Markenidentität für hydrogenreiches Trinkwasser.
 Gestaltung von Design und Form der Wasserflasche.
 Konzeption und Umsetzung einer Landingpage, die die Vorteile des Produkts kommuniziert,
 sowie die Entwicklung verschiedener Printmaterialien — vom Präsentationskatalog
 bis hin zu Visitenkarten und Werbeartikeln.
-Umsetzung einer vollständigen Markenverpackung
-    `},blocks:[{type:"text",layout:"right",content:`
-Der Name HAS wurde vom Kunden vorgegeben und bildete eine ideale Grundlage
+Umsetzung einer vollständigen Markenverpackung`},blocks:[{type:"text-right",text:`Der Name HAS wurde vom Kunden vorgegeben und bildete eine ideale Grundlage
 für ein minimalistisches und stilvolles Logo-Symbol in Form eines Kreuzes.
 Das Kreuzsymbol wird mit Medizin assoziiert und unterstreicht, dass
 hydrogenreiches Wasser zur Erhaltung von Vitalität und einem gesunden
@@ -30,22 +27,17 @@ Lebensstil beiträgt.
 
 Die Schlichtheit und Klarheit des visuellen Stils vermitteln die technologische
 Qualität des Herstellungsprozesses und formen zugleich das Bild des Wassers
-der Zukunft.
-      `},{type:"image",layout:"full",src:"/img/has/01.jpg"},{type:"text",layout:"right",content:`
-Unter Berücksichtigung des Charakters der Marke wurde eine einzigartige
+der Zukunft.`},{type:"image-full",src:"/img/has/01.jpg"},{type:"text-right",text:`Unter Berücksichtigung des Charakters der Marke wurde eine einzigartige
 Flaschenform entwickelt und ihr visuelles Erscheinungsbild gestaltet.
 Unter meiner Leitung wurden atmosphärische Produkt-Renderings erstellt,
-die für den Einsatz in Werbematerialien vorgesehen sind.
-      `},{type:"video",layout:"full",src:"https://player.vimeo.com/video/794826671"},{type:"images-two",left:"/img/has/02.jpg",right:"/img/has/03.jpg"},{type:"image",layout:"full",src:"/img/has/04.jpg"},{type:"image",layout:"full",src:"/img/has/05.jpg"},{type:"text",layout:"right",content:`
-Da es sich um eine türkische Wassermarke handelt, wurde den
+die für den Einsatz in Werbematerialien vorgesehen sind.`},{type:"video-full",vimeoId:"794826671"},{type:"image-full",src:"/img/has/02.jpg"},{type:"image-full",src:"/img/has/03.jpg"},{type:"image-full",src:"/img/has/04.jpg"},{type:"image-full",src:"/img/has/05.jpg"},{type:"text-right",text:`Da es sich um eine türkische Wassermarke handelt, wurde den
 Werbematerialien für Hotels besondere Aufmerksamkeit gewidmet.
 Es wurden gebrandete Kunststoff-Displays entwickelt.
 
 Zusätzlich wurden digitale Displays mit Bildschirmen für den Einsatz
 in Hotelbereichen konzipiert, die der Präsentation des Produkts und
 seiner Vorteile dienen. Darüber hinaus wurde ein gedruckter
-Präsentationskatalog sowie weitere Werbemittel erstellt.
-      `},{type:"images-two",left:"/img/has/06.jpg",right:"/img/has/07.jpg"},{type:"image",layout:"full",src:"/img/has/08.jpg"},{type:"image",layout:"full",src:"/img/has/09.jpg"},{type:"image",layout:"full",src:"/img/has/10.jpg"},{type:"image",layout:"full",src:"/img/has/11.jpg"}]},j={vakio:y,dolcevita:b,has:w};function z(e){const t=j[e];if(!t){console.warn(`Case "${e}" not found`);return}x(t),S(t),E(t),L(t.blocks)}function x(e){const t=document.querySelector(".case-title-text");t&&(t.textContent=e.header.title)}function S(e){const t=document.querySelector(".case-intro-title"),n=document.querySelector(".case-intro-features"),i=document.querySelector(".case-intro-year");t&&(t.textContent=e.header.subtitle),n&&(n.textContent=e.header.info),i&&(i.textContent=e.header.year);const s=document.querySelector(".case-intro-cover"),r=document.querySelector(".case-intro-image");s&&(s.innerHTML=`<img src="${e.intro.cover}" alt="">`),r&&(r.innerHTML=`<img src="${e.intro.image}" alt="">`)}function E(e){const t=document.querySelector(".case-task-heading"),n=document.querySelector(".case-task-text");t&&(t.textContent=e.task.title),n&&(n.textContent=e.task.text)}function L(e){const t=document.querySelector(".case-admin");t&&(t.innerHTML="",e.forEach(n=>{let i=null;switch(n.type){case"text-right":i=P(n);break;case"images-two":i=I(n);break;case"image-full":i=D(n);break;case"video-full":i=C(n);break;default:console.warn("Unknown block type:",n.type)}i&&t.appendChild(i)}))}function P(e){const t=document.createElement("section");t.className="case-admin-row";const n=e.text.split(/\n\s*\n/).map(i=>i.replace(/\n/g," ").trim()).filter(Boolean).map(i=>`<p>${i}</p>`).join("");return t.innerHTML=`
+Präsentationskatalog sowie weitere Werbemittel erstellt.`},{type:"image-full",src:"/img/has/06.jpg"},{type:"image-full",src:"/img/has/07.jpg"},{type:"image-full",src:"/img/has/08.jpg"},{type:"image-full",src:"/img/has/09.jpg"},{type:"image-full",src:"/img/has/10.jpg"},{type:"image-full",src:"/img/has/11.jpg"}]},j={vakio:y,dolcevita:b,has:w};function x(e){const t=j[e];if(!t){console.warn(`Case "${e}" not found`);return}z(t),S(t),E(t),L(t.blocks)}function z(e){const t=document.querySelector(".case-title-text");t&&(t.textContent=e.header.title)}function S(e){const t=document.querySelector(".case-intro-title"),n=document.querySelector(".case-intro-features"),i=document.querySelector(".case-intro-year");t&&(t.textContent=e.header.subtitle),n&&(n.textContent=e.header.info),i&&(i.textContent=e.header.year);const s=document.querySelector(".case-intro-cover"),r=document.querySelector(".case-intro-image");s&&(s.innerHTML=`<img src="${e.intro.cover}" alt="">`),r&&(r.innerHTML=`<img src="${e.intro.image}" alt="">`)}function E(e){const t=document.querySelector(".case-task-heading"),n=document.querySelector(".case-task-text");t&&(t.textContent=e.task.title),n&&(n.textContent=e.task.text)}function L(e){const t=document.querySelector(".case-admin");t&&(t.innerHTML="",e.forEach(n=>{let i=null;switch(n.type){case"text-right":i=P(n);break;case"images-two":i=I(n);break;case"image-full":i=D(n);break;case"video-full":i=C(n);break;default:console.warn("Unknown block type:",n.type)}i&&t.appendChild(i)}))}function P(e){const t=document.createElement("section");t.className="case-admin-row";const n=e.text.split(/\n\s*\n/).map(i=>i.replace(/\n/g," ").trim()).filter(Boolean).map(i=>`<p>${i}</p>`).join("");return t.innerHTML=`
     <div></div>
     <div class="case-admin-text">
       ${n}
@@ -66,7 +58,7 @@ Präsentationskatalog sowie weitere Werbemittel erstellt.
     <div>
       <img src="${e.right}" alt="">
     </div>
-  `,t}let u=!1;function g(e){if(console.log("OPEN CASE ROUTER:",e),!c.find(n=>n.id===e)){console.warn("CASE NOT FOUND:",e);return}history.pushState({caseId:e},"",`/#case/${e}`),z(e),u=!0}function f(){u&&(history.pushState({},"","/"),u=!1)}function K(){const e=location.hash.match(/^#case\/(.+)$/);e&&g(e[1])}window.addEventListener("popstate",()=>{const e=location.hash.match(/^#case\/(.+)$/);e?g(e[1]):f()});function h(e){return`
+  `,t}let u=!1;function g(e){if(console.log("OPEN CASE ROUTER:",e),!c.find(n=>n.id===e)){console.warn("CASE NOT FOUND:",e);return}history.pushState({caseId:e},"",`/#case/${e}`),x(e),u=!0}function f(){u&&(history.pushState({},"","/"),u=!1)}function K(){const e=location.hash.match(/^#case\/(.+)$/);e&&g(e[1])}window.addEventListener("popstate",()=>{const e=location.hash.match(/^#case\/(.+)$/);e?g(e[1]):f()});function h(e){return`
     <article 
       class="project-card"
       data-side="${e.category==="web"?"left":"right"}"
