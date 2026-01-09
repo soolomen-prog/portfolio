@@ -4,7 +4,7 @@
     "category": "web",
     "title": "VAKIO",
     "subtitle": "Online-Shop für Klimasysteme",
-    "features": ["UI — UX", "20 Seiten"],
+    "features": ["UI", "UX", "20 Seiten"],
     "year": 2022,
     "coverImage": "/img/vakio/cover.jpg",
     "homeDescription": "Überarbeitung der Website mit durchdachten Nutzer­führungskonzepten, die gezielt auf den Kauf ausgerichtet sind. Der neue visuelle Stil unterstreicht die technologische Qualität der Lösungen und den modernen Charakter der Marke",
@@ -32,12 +32,7 @@
     "category": "branding",
     "title": "HAS",
     "subtitle": "Türkisches Trinkwasser",
-    "features": [
-      "Identity",
-      "Landing",
-      "Packaging",
-      "Catalog"
-    ],
+    "features": ["Identity", "Packaging", "Landing"],
     "year": 2022,
     "coverImage": "/img/has/cover.jpg",
     "homeDescription": "Entwicklung einer visuellen Markenidentität für Trinkwasser — von Logo und Flaschenform bis hin zu Packaging, Landingpage und Printmedien. Der minimalistische Stil unterstreicht die technologische Qualität des Produkts und das Bild des Wassers der Zukunft",
