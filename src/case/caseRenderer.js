@@ -169,7 +169,7 @@ function createVideoFull(block) {
 
 function createImagesTwo(block) {
   const section = document.createElement('section');
-  section.className = 'case-admin-row full images-two';
+  section.className = 'case-admin-row';
 
   const imgLeft = document.createElement('img');
   imgLeft.src = block.left;
@@ -184,4 +184,5 @@ function createImagesTwo(block) {
 
   return section;
 }
+
 

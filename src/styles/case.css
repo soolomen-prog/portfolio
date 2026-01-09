@@ -525,28 +525,3 @@
   max-width: 100%;
   object-fit: contain;
 }
-
-/* =========================
-   IMAGES TWO — SYSTEM GRID
-========================= */
-
-.case-admin-row.images-two {
-  display: grid;
-  grid-template-columns: 1fr var(--gap-m) 1fr;
-  width: 100%;
-}
-
-.case-admin-row.images-two img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
-
-/* mobile */
-@media (max-width: 768px) {
-  .case-admin-row.images-two {
-    grid-template-columns: 1fr;
-    gap: var(--gap-s);
-  }
-}

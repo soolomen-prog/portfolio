@@ -51,7 +51,7 @@ Präsentationskatalog sowie weitere Werbemittel erstellt.`},{type:"images-two",l
       allow="autoplay; fullscreen; picture-in-picture"
       allowfullscreen
     ></iframe>
-  `,t}function I(e){const t=document.createElement("section");t.className="case-admin-row full images-two";const n=document.createElement("img");n.src=e.left,n.alt="";const i=document.createElement("img");return i.src=e.right,i.alt="",t.appendChild(n),t.appendChild(i),t}let u=!1;function g(e){if(console.log("OPEN CASE ROUTER:",e),!c.find(n=>n.id===e)){console.warn("CASE NOT FOUND:",e);return}history.pushState({caseId:e},"",`/#case/${e}`),x(e),u=!0}function f(){u&&(history.pushState({},"","/"),u=!1)}function K(){const e=location.hash.match(/^#case\/(.+)$/);e&&g(e[1])}window.addEventListener("popstate",()=>{const e=location.hash.match(/^#case\/(.+)$/);e?g(e[1]):f()});function h(e){return`
+  `,t}function I(e){const t=document.createElement("section");t.className="case-admin-row";const n=document.createElement("img");n.src=e.left,n.alt="";const i=document.createElement("img");return i.src=e.right,i.alt="",t.appendChild(n),t.appendChild(i),t}let u=!1;function g(e){if(console.log("OPEN CASE ROUTER:",e),!c.find(n=>n.id===e)){console.warn("CASE NOT FOUND:",e);return}history.pushState({caseId:e},"",`/#case/${e}`),x(e),u=!0}function f(){u&&(history.pushState({},"","/"),u=!1)}function K(){const e=location.hash.match(/^#case\/(.+)$/);e&&g(e[1])}window.addEventListener("popstate",()=>{const e=location.hash.match(/^#case\/(.+)$/);e?g(e[1]):f()});function h(e){return`
     <article 
       class="project-card"
       data-side="${e.category==="web"?"left":"right"}"
