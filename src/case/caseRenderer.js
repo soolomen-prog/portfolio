@@ -3,6 +3,7 @@
 import vakio from '../cases/webdesign/vakio.js';
 import dolcevita from '../cases/webdesign/dolcevita.js';
 import has from '../cases/branding/has.js';
+import tolk from '../cases/branding/tolk.js';
 
 /**
  * ВАЖНО:
@@ -12,6 +13,7 @@ const casesMap = {
   vakio,
   dolcevita,
   has,
+  tolk,
 };
 
 /**
@@ -90,25 +92,30 @@ function renderBlocks(blocks) {
     let el = null;
 
     switch (block.type) {
-      case 'text-right':
-        el = createTextRight(block);
-        break;
+  case 'text-right':
+    el = createTextRight(block);
+    break;
 
-      case 'images-two':
-        el = createImagesTwo(block);
-        break;
+  case 'images-two':
+    el = createImagesTwo(block);
+    break;
 
-      case 'image-full':
-        el = createImageFull(block);
-        break;
+  case 'image-full':
+    el = createImageFull(block);
+    break;
 
-      case 'video-full':
-        el = createVideoFull(block);
-        break;
+  case 'video-full':
+    el = createVideoFull(block);
+    break;
 
-      default:
-        console.warn('Unknown block type:', block.type);
-    }
+  case 'video-file-full':
+    el = createVideoFileFull(block);
+    break;
+
+  default:
+    console.warn('Unknown block type:', block.type);
+}
+
 
     if (el) container.appendChild(el);
   });
@@ -185,4 +192,20 @@ function createImagesTwo(block) {
   return section;
 }
 
+function createVideoFileFull(block) {
+  const section = document.createElement('section');
+  section.className = 'case-admin-row full';
+
+  section.innerHTML = `
+    <video
+      src="${block.src}"
+      autoplay
+      loop
+      muted
+      playsinline
+    ></video>
+  `;
+
+  return section;
+}
 

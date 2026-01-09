@@ -39,5 +39,20 @@
     "side": "right",
     "visibleOnHome": true,
     "order": 1
+  },
+
+  {
+    "id": "tolk",
+    "category": "branding",
+    "title": "TOLK",
+    "subtitle": "Corporate Identity eines Immobilienentwicklers",
+    "features": ["Identity", "Brandbook"],
+    "year": 2024,
+    "coverImage": "/img/tolk/cover.jpg",
+    "homeDescription": "Entwicklung einer visuellen Markenidentität für Trinkwasser — von Logo und Flaschenform bis hin zu Packaging, Landingpage und Printmedien. Der minimalistische Stil unterstreicht die technologische Qualität des Produkts und das Bild des Wassers der Zukunft",
+    "side": "right",
+    "visibleOnHome": true,
+    "order": 1
+
   }
 ]
