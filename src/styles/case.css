@@ -527,13 +527,12 @@
 }
 
 /* =========================
-   IMAGES TWO (FULL WIDTH)
+   IMAGES TWO — SYSTEM GRID
 ========================= */
 
 .case-admin-row.images-two {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--gap-s);
+  grid-template-columns: 1fr var(--gap-m) 1fr;
   width: 100%;
 }
 
@@ -548,5 +547,6 @@
 @media (max-width: 768px) {
   .case-admin-row.images-two {
     grid-template-columns: 1fr;
+    gap: var(--gap-s);
   }
 }
