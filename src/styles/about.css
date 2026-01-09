@@ -25,7 +25,6 @@
   pointer-events: none;
 }
 
-/* колонки (как на всем сайте) */
 .about-left {
   padding: 0 var(--gap-xs);
 }
@@ -34,30 +33,7 @@
   padding: 0 var(--gap-xs);
 }
 
-/* ===============================
-   PHOTO (левая колонка)
-================================ */
-
-/* фото — как элемент внутри секции, НЕ растягиваем "красиво" бесконечно */
-.about-photo {
-  /* тот же отступ, что и у секций справа (у тебя padding-top: 8px) */
-  padding-top: 8px;
-
-  /* чтобы фото не становилось гигантским на больших экранах */
-  max-width: 520px;
-}
-
-/* изображение */
-.about-photo img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ===============================
-   СЕКЦИИ
-================================ */
-
+/* СЕКЦИИ */
 .about-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -96,10 +72,7 @@
   padding-bottom: 0;
 }
 
-/* ===============================
-   ТЕКСТ
-================================ */
-
+/* ТЕКСТ */
 .about-label,
 .about-text {
   font-size: 14px;
@@ -115,10 +88,7 @@
   margin-top: 14px;
 }
 
-/* ===============================
-   ССЫЛКИ
-================================ */
-
+/* ССЫЛКИ */
 .about-links {
   margin: 18px 0;
   display: grid;
@@ -140,24 +110,23 @@
   color: var(--hover);
 }
 
-/* ===============================
-   DOWNLOAD
-================================ */
+/* ===== LEFT PHOTO (NEW) ===== */
 
-.about-section--download {
-  border-top: none;
-  padding-top: 0;
-  padding-bottom: 100px;
+.about-label--ghost {
+  visibility: hidden; /* сохраняем высоту строки, но не показываем текст */
 }
 
-.about-download a {
-  justify-self: start;
+.about-left-photo {
+  padding-top: 8px; /* как у секций справа */
 }
 
-/* ===============================
-   MOBILE
-================================ */
+.about-photo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
+/* MOBILE */
 @media (max-width: 1024px) {
   .about-layout {
     grid-template-columns: 1fr;
@@ -171,6 +140,10 @@
     padding: 0 var(--gap-xs);
   }
 
+  .about-left {
+    padding: 0 var(--gap-xs);
+  }
+
   .about-download a {
     grid-column: 1;
     justify-self: start;
@@ -180,17 +153,9 @@
     grid-template-columns: 1fr;
     row-gap: var(--gap-xs);
   }
-
-  /* на мобиле фото пусть тянется на ширину колонки */
-  .about-photo {
-    max-width: none;
-  }
 }
 
-/* ===============================
-   scrollbar hide (как на главной)
-================================ */
-
+/* скрываем визуальный scrollbar (как на главной) */
 html,
 body {
   scrollbar-width: none; /* Firefox */
@@ -200,4 +165,14 @@ html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+
+.about-section--download {
+  border-top: none;
+  padding-top: 0;
+  padding-bottom: 100px;
+}
+
+.about-download a {
+  justify-self: start;
 }
