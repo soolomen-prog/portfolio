@@ -169,18 +169,19 @@ function createVideoFull(block) {
 
 function createImagesTwo(block) {
   const section = document.createElement('section');
-  section.className = 'case-admin-row images-two';
+  section.className = 'case-admin-row full images-two';
 
-  section.innerHTML = `
-    <div class="images-two-inner">
-      <div class="images-two-col">
-        <img src="${block.left}" alt="" loading="lazy" />
-      </div>
-      <div class="images-two-col">
-        <img src="${block.right}" alt="" loading="lazy" />
-      </div>
-    </div>
-  `;
+  const imgLeft = document.createElement('img');
+  imgLeft.src = block.left;
+  imgLeft.alt = '';
+
+  const imgRight = document.createElement('img');
+  imgRight.src = block.right;
+  imgRight.alt = '';
+
+  section.appendChild(imgLeft);
+  section.appendChild(imgRight);
 
   return section;
 }
+

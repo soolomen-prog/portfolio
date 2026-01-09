@@ -527,28 +527,26 @@
 }
 
 /* =========================
-   IMAGES TWO
+   IMAGES TWO (FULL WIDTH)
 ========================= */
 
-.images-two {
-  padding: var(--gap-l) 0;
-}
-
-.images-two-inner {
+.case-admin-row.images-two {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--gap-l);
+  gap: var(--gap-s);
+  width: 100%;
 }
 
-.images-two-col img {
+.case-admin-row.images-two img {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
 }
 
 /* mobile */
 @media (max-width: 768px) {
-  .images-two-inner {
+  .case-admin-row.images-two {
     grid-template-columns: 1fr;
   }
 }
