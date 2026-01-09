@@ -169,14 +169,16 @@ function createVideoFull(block) {
 
 function createImagesTwo(block) {
   const section = document.createElement('section');
-  section.className = 'case-admin-row';
+  section.className = 'case-admin-row images-two';
 
   section.innerHTML = `
-    <div>
-      <img src="${block.left}" alt="">
-    </div>
-    <div>
-      <img src="${block.right}" alt="">
+    <div class="images-two-inner">
+      <div class="images-two-col">
+        <img src="${block.left}" alt="" loading="lazy" />
+      </div>
+      <div class="images-two-col">
+        <img src="${block.right}" alt="" loading="lazy" />
+      </div>
     </div>
   `;
 

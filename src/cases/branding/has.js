@@ -60,31 +60,27 @@ die für den Einsatz in Werbematerialien vorgesehen sind.`,
       vimeoId: '794826671',
     },
 
-    // 5 — IMAGE FULL (was left)
+    // 5 — IMAGE left right
     {
-      type: 'image-full',
-      src: '/img/has/02.jpg',
+      type: 'images-two',
+      left: '/img/has/02.jpg',
+      right: '/img/has/03.jpg',
     },
 
-    // 6 — IMAGE FULL (was right)
-    {
-      type: 'image-full',
-      src: '/img/has/03.jpg',
-    },
 
-    // 7
+    // 6
     {
       type: 'image-full',
       src: '/img/has/04.jpg',
     },
 
-    // 8
+    // 7
     {
       type: 'image-full',
       src: '/img/has/05.jpg',
     },
 
-    // 9 — TEXT RIGHT
+    // 8 — TEXT RIGHT
     {
       type: 'text-right',
       text: `Da es sich um eine türkische Wassermarke handelt, wurde den
@@ -97,37 +93,32 @@ seiner Vorteile dienen. Darüber hinaus wurde ein gedruckter
 Präsentationskatalog sowie weitere Werbemittel erstellt.`,
     },
 
+    // 9 — IMAGE left right
+    {
+      type: 'images-two',
+      left: '/img/has/06.jpg',
+      right: '/img/has/07.jpg',
+    },
+
     // 10
-    {
-      type: 'image-full',
-      src: '/img/has/06.jpg',
-    },
-
-    // 11
-    {
-      type: 'image-full',
-      src: '/img/has/07.jpg',
-    },
-
-    // 12
     {
       type: 'image-full',
       src: '/img/has/08.jpg',
     },
 
-    // 13
+    // 11
     {
       type: 'image-full',
       src: '/img/has/09.jpg',
     },
 
-    // 14
+    // 12
     {
       type: 'image-full',
       src: '/img/has/10.jpg',
     },
 
-    // 15
+    // 13
     {
       type: 'image-full',
       src: '/img/has/11.jpg',
