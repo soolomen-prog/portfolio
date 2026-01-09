@@ -176,3 +176,19 @@ body::-webkit-scrollbar {
 .about-download a {
   justify-self: start;
 }
+
+/* PHOTO SECTION — behaves like other sections */
+.about-section--photo {
+  border-top: none;       /* у фото нет линии сверху */
+  padding-top: 8px;       /* тот же отступ */
+}
+
+.about-photo {
+  width: 100%;
+}
+
+.about-photo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
