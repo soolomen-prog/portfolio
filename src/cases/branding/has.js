@@ -123,5 +123,11 @@ Präsentationskatalog sowie weitere Werbemittel erstellt.`,
       type: 'image-full',
       src: '/img/has/11.jpg',
     },
+    
+    // 14
+    {
+      type: 'image-full',
+      src: '/img/has/12.jpg',
+    },
   ],
 };
