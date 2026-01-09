@@ -52,7 +52,22 @@
     "homeDescription": "Corporate Design für einen Immobilienentwickler, basierend auf der Metapher des Lebenswegs und der Idee des Zuhauses als wichtiger Lebensabschnitt. Die visuelle Identität hebt die Marke in einem übersättigten Markt hervor und vereint alle Wohnprojekte in einem einheitlichen System",
     "side": "right",
     "visibleOnHome": true,
-    "order": 1
+    "order": 2
+
+  },
+
+  {
+    "id": "dius",
+    "category": "branding",
+    "title": "DIUS",
+    "subtitle": "Corporate Design eines Businesscenters",
+    "features": ["Identity", "Guideline"],
+    "year": 2024,
+    "coverImage": "/img/dius/cover.jpg",
+    "homeDescription": "Corporate Design für einen Immobilienentwickler, basierend auf der Metapher des Lebenswegs und der Idee des Zuhauses als wichtiger Lebensabschnitt. Die visuelle Identität hebt die Marke in einem übersättigten Markt hervor und vereint alle Wohnprojekte in einem einheitlichen System",
+    "side": "right",
+    "visibleOnHome": true,
+    "order": 3
 
   }
 ]
