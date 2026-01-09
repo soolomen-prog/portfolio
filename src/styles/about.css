@@ -25,34 +25,39 @@
   pointer-events: none;
 }
 
+/* колонки (как на всем сайте) */
 .about-left {
   padding: 0 var(--gap-xs);
 }
 
-/* линия слева — симметрично линии CV */
-.about-left-line {
-  border-top: 1.5px solid var(--line);
-  margin-top: 0;
-  height: 1px;
+.about-right {
+  padding: 0 var(--gap-xs);
 }
 
-/* фото */
+/* ===============================
+   PHOTO (левая колонка)
+================================ */
+
+/* фото — как элемент внутри секции, НЕ растягиваем "красиво" бесконечно */
 .about-photo {
-  margin-top: 8px; /* тот же отступ, что и справа */
+  /* тот же отступ, что и у секций справа (у тебя padding-top: 8px) */
+  padding-top: 8px;
+
+  /* чтобы фото не становилось гигантским на больших экранах */
+  max-width: 520px;
 }
 
+/* изображение */
 .about-photo img {
   width: 100%;
   height: auto;
   display: block;
 }
 
+/* ===============================
+   СЕКЦИИ
+================================ */
 
-.about-right {
-  padding: 0 var(--gap-xs);
-}
-
-/* СЕКЦИИ */
 .about-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -91,7 +96,10 @@
   padding-bottom: 0;
 }
 
-/* ТЕКСТ */
+/* ===============================
+   ТЕКСТ
+================================ */
+
 .about-label,
 .about-text {
   font-size: 14px;
@@ -107,7 +115,10 @@
   margin-top: 14px;
 }
 
-/* ССЫЛКИ */
+/* ===============================
+   ССЫЛКИ
+================================ */
+
 .about-links {
   margin: 18px 0;
   display: grid;
@@ -129,7 +140,24 @@
   color: var(--hover);
 }
 
-/* MOBILE */
+/* ===============================
+   DOWNLOAD
+================================ */
+
+.about-section--download {
+  border-top: none;
+  padding-top: 0;
+  padding-bottom: 100px;
+}
+
+.about-download a {
+  justify-self: start;
+}
+
+/* ===============================
+   MOBILE
+================================ */
+
 @media (max-width: 1024px) {
   .about-layout {
     grid-template-columns: 1fr;
@@ -152,9 +180,17 @@
     grid-template-columns: 1fr;
     row-gap: var(--gap-xs);
   }
+
+  /* на мобиле фото пусть тянется на ширину колонки */
+  .about-photo {
+    max-width: none;
+  }
 }
 
-/* скрываем визуальный scrollbar (как на главной) */
+/* ===============================
+   scrollbar hide (как на главной)
+================================ */
+
 html,
 body {
   scrollbar-width: none; /* Firefox */
@@ -165,14 +201,3 @@ body::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
-
-.about-section--download {
-  border-top: none;
-  padding-top: 0;
-  padding-bottom: 100px;
-}
-
-.about-download a {
-  justify-self: start;
-}
-
