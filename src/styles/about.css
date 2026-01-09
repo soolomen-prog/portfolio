@@ -26,8 +26,27 @@
 }
 
 .about-left {
-  /* пусто по макету */
+  padding: 0 var(--gap-xs);
 }
+
+/* линия слева — симметрично линии CV */
+.about-left-line {
+  border-top: 1.5px solid var(--line);
+  margin-top: 0;
+  height: 1px;
+}
+
+/* фото */
+.about-photo {
+  margin-top: 8px; /* тот же отступ, что и справа */
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 .about-right {
   padding: 0 var(--gap-xs);
