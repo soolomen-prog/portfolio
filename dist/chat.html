@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Let’s talk — Andrei Solomin</title>
+
+  <link rel="stylesheet" href="/css/chat.css" />
+</head>
+
+<body>
+
+  <!-- HEADER / FOOTER — используются общие -->
+
+  <main class="chat-page">
+
+    <div class="chat-grid">
+
+      <!-- LEFT COLUMN -->
+      <section class="chat-column chat-left">
+
+        <div class="chat-contact chat-contact--hidden">
+          <div class="chat-contact-icon">
+            <!-- SVG иконка бота 42x42 -->
+          </div>
+
+          <div class="chat-contact-text">
+            <p>
+              Если вы хотите связаться<br>
+              с Андреем напрямую или обсудить<br>
+              проект лично, напишите на почту:
+            </p>
+            <a href="mailto:hi@andreisolomin.com">hi@andreisolomin.com</a>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- RIGHT COLUMN -->
+      <section class="chat-column chat-right">
+
+        <!-- CHAT CONTENT -->
+        <div class="chat-content">
+
+          <!-- INTRO MESSAGE -->
+          <div class="chat-message chat-message--intro">
+
+            <div class="chat-bot-header">
+              <!-- SVG иконка бота 26x26 -->
+            </div>
+
+            <p class="chat-intro-text">
+              Привет! Я Лукас — виртуальный менеджер. Я не человек, а ИИ.<br>
+              Я могу предварительно оценить ваш проект, рассказать о каждом этапе
+              разработки и помочь сформировать задачу. Если идея пока не до конца
+              ясна — я задам несколько вопросов, и мы разберёмся вместе
+            </p>
+
+            <div class="chat-intro-list">
+              <p class="chat-intro-heading">Основные направления работы:</p>
+              <ul>
+                <li>Веб-дизайн</li>
+                <li>Брендинг и корпоративный стиль</li>
+                <li>Печатные материалы и каталоги</li>
+                <li>Оформление соцсетей</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- DIALOG -->
+          <div class="chat-dialog">
+
+            <!-- BOT MESSAGE -->
+            <div class="chat-message chat-message--bot">
+              <div class="chat-bubble chat-bubble--bot">
+                Добрый день, спасибо за обращение
+              </div>
+              <div class="chat-author">Lukas</div>
+            </div>
+
+            <!-- USER MESSAGE -->
+            <div class="chat-message chat-message--user">
+              <div class="chat-bubble chat-bubble--user">
+                Здравствуйте, подскажите цену на разработку интернет-магазина…
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- INPUT -->
+        <div class="chat-input-wrapper">
+
+          <div class="chat-input">
+
+            <span class="chat-caret"></span>
+
+            <input
+              type="text"
+              class="chat-input-field"
+              placeholder="Спросите что-нибудь..."
+            />
+
+            <button class="chat-send">Отправить</button>
+
+          </div>
+
+          <div class="chat-hint">
+            Bitte geben Sie keine personenbezogenen Daten
+            (z. B. Name, E-Mail, Telefonnummer) ein
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+</body>
+</html>
