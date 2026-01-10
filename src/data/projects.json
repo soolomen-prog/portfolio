@@ -27,6 +27,20 @@
     "order": 2
   },
 
+    {
+    "id": "dstation",
+    "category": "web",
+    "title": "D-Станция",
+    "subtitle": "Landingpage eines Redevelopment-Projekts",
+    "features": ["UI", "UX"],
+    "year": 2023,
+    "coverImage": "/img/dstation/cover.jpg",
+    "homeDescription": "Die Landingpage ist einem Redevelopment-Projekt eines historischen Waggondepots im Zentrum von Moskau gewidmet. Sie vermittelt den Wert des Ortes und seine neue Nutzung und weckt Interesse an der Anmietung von Gewerbeflächen",
+    "side": "left",
+    "visibleOnHome": true,
+    "order": 3
+  },
+
   {
     "id": "has",
     "category": "branding",

@@ -5,6 +5,7 @@ import dolcevita from '../cases/webdesign/dolcevita.js';
 import has from '../cases/branding/has.js';
 import tolk from '../cases/branding/tolk.js';
 import dius from '../cases/branding/dius.js';
+import dstation from '../cases/webdesign/dstation.js';
 
 /**
  * ВАЖНО:
@@ -13,6 +14,7 @@ import dius from '../cases/branding/dius.js';
 const casesMap = {
   vakio,
   dolcevita,
+  dstation,
   has,
   tolk,
   dius,
