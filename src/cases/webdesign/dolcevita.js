@@ -5,7 +5,7 @@ export default {
   category: 'webdesign',
 
   header: {
-    title: 'Dolcevita',
+    title: 'Dolce Vita',
     subtitle: 'Website für Kosmetologie',
     info: 'UI / 18 Seiten',
     year: '2022',
