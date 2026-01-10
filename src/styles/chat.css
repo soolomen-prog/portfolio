@@ -1,9 +1,97 @@
 /* ===============================
+   UI LINES (top + vertical)
+   Specs from your description:
+   - top offset: 8px
+   - left/right offset: 8px
+   - center vertical line
+   - horizontal lines with 8px gap around center
+================================ */
+
+.ui-lines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2; /* above background, below content if needed */
+}
+
+.ui-line {
+  position: absolute;
+  background: var(--ui-line-color, rgba(0, 0, 0, 0.12));
+}
+
+/* vertical lines */
+.ui-line--v-left {
+  top: 8px;
+  bottom: 0;
+  left: 8px;
+  width: 1px;
+}
+
+.ui-line--v-center {
+  top: 8px;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-0.5px);
+}
+
+.ui-line--v-right {
+  top: 8px;
+  bottom: 0;
+  right: 8px;
+  width: 1px;
+}
+
+/* top horizontal lines (split by center with 8px gaps) */
+.ui-line--h-left {
+  top: 8px;
+  left: 8px;
+  right: calc(50% + 8px);
+  height: 1px;
+}
+
+.ui-line--h-right {
+  top: 8px;
+  left: calc(50% + 8px);
+  right: 8px;
+  height: 1px;
+}
+
+/* ===============================
+   HEADER tweaks for chat page
+   (You already have header.css; we only adjust spacing/weights here)
+================================ */
+
+.site-header--chat {
+  z-index: 5; /* above lines */
+}
+
+/* left side has extra links */
+.header-left--chat {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header-left-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Make legal items regular */
+.nav-item--regular {
+  font-weight: 400 !important;
+}
+
+/* ===============================
    CHAT PAGE LAYOUT
 ================================ */
 
 .chat-page {
   height: calc(100vh - 46px);
+  position: relative;
+  z-index: 3; /* above lines */
 }
 
 .chat-grid {
@@ -51,6 +139,11 @@
 .chat-message--intro {
   font-size: 26px;
   line-height: 26px;
+  font-weight: 500; /* intro on макете выглядит чуть плотнее, если нужно — поменяешь */
+}
+
+.chat-intro-text {
+  margin: 0;
 }
 
 .chat-intro-list {
@@ -58,12 +151,17 @@
 }
 
 .chat-intro-heading {
-  margin-bottom: 8px;
+  margin: 0 0 8px;
+  font-weight: 500;
 }
 
 .chat-intro-list ul {
   margin: 0;
   padding-left: 18px;
+}
+
+.chat-intro-list li {
+  font-weight: 500;
 }
 
 /* ===============================
@@ -79,7 +177,7 @@
 }
 
 /* ===============================
-   BUBBLES
+   BUBBLES (Regular 18/24)
 ================================ */
 
 .chat-bubble {
@@ -88,7 +186,7 @@
   border-radius: 16px;
   font-size: 18px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 400; /* REGULAR */
 }
 
 /* BOT */
@@ -106,12 +204,13 @@
   background: #eff5fb;
 }
 
-/* AUTHOR */
+/* AUTHOR (Regular) */
 .chat-author {
   margin-top: 8px;
   font-size: 14px;
+  line-height: 18px;
   color: #999999;
-  font-weight: 400;
+  font-weight: 400; /* REGULAR */
 }
 
 /* ===============================
@@ -139,12 +238,13 @@
   padding-left: 34px;
   font-size: 18px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 400; /* REGULAR */
   outline: none;
 }
 
 .chat-input-field::placeholder {
   color: #999999;
+  font-weight: 400; /* REGULAR */
 }
 
 /* CARET */
@@ -155,6 +255,7 @@
   height: 24px;
   background: #000;
   animation: blink 1.2s infinite;
+  pointer-events: none;
 }
 
 @keyframes blink {
@@ -172,6 +273,8 @@
   background: #262626;
   color: #fff;
   font-size: 18px;
+  line-height: 24px;
+  font-weight: 400; /* REGULAR */
   cursor: pointer;
 }
 
@@ -180,31 +283,37 @@
 }
 
 /* ===============================
-   HINT
+   HINT (Regular)
 ================================ */
 
 .chat-hint {
   margin-top: 8px;
   font-size: 14px;
+  line-height: 18px;
   color: #999999;
-  font-weight: 400;
+  font-weight: 400; /* REGULAR */
 }
 
 /* ===============================
-   CONTACT LEFT
+   CONTACT LEFT (appears after 20s)
 ================================ */
 
 .chat-contact {
   position: absolute;
   left: 46px;
   bottom: 46px;
-  opacity: 1;
-  transition: opacity 0.4s ease;
-}
-
-.chat-contact--hidden {
   opacity: 0;
   pointer-events: none;
+
+  animation: chatContactFadeIn 0.4s ease forwards;
+  animation-delay: 20s;
+}
+
+@keyframes chatContactFadeIn {
+  to {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 .chat-contact-icon {
@@ -215,4 +324,9 @@
 
 .chat-contact-text p {
   margin: 0 0 4px;
+  font-weight: 500; /* в макете этот блок выглядит плотнее */
+}
+
+.chat-contact-text a {
+  font-weight: 500;
 }

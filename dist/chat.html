@@ -4,16 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Let’s talk — Andrei Solomin</title>
-
   <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
-  <script type="module" crossorigin src="/assets/main-7SlJ44kZ.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-CmlFv0J9.css">
+  <script type="module" crossorigin src="/assets/main-BN512oM6.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-Dt_fD80A.css">
 </head>
 
 <body>
 
-  <!-- HEADER / FOOTER — используются общие -->
+  <!-- LINES (top + vertical) -->
+  <div class="ui-lines" aria-hidden="true">
+    <div class="ui-line ui-line--v-left"></div>
+    <div class="ui-line ui-line--v-center"></div>
+    <div class="ui-line ui-line--v-right"></div>
 
+    <div class="ui-line ui-line--h-left"></div>
+    <div class="ui-line ui-line--h-right"></div>
+  </div>
+
+  <!-- HEADER (нижняя шапка) -->
+  <!-- Структура взята из index.html и адаптирована под чат-страницу -->
+  <header class="site-header site-header--chat">
+    <div class="header-inner">
+
+      <!-- LEFT: name + About + Projects -->
+      <div class="header-left header-left--chat">
+        <a href="/" class="author-name">Andrei Solomin</a>
+
+        <nav class="header-left-nav">
+          <a href="/about.html" class="nav-item nav-item--regular">About</a>
+          <a href="/" class="nav-item nav-item--regular">Projects</a>
+        </nav>
+      </div>
+
+      <!-- CENTER: Let’s talk -->
+      <div class="header-center">
+        <a href="/chat.html" class="nav-item is-active">
+          <svg class="talk-icon" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
+            <path d="M14 7C14 6.83436 13.9137 6.63421 13.6722 6.56692C11.6983 6.01479 10.4612 5.38501 9.53808 4.46192C8.61499 3.53883 7.98349 2.3017 7.43308 0.327828C7.36579 0.0862706 7.16564 0 7 0C6.83436 0 6.63421 0.0862706 6.56692 0.327828C6.01651 2.3017 5.38501 3.53883 4.46192 4.46192C3.53883 5.38501 2.3017 6.01651 0.327828 6.56692C0.0862706 6.63421 0 6.83436 0 7C0 7.16564 0.0862706 7.36579 0.327828 7.43308C2.3017 7.98349 3.53883 8.61499 4.46192 9.53808C5.38501 10.4612 6.01651 11.6983 6.56692 13.6722C6.63421 13.9137 6.83436 14 7 14C7.16564 14 7.36579 13.9137 7.43308 13.6722C7.98349 11.6983 8.61499 10.4612 9.53808 9.53808C10.4612 8.61499 11.6983 7.98349 13.6722 7.43308C13.9137 7.36579 14 7.16564 14 7Z"/>
+          </svg>
+          <span>Let’s talk</span>
+        </a>
+      </div>
+
+      <!-- RIGHT: legal -->
+      <div class="header-right header-right--chat">
+        <a href="/datenschutzerklaerung" class="nav-item nav-item--regular nav-item--legal">Datenschutzerklärung</a>
+        <a href="/impressum" class="nav-item nav-item--regular nav-item--legal">Impressum</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN -->
   <main class="chat-page">
 
     <div class="chat-grid">
@@ -21,9 +63,10 @@
       <!-- LEFT COLUMN -->
       <section class="chat-column chat-left">
 
-        <div class="chat-contact chat-contact--hidden">
+        <!-- CONTACT (appears after 20s) -->
+        <div class="chat-contact" aria-live="polite">
           <div class="chat-contact-icon">
-            <!-- SVG иконка бота 42x42 -->
+            <!-- SVG иконка бота 42x42 (вставишь позже) -->
           </div>
 
           <div class="chat-contact-text">
@@ -48,7 +91,7 @@
           <div class="chat-message chat-message--intro">
 
             <div class="chat-bot-header">
-              <!-- SVG иконка бота 26x26 -->
+              <!-- SVG иконка бота 26x26 (вставишь позже) -->
             </div>
 
             <p class="chat-intro-text">
@@ -96,17 +139,16 @@
         <div class="chat-input-wrapper">
 
           <div class="chat-input">
-
             <span class="chat-caret"></span>
 
             <input
               type="text"
               class="chat-input-field"
               placeholder="Спросите что-нибудь..."
+              aria-label="Chat input"
             />
 
-            <button class="chat-send">Отправить</button>
-
+            <button class="chat-send" type="button">Отправить</button>
           </div>
 
           <div class="chat-hint">
@@ -122,7 +164,7 @@
 
   </main>
 
-<!-- APP ENTRY -->
+  <!-- APP ENTRY -->
 
 </body>
 </html>
