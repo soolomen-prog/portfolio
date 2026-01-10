@@ -3,7 +3,7 @@ export default {
   category: 'webdesign',
 
   header: {
-    title: 'D-СТАНЦИЯ',
+    title: 'D-STATION',
     subtitle: 'Landingpage eines Redevelopment-Projekts',
     info: 'UI / UX',
     year: '2023',
