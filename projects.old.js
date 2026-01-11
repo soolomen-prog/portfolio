@@ -13,7 +13,7 @@ function createProjectCard(project) {
       data-side="${project.category === 'web' ? 'left' : 'right'}"
       data-id="${project.id}"
     >
-      <a href="#case/${project.id}" class="project-image">
+      <a href="#" class="project-image">
         <img src="${project.coverImage}" alt="${project.title}">
       </a>
 
@@ -66,10 +66,8 @@ const casePanel   = document.getElementById('case-panel');
 const caseOverlay = document.getElementById('case-overlay');
 
 function openCase(side, project) {
-  // обновляем URL
-  location.hash = `case/${project.id}`;
 
-  // рендер кейса
+  // 1. РЕНДЕР КЕЙСА
   openCaseById(project.id);
 
   casePanel.classList.remove('hidden', 'from-left', 'from-right', 'active');
@@ -83,14 +81,16 @@ function openCase(side, project) {
   casePanel.classList.add('active');
   caseOverlay.classList.add('active');
 
-  // скролл вверх
+  // 2. ⬆️ СКРОЛЛИМ РЕАЛЬНЫЙ СКРОЛЛ-КОНТЕЙНЕР
   setTimeout(() => {
-    const inner = casePanel.querySelector('.case-inner');
-    if (inner) inner.scrollTop = 0;
-  }, 0);
+  const inner = casePanel.querySelector('.case-inner');
+  if (inner) inner.scrollTop = 0;
+}, 0);
+
+
 
   /* ===============================
-     NEXT PROJECT (LOOP)
+     NEXT PROJECT (SAME CATEGORY, LOOP)
   ================================ */
 
   const sameCategory = projects
@@ -102,6 +102,7 @@ function openCase(side, project) {
     sameCategory[(currentIndex + 1) % sameCategory.length];
 
   if (nextProject) {
+
     document.querySelector('.case-next-title').textContent =
       nextProject.title;
 
@@ -128,6 +129,10 @@ function openCase(side, project) {
     nextLink.onclick  = openNext;
     nextImage.onclick = openNext;
   }
+
+  casePanel.offsetHeight;
+  casePanel.classList.add('active');
+  caseOverlay.classList.add('active');
 }
 
 function closeCase() {
@@ -135,34 +140,17 @@ function closeCase() {
 
   casePanel.classList.remove('active');
   caseOverlay.classList.remove('active');
-
   setTimeout(() => {
     casePanel.classList.add('hidden');
     caseOverlay.classList.add('hidden');
   }, 450);
 }
 
+
 caseOverlay.addEventListener('click', closeCase);
 document.addEventListener('click', e => {
   if (e.target.closest('.case-close')) closeCase();
 });
-
-/* ===============================
-   HASH ROUTER (DIRECT LINKS)
-================================ */
-
-function openCaseFromHash() {
-  const hash = location.hash;
-
-  if (!hash.startsWith('#case/')) return;
-
-  const id = hash.replace('#case/', '');
-  const project = projects.find(p => p.id === id);
-  if (!project) return;
-
-  const side = project.category === 'web' ? 'left' : 'right';
-  openCase(side, project);
-}
 
 /* ===============================
    CLICKS
@@ -186,5 +174,3 @@ function bindProjectClicks() {
 
 renderProjects();
 initCaseRouter();
-openCaseFromHash();
-window.addEventListener('hashchange', openCaseFromHash);
