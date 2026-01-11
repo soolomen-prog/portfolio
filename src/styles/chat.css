@@ -129,7 +129,6 @@
   flex: 1;
   overflow-y: auto;
   padding-top: 100px;
-  margin-bottom: 28px; /* ← ВАЖНО */
 }
 
 /* hide scrollbar */
@@ -266,7 +265,6 @@
 
 .chat-input-wrapper {
   padding-bottom: 46px;
-  margin-top: 28px;
 }
 
 .chat-input {
