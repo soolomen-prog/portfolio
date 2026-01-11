@@ -172,6 +172,21 @@
 }
 
 /* ===============================
+   BOT HEADER (ICON + SPACING)
+================================ */
+
+.chat-bot-header {
+  margin-bottom: 28px;
+}
+
+.chat-bot-header img {
+  display: block;
+  width: 42px;
+  height: 42px;
+}
+
+
+/* ===============================
    DIALOG
 ================================ */
 
