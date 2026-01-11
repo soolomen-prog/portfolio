@@ -369,11 +369,3 @@
   font-weight: 500;
 }
 
-/* ===============================
-   REMOVE SIDE UI LINES ON CHAT
-================================ */
-
-.site-header--chat ~ .ui-lines .ui-line--v-left,
-.site-header--chat ~ .ui-lines .ui-line--v-right {
-  display: none;
-}
