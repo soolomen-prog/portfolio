@@ -85,6 +85,7 @@
   gap: 24px;
 }
 
+
 /* Make legal items regular */
 .nav-item--regular {
   font-weight: 400 !important;
@@ -115,29 +116,19 @@
   padding: 0 46px;
 }
 
-/* ВАЖНО: даём flex-контейнеру возможность "сжиматься" */
 .chat-right {
   display: flex;
   flex-direction: column;
-  min-height: 0; /* allow chat-content to shrink and scroll */
 }
 
 /* ===============================
    CHAT CONTENT
 ================================ */
 
-/* ВАЖНО: прижимаем контент вниз, и даём 28px до инпута */
 .chat-content {
   flex: 1;
-  min-height: 0; /* required for overflow in flex layouts */
   overflow-y: auto;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-
   padding-top: 100px;
-  padding-bottom: 28px; /* расстояние от последнего сообщения до поля ввода */
 }
 
 /* hide scrollbar */
@@ -203,6 +194,7 @@
   -webkit-mask-size: contain;
 }
 
+
 /* ===============================
    BOT HEADER (ICON + SPACING)
 ================================ */
@@ -216,6 +208,7 @@
   width: 42px;
   height: 42px;
 }
+
 
 /* ===============================
    DIALOG
@@ -300,6 +293,7 @@
   font-weight: 400; /* REGULAR */
 }
 
+
 /* SEND BUTTON */
 .chat-send {
   width: 180px;
@@ -359,18 +353,19 @@
   margin-bottom: 28px;
 }
 
-.chat-contact-text p {
-  margin: 0 0 4px;
-  font-weight: 500; /* в макете этот блок выглядит плотнее */
-}
-
 .chat-contact-text a {
-  color: #262626;
-  text-decoration: underline;
+  color: #262626;              /* как весь текст на сайте */
+  text-decoration: underline;       /* подчёркивание */
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease; /* аккуратный hover */
 }
 
 .chat-contact-text a:hover {
-  color: var(--hover);
+  color: var(--hover);         /* розовый, как везде */
 }
+
+
+.chat-contact-text a {
+  font-weight: 500;
+}
+
