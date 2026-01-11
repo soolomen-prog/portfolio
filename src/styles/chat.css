@@ -353,10 +353,17 @@
   margin-bottom: 28px;
 }
 
-.chat-contact-text p {
-  margin: 0 0 4px;
-  font-weight: 500; /* в макете этот блок выглядит плотнее */
+.chat-contact-text a {
+  color: #262626;              /* как весь текст на сайте */
+  text-decoration: underline;       /* подчёркивание */
+  font-weight: 500;
+  transition: color 0.2s ease; /* аккуратный hover */
 }
+
+.chat-contact-text a:hover {
+  color: var(--hover);         /* розовый, как везде */
+}
+
 
 .chat-contact-text a {
   font-weight: 500;
