@@ -300,13 +300,17 @@
   width: 1px;
   height: 24px;
   background: #000;
-  animation: blink 1.2s infinite;
+  animation: caret-blink 1.8s steps(1) infinite;
   pointer-events: none;
 }
 
-@keyframes blink {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0; }
+@keyframes caret-blink {
+  0%, 60% {
+    opacity: 1;
+  }
+  60.01%, 100% {
+    opacity: 0;
+  }
 }
 
 /* SEND BUTTON */
