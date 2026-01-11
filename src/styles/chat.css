@@ -163,13 +163,37 @@
 }
 
 .chat-intro-list ul {
+  list-style: none;      /* убираем стандартные буллеты */
   margin: 0;
-  padding-left: 18px;
+  padding-left: 0;       /* важно: убираем стандартный отступ */
 }
 
 .chat-intro-list li {
+  position: relative;
+  padding-left: 28px;    /* отступ текста от иконки */
+  margin-bottom: 4px;
   font-weight: 500;
 }
+
+.chat-intro-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45em;           /* вертикальное выравнивание по тексту */
+
+  width: 14px;
+  height: 14px;
+
+  background-color: currentColor;
+
+  /* SVG иконка Let’s talk */
+  mask: url('/src/assets/icons/star.svg') no-repeat center;
+  -webkit-mask: url('/src/assets/icons/star.svg') no-repeat center;
+
+  mask-size: contain;
+  -webkit-mask-size: contain;
+}
+
 
 /* ===============================
    BOT HEADER (ICON + SPACING)
