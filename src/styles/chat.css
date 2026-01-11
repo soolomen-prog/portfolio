@@ -79,6 +79,13 @@
   gap: 24px;
 }
 
+.header-right--chat {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+
 /* Make legal items regular */
 .nav-item--regular {
   font-weight: 400 !important;
