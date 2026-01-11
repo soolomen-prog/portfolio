@@ -293,25 +293,6 @@
   font-weight: 400; /* REGULAR */
 }
 
-/* CARET */
-.chat-caret {
-  position: absolute;
-  left: 34px;
-  width: 1px;
-  height: 24px;
-  background: #000;
-  animation: caret-blink 1.8s steps(1) infinite;
-  pointer-events: none;
-}
-
-@keyframes caret-blink {
-  0%, 60% {
-    opacity: 1;
-  }
-  60.01%, 100% {
-    opacity: 0;
-  }
-}
 
 /* SEND BUTTON */
 .chat-send {
