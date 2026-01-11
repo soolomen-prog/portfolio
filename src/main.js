@@ -6,7 +6,6 @@ import './styles/responsive.css'
 import './styles/case.css'
 import './styles/about.css'
 import './styles/chat.css'
-
 import './projects.js'
 import de from './i18n/de.js'
 window.t = de
