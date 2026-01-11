@@ -179,7 +179,7 @@
   content: '';
   position: absolute;
   left: 0;
-  top: 0.45em;           /* вертикальное выравнивание по тексту */
+  top: 0.25em;           /* вертикальное выравнивание по тексту */
 
   width: 14px;
   height: 14px;
