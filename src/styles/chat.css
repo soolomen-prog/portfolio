@@ -1,24 +1,30 @@
 /* ===============================
    UI LINES (top + vertical)
+   Specs from your description:
+   - top offset: 8px
+   - left/right offset: 8px
+   - center vertical line
+   - horizontal lines with 8px gap around center
 ================================ */
-
-:root {
-  --header-h: 46px;     /* высота нижней шапки */
-  --gap-desktop: 46px;  /* отступ инпута от шапки на десктопе */
-  --gap-mobile: 18px;   /* отступ инпута от шапки на мобиле */
-  --ui-text: #262626;
-}
 
 .ui-lines {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 2;
+  z-index: 2; /* above background, below content if needed */
 }
 
 .ui-line {
   position: absolute;
   background: var(--ui-line-color, rgba(0, 0, 0, 0.12));
+}
+
+/* vertical lines */
+.ui-line--v-left {
+  top: 8px;
+  bottom: 0;
+  left: 8px;
+  width: 1px;
 }
 
 .ui-line--v-center {
@@ -29,6 +35,14 @@
   transform: translateX(-0.5px);
 }
 
+.ui-line--v-right {
+  top: 8px;
+  bottom: 0;
+  right: 8px;
+  width: 1px;
+}
+
+/* top horizontal lines (split by center with 8px gaps) */
 .ui-line--h-left {
   top: 8px;
   left: 8px;
@@ -45,12 +59,22 @@
 
 /* ===============================
    HEADER tweaks for chat page
+   (You already have header.css; we only adjust spacing/weights here)
 ================================ */
 
+/* ВАЖНО: фиксируем нижнюю шапку, чтобы она ВСЕГДА была поверх меню
+   и крестик всегда был кликабельный */
 .site-header--chat {
-  z-index: 60; /* шапка всегда поверх */
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 46px;
+
+  z-index: 30; /* выше mobile-menu */
 }
 
+/* left side has extra links */
 .header-left--chat {
   display: flex;
   align-items: center;
@@ -69,20 +93,19 @@
   gap: 24px;
 }
 
+/* Make legal items regular */
 .nav-item--regular {
   font-weight: 400 !important;
 }
 
 /* ===============================
    CHAT PAGE LAYOUT
-   Важно: даём странице понятную высоту,
-   чтобы внутри появился скролл у .chat-content
 ================================ */
 
 .chat-page {
+  height: calc(100vh - 46px);
   position: relative;
-  z-index: 3;
-  height: calc(100vh - var(--header-h)); /* место под нижнюю шапку */
+  z-index: 3; /* above lines */
 }
 
 .chat-grid {
@@ -100,25 +123,21 @@
   padding: 0 46px;
 }
 
-/* RIGHT колонка — контейнер для:
-   1) скроллящегося контента
-   2) прибитого инпута */
+/* ВАЖНО: даём flex-контейнеру возможность "сжиматься" */
 .chat-right {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  min-height: 0;
-  overflow: hidden; /* скролл только у .chat-content */
+  min-height: 0; /* allow chat-content to shrink and scroll */
 }
 
 /* ===============================
-   CHAT CONTENT (SCROLL AREA)
-   Здесь должен быть скролл
+   CHAT CONTENT
 ================================ */
 
+/* ВАЖНО: прижимаем контент вниз, и даём 28px до инпута */
 .chat-content {
   flex: 1;
-  min-height: 0;
+  min-height: 0; /* required for overflow in flex layouts */
   overflow-y: auto;
 
   display: flex;
@@ -126,9 +145,7 @@
   justify-content: flex-end;
 
   padding-top: 100px;
-
-  /* чтобы контент не прятался под прибитый инпут */
-  padding-bottom: calc(84px + 18px + 28px + var(--gap-desktop));
+  padding-bottom: 28px; /* расстояние от последнего сообщения до поля ввода */
 }
 
 /* hide scrollbar */
@@ -146,7 +163,7 @@
 .chat-message--intro {
   font-size: 26px;
   line-height: 26px;
-  font-weight: 500;
+  font-weight: 500; /* intro on макете выглядит чуть плотнее, если нужно — поменяешь */
 }
 
 .chat-intro-text {
@@ -163,14 +180,14 @@
 }
 
 .chat-intro-list ul {
-  list-style: none;
+  list-style: none;      /* убираем стандартные буллеты */
   margin: 0;
-  padding-left: 0;
+  padding-left: 0;       /* важно: убираем стандартный отступ */
 }
 
 .chat-intro-list li {
   position: relative;
-  padding-left: 28px;
+  padding-left: 28px;    /* отступ текста от иконки */
   margin-bottom: 4px;
   font-weight: 500;
 }
@@ -179,12 +196,17 @@
   content: '';
   position: absolute;
   left: 0;
-  top: 0.25em;
+  top: 0.25em;           /* вертикальное выравнивание по тексту */
+
   width: 14px;
   height: 14px;
+
   background-color: currentColor;
+
+  /* SVG иконка Let’s talk */
   mask: url('/src/assets/icons/star.svg') no-repeat center;
   -webkit-mask: url('/src/assets/icons/star.svg') no-repeat center;
+
   mask-size: contain;
   -webkit-mask-size: contain;
 }
@@ -225,13 +247,15 @@
   border-radius: 16px;
   font-size: 18px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 400; /* REGULAR */
 }
 
+/* BOT */
 .chat-bubble--bot {
   background: #f7d6e8;
 }
 
+/* USER */
 .chat-message--user {
   display: flex;
   justify-content: flex-end;
@@ -241,25 +265,22 @@
   background: #eff5fb;
 }
 
+/* AUTHOR (Regular) */
 .chat-author {
   margin-top: 8px;
   font-size: 14px;
   line-height: 18px;
   color: #999999;
-  font-weight: 400;
+  font-weight: 400; /* REGULAR */
 }
 
 /* ===============================
-   INPUT (PINNED)
-   Инпут прибит к низу колонки, но выше шапки:
-   desktop: 46px
+   INPUT
 ================================ */
 
 .chat-input-wrapper {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: calc(var(--header-h) + var(--gap-desktop));
+  margin-top: auto;      /* ← прибивает вниз */
+  padding-bottom: 46px; /* десктоп отступ */
 }
 
 .chat-input {
@@ -279,16 +300,16 @@
   padding-left: 34px;
   font-size: 18px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 400; /* REGULAR */
   outline: none;
-  color: var(--ui-text);
 }
 
 .chat-input-field::placeholder {
   color: #999999;
-  font-weight: 400;
+  font-weight: 400; /* REGULAR */
 }
 
+/* SEND BUTTON */
 .chat-send {
   width: 180px;
   height: 56px;
@@ -299,7 +320,7 @@
   color: #fff;
   font-size: 18px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 400; /* REGULAR */
   cursor: pointer;
 }
 
@@ -307,12 +328,16 @@
   background: #ff0095;
 }
 
+/* ===============================
+   HINT (Regular)
+================================ */
+
 .chat-hint {
   margin-top: 8px;
   font-size: 14px;
   line-height: 18px;
   color: #999999;
-  font-weight: 400;
+  font-weight: 400; /* REGULAR */
 }
 
 /* ===============================
@@ -345,7 +370,7 @@
 
 .chat-contact-text p {
   margin: 0 0 4px;
-  font-weight: 500;
+  font-weight: 500; /* в макете этот блок выглядит плотнее */
 }
 
 .chat-contact-text a {
@@ -372,6 +397,7 @@
 
 /* ≤ 1024px — одна колонка */
 @media (max-width: 1024px) {
+
   .chat-grid {
     grid-template-columns: 1fr;
   }
@@ -383,12 +409,15 @@
   .chat-column {
     padding-left: 46px;
     padding-right: 46px;
+    height: calc(100vh - 46px); /* ключевая строка */
   }
 
+  /* центральную линию убираем */
   .ui-line--v-center {
     display: none;
   }
 
+  /* верхнюю линию делаем цельной */
   .ui-line--h-left {
     right: 8px;
   }
@@ -398,55 +427,64 @@
   }
 }
 
-/* ≤ 500px — мобильные отступы + типографика + pinned input gap */
+/* ≤ 500px — мобильные отступы + типографика */
 @media (max-width: 500px) {
+
   .chat-column {
     padding-left: 8px;
     padding-right: 8px;
   }
 
+  /* приветственный текст */
   .chat-message--intro {
     font-size: 18px;
     line-height: 22px;
   }
 
+  /* текст в инпуте и бабблах */
   .chat-input-field,
   .chat-bubble {
     font-size: 14px;
     line-height: 22px;
   }
 
+  /* hint по центру */
   .chat-hint {
     text-align: center;
   }
 
-  /* КНОПКА — оставляем, но чтобы влезала в 50px */
+  /* кнопка */
   .chat-send {
     width: auto;
-    padding: 0 16px;
-    height: 38px;
-    border-radius: 19px;
-    margin-right: 10px;
-    font-size: 14px;
-    line-height: 22px;
+    padding: 0 20px;
   }
 
-  /* ВОТ ТО, ЧТО ТЫ ПРОСИЛ:
-     высота поля ввода на мобиле 50px */
+  /* уменьшенная высота инпута и кнопки на мобиле */
+  .chat-input {
+  height: 50px;
+  border-radius: 25px;
+  }
+
+  .chat-send {
+  height: 36px;
+  border-radius: 18px;
+  }
+
+    .chat-input-wrapper {
+    padding-bottom: 18px; /* мобильный отступ */
+  }
+
   .chat-input {
     height: 50px;
     border-radius: 25px;
   }
 
-  /* инпут прибит выше шапки на 18px */
-  .chat-input-wrapper {
-    bottom: calc(var(--header-h) + var(--gap-mobile));
+  .chat-send {
+    height: 36px;
+    border-radius: 18px;
   }
 
-  /* и добавляем меньше “запаса” снизу у скролла */
-  .chat-content {
-    padding-bottom: calc(50px + 18px + 20px + var(--gap-mobile));
-  }
+
 }
 
 /* ===============================
@@ -457,11 +495,12 @@
   display: none;
   position: relative;
   width: 22px;
-  height: 22px;
+  height: 8px;
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 70; /* выше меню и шапки */
+
+  z-index: 31; /* выше шапки */
 }
 
 .burger span {
@@ -470,9 +509,16 @@
   width: 22px;
   height: 1px;
   background: #000;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+/* делаем симметричный бургер/крест */
+.burger span {
   top: 50%;
   transform-origin: center;
-  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .burger span:nth-child(1) {
@@ -492,6 +538,7 @@
 }
 
 @media (max-width: 860px) {
+
   .header-left-nav,
   .header-right--chat a {
     display: none;
@@ -508,8 +555,7 @@
 
 /* ===============================
    MOBILE MENU PANEL
-   Меню всегда ВЫШЕ шапки (шапка поверх меню),
-   поэтому ставим bottom: var(--header-h)
+   ВАЖНО: меню открывается НАД шапкой (46px) и НЕ перекрывает её
 ================================ */
 
 .mobile-menu {
@@ -517,8 +563,11 @@
   left: 0;
   right: 0;
 
-  bottom: var(--header-h);
-  height: 260px;
+  /* закрыто: спрятано под экран, но оставляем место под шапку 46px */
+  bottom: calc(-260px + 46px);
+
+  min-height: 260px;
+  box-sizing: border-box;
 
   background: #eff5fb;
   padding: 18px;
@@ -526,30 +575,33 @@
   display: flex;
   flex-direction: column;
 
-  transform: translateY(100%);
-  transition: transform 0.35s ease;
+  transition: bottom 0.35s ease;
 
-  z-index: 40; /* ниже шапки */
+  /* ниже шапки */
+  z-index: 20;
 }
 
 .mobile-menu.is-open {
-  transform: translateY(0);
+  /* открыто: верх меню упирается в шапку */
+  bottom: 46px;
 }
 
+/* TOP LINKS */
 .mobile-menu-top {
   display: flex;
   flex-direction: column;
 }
 
 .mobile-menu-top a {
-  display: block;
   font-size: 26px;
   line-height: 42px;
   font-weight: 500;
+
   color: #262626;
   text-decoration: none;
 }
 
+/* BOTTOM LINKS — ЖЁСТКО ВНИЗ */
 .mobile-menu-bottom {
   margin-top: auto;
   display: flex;
@@ -557,10 +609,10 @@
 }
 
 .mobile-menu-bottom a {
-  display: block;
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;
+
   color: #262626;
   text-decoration: none;
 }
