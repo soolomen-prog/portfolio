@@ -543,3 +543,7 @@
   position: absolute;
   bottom: 18px;
 }
+
+.mobile-menu {
+  display: block !important;
+}
