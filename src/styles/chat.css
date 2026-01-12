@@ -550,7 +550,7 @@
 }
 
 .mobile-menu.is-open {
-  bottom: 46;
+  bottom: 0;
 }
 
 /* TOP LINKS */
