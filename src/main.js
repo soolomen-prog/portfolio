@@ -46,8 +46,12 @@ function updateHeader() {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const burger = document.querySelector('.burger');
+  const chatHeader = document.querySelector('.site-header--chat');
+  if (!chatHeader) return;
+
+  const burger = chatHeader.querySelector('.burger');
   const mobileMenu = document.querySelector('.mobile-menu');
+
 
   if (burger && mobileMenu) {
     burger.addEventListener('click', () => {
