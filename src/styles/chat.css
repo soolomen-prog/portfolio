@@ -374,3 +374,63 @@
 .chat-contact-text a:hover {
   color: var(--hover);
 }
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+/* ≤ 1204px — скрываем левый контакт */
+@media (max-width: 1204px) {
+  .chat-contact {
+    display: none;
+  }
+}
+
+/* ≤ 1024px — одна колонка */
+@media (max-width: 1024px) {
+
+  /* grid → одна колонка */
+  .chat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* убираем левую колонку полностью */
+  .chat-left {
+    display: none;
+  }
+
+  /* правая колонка — на всю ширину */
+  .chat-column {
+    padding-left: 46px;
+    padding-right: 46px;
+  }
+
+  /* убираем центральную вертикальную линию */
+  .ui-line--v-center {
+    display: none;
+  }
+
+  /* горизонтальные линии — на всю ширину */
+  .ui-line--h-left {
+    right: 8px;
+  }
+
+  .ui-line--h-right {
+    display: none;
+  }
+}
+
+/* ≤ 500px — мобильные отступы */
+@media (max-width: 500px) {
+
+  .chat-column {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  /* кнопка отправки уже становится тесной */
+  .chat-send {
+    width: auto;
+    padding: 0 20px;
+  }
+}
