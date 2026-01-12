@@ -536,29 +536,44 @@
   right: 0;
   bottom: -230px;
   height: 230px;
+
   background: #eff5fb;
+  padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   transition: bottom 0.35s ease;
   z-index: 10;
-  padding: 18px;
 }
 
 .mobile-menu.is-open {
   bottom: 0;
 }
 
+/* TOP LINKS */
 .mobile-menu-top a {
   display: block;
   font-size: 26px;
   line-height: 42px;
   font-weight: 500;
+
+  color: #262626;
+  text-decoration: none;
 }
 
+/* BOTTOM LINKS */
 .mobile-menu-bottom {
-  position: absolute;
-  bottom: 18px;
+  margin-top: auto;
 }
 
-.mobile-menu a {
+.mobile-menu-bottom a {
+  display: block;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+
   color: #262626;
   text-decoration: none;
 }
