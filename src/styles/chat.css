@@ -279,7 +279,8 @@
 ================================ */
 
 .chat-input-wrapper {
-  padding-bottom: 46px;
+  margin-top: auto;      /* ← прибивает вниз */
+  padding-bottom: 46px; /* десктоп отступ */
 }
 
 .chat-input {
@@ -467,6 +468,21 @@
   height: 36px;
   border-radius: 18px;
   }
+
+    .chat-input-wrapper {
+    padding-bottom: 18px; /* мобильный отступ */
+  }
+
+  .chat-input {
+    height: 50px;
+    border-radius: 25px;
+  }
+
+  .chat-send {
+    height: 36px;
+    border-radius: 18px;
+  }
+
 
 }
 
