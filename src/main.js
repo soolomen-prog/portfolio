@@ -13,7 +13,9 @@ import './styles/chat.css';
 /* ===============================
    DATA / I18N
 ================================ */
-import './projects.js';
+if (!window.location.pathname.includes('chat')) {
+  import('./projects.js');
+}
 import de from './i18n/de.js';
 window.t = de;
 
