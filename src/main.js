@@ -51,7 +51,14 @@ const mobileMenu = document.querySelector('.mobile-menu');
 
 if (burger && mobileMenu) {
   burger.addEventListener('click', () => {
-    burger.classList.toggle('is-open');
+    burger.classList.toggle('is-active');
     mobileMenu.classList.toggle('is-open');
+
   });
+}
+
+const chatInput = document.querySelector('.chat-input-field');
+
+if (chatInput && window.innerWidth <= 1024) {
+  chatInput.blur();
 }

@@ -458,7 +458,7 @@
   display: none;
   position: relative;
   width: 22px;
-  height: 16px;
+  height: 8px;
   background: none;
   border: none;
   cursor: pointer;
@@ -470,7 +470,10 @@
   width: 22px;
   height: 1px;
   background: #000;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
 
 .burger span:nth-child(1) {
@@ -481,14 +484,15 @@
   bottom: 0;
 }
 
-/* open → крест */
-.burger.is-open span:nth-child(1) {
-  transform: rotate(45deg) translateY(7px);
+/* active → крест */
+.burger.is-active span:nth-child(1) {
+  transform: rotate(45deg) translateY(3.5px);
 }
 
-.burger.is-open span:nth-child(2) {
-  transform: rotate(-45deg) translateY(-7px);
+.burger.is-active span:nth-child(2) {
+  transform: rotate(-45deg) translateY(-3.5px);
 }
+
 
 @media (max-width: 860px) {
 
