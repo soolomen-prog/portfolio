@@ -389,28 +389,25 @@
 /* ≤ 1024px — одна колонка */
 @media (max-width: 1024px) {
 
-  /* grid → одна колонка */
   .chat-grid {
     grid-template-columns: 1fr;
   }
 
-  /* убираем левую колонку полностью */
   .chat-left {
     display: none;
   }
 
-  /* правая колонка — на всю ширину */
   .chat-column {
     padding-left: 46px;
     padding-right: 46px;
   }
 
-  /* убираем центральную вертикальную линию */
+  /* центральную линию убираем */
   .ui-line--v-center {
     display: none;
   }
 
-  /* горизонтальные линии — на всю ширину */
+  /* верхнюю линию делаем цельной */
   .ui-line--h-left {
     right: 8px;
   }
@@ -420,7 +417,7 @@
   }
 }
 
-/* ≤ 500px — мобильные отступы */
+/* ≤ 500px — мобильные отступы + типографика */
 @media (max-width: 500px) {
 
   .chat-column {
@@ -428,9 +425,117 @@
     padding-right: 8px;
   }
 
-  /* кнопка отправки уже становится тесной */
+  /* приветственный текст */
+  .chat-message--intro {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  /* текст в инпуте и бабблах */
+  .chat-input-field,
+  .chat-bubble {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  /* hint по центру */
+  .chat-hint {
+    text-align: center;
+  }
+
+  /* кнопка */
   .chat-send {
     width: auto;
     padding: 0 20px;
   }
+}
+
+/* ===============================
+   MOBILE HEADER
+================================ */
+
+.burger {
+  display: none;
+  position: relative;
+  width: 22px;
+  height: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burger span {
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 1px;
+  background: #000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger span:nth-child(1) {
+  top: 0;
+}
+
+.burger span:nth-child(2) {
+  bottom: 0;
+}
+
+/* open → крест */
+.burger.is-open span:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+
+.burger.is-open span:nth-child(2) {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
+@media (max-width: 860px) {
+
+  .header-left-nav,
+  .header-right--chat a {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .header-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* ===============================
+   MOBILE MENU PANEL
+================================ */
+
+.mobile-menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -230px;
+  height: 230px;
+  background: #eff5fb;
+  transition: bottom 0.35s ease;
+  z-index: 10;
+  padding: 18px;
+}
+
+.mobile-menu.is-open {
+  bottom: 0;
+}
+
+.mobile-menu-top a {
+  display: block;
+  font-size: 26px;
+  line-height: 42px;
+  font-weight: 500;
+}
+
+.mobile-menu-bottom {
+  position: absolute;
+  bottom: 18px;
 }

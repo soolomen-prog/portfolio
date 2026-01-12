@@ -46,3 +46,12 @@ function updateHeader() {
 
 document.addEventListener('DOMContentLoaded', updateHeader);
 
+const burger = document.querySelector('.burger');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+if (burger && mobileMenu) {
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('is-open');
+    mobileMenu.classList.toggle('is-open');
+  });
+}
