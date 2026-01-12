@@ -63,7 +63,7 @@
 ================================ */
 
 .site-header--chat {
-  z-index: 30; /* above lines */
+  z-index: 5; /* above lines */
 }
 
 /* left side has extra links */
@@ -463,7 +463,7 @@
   border: none;
   cursor: pointer;
 
-  z-index: 31; /* ← ВОТ ЭТА СТРОКА */
+  z-index: 21; /* ← ВОТ ЭТА СТРОКА */
 }
 
 .burger span {
@@ -546,7 +546,7 @@
   flex-direction: column;
 
   transition: bottom 0.35s ease;
-  z-index: 20;
+  z-index: 100;
 }
 
 .mobile-menu.is-open {
