@@ -1,18 +1,31 @@
-import './styles/base.css'
-import './styles/layout.css'
-import './styles/project.css'
-import './styles/header.css'
-import './styles/responsive.css'
-import './styles/case.css'
-import './styles/about.css'
-import './styles/chat.css'
-import './projects.js'
-import de from './i18n/de.js'
-window.t = de
+/* ===============================
+   STYLES
+================================ */
+
+import './styles/base.css';
+import './styles/layout.css';
+import './styles/project.css';
+import './styles/header.css';
+import './styles/responsive.css';
+import './styles/case.css';
+import './styles/about.css';
+import './styles/chat.css';
+
+/* ===============================
+   DATA / I18N
+================================ */
+
+import './projects.js';
+import de from './i18n/de.js';
+window.t = de;
+
+/* ===============================
+   HEADER (index / about only)
+================================ */
 
 function updateHeader() {
   const header = document.querySelector('.site-header');
-  if (!header) return;
+  if (!header) return; // ⛔️ важно
 
   const navLink = header.querySelector('.header-right .nav-item');
   const nameEl = header.querySelector('.author-name');
@@ -23,7 +36,7 @@ function updateHeader() {
     path === '/about' ||
     path.endsWith('/about.html');
 
-  // Правый пункт
+  // Правый пункт меню
   if (navLink) {
     if (isAbout) {
       navLink.textContent = 'Projekte';
@@ -44,11 +57,19 @@ function updateHeader() {
   }
 }
 
+/* ===============================
+   DOM READY
+================================ */
+
 document.addEventListener('DOMContentLoaded', () => {
 
-  const chatHeader = document.querySelector('.site-header--chat');
+  /* ---------- обычные страницы ---------- */
+  if (document.querySelector('.site-header')) {
+    updateHeader();
+  }
 
-  // работаем ТОЛЬКО если это страница чата
+  /* ---------- CHAT PAGE ONLY ---------- */
+  const chatHeader = document.querySelector('.site-header--chat');
   if (chatHeader) {
     const burger = chatHeader.querySelector('.burger');
     const mobileMenu = document.querySelector('.mobile-menu');
@@ -61,12 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // отключаем автофокус на мобиле
+  /* ---------- disable autofocus on mobile ---------- */
   const chatInput = document.querySelector('.chat-input-field');
   if (chatInput && window.innerWidth <= 1024) {
     chatInput.blur();
   }
 
 });
-
-
