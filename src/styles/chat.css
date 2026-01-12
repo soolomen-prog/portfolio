@@ -534,9 +534,9 @@
   position: fixed;
   left: 0;
   right: 0;
-  bottom: -230px;
+  bottom: -260px;
 
-  height: 230px;
+  min-height: 260px;
   box-sizing: border-box;
 
   background: #eff5fb;
