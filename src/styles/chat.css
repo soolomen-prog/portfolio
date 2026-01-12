@@ -127,6 +127,7 @@
 .chat-right {
   display: flex;
   flex-direction: column;
+  height: 100%;     /* ← ВОТ ЭТОГО НЕ ХВАТАЛО */
   min-height: 0; /* allow chat-content to shrink and scroll */
 }
 
