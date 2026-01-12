@@ -49,12 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const burger = document.querySelector('.burger');
   const mobileMenu = document.querySelector('.mobile-menu');
 
-  if (!burger || !mobileMenu) return;
-
-  burger.addEventListener('click', () => {
-    burger.classList.toggle('is-active');
-    mobileMenu.classList.toggle('is-open');
-  });
+  if (burger && mobileMenu) {
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('is-active');
+      mobileMenu.classList.toggle('is-open');
+    });
+  }
 
   // отключаем автофокус на мобиле
   const chatInput = document.querySelector('.chat-input-field');
@@ -63,3 +63,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
