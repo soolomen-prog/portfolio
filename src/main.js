@@ -47,17 +47,18 @@ function updateHeader() {
 document.addEventListener('DOMContentLoaded', () => {
 
   const chatHeader = document.querySelector('.site-header--chat');
-  if (!chatHeader) return;
 
-  const burger = chatHeader.querySelector('.burger');
-  const mobileMenu = document.querySelector('.mobile-menu');
+  // работаем ТОЛЬКО если это страница чата
+  if (chatHeader) {
+    const burger = chatHeader.querySelector('.burger');
+    const mobileMenu = document.querySelector('.mobile-menu');
 
-
-  if (burger && mobileMenu) {
-    burger.addEventListener('click', () => {
-      burger.classList.toggle('is-active');
-      mobileMenu.classList.toggle('is-open');
-    });
+    if (burger && mobileMenu) {
+      burger.addEventListener('click', () => {
+        burger.classList.toggle('is-active');
+        mobileMenu.classList.toggle('is-open');
+      });
+    }
   }
 
   // отключаем автофокус на мобиле
@@ -67,4 +68,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
 
