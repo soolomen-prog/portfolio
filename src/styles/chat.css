@@ -63,7 +63,7 @@
 ================================ */
 
 .site-header--chat {
-  z-index: 20; /* above lines */
+  z-index: 5; /* above lines */
 }
 
 /* left side has extra links */
