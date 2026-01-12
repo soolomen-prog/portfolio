@@ -62,8 +62,16 @@
    (You already have header.css; we only adjust spacing/weights here)
 ================================ */
 
+/* ВАЖНО: фиксируем нижнюю шапку, чтобы она ВСЕГДА была поверх меню
+   и крестик всегда был кликабельный */
 .site-header--chat {
-  z-index: 5; /* above lines */
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 46px;
+
+  z-index: 30; /* выше mobile-menu */
 }
 
 /* left side has extra links */
@@ -271,7 +279,8 @@
 ================================ */
 
 .chat-input-wrapper {
-  padding-bottom: 46px;
+  margin-top: auto;      /* ← прибивает вниз */
+  padding-bottom: 46px; /* десктоп отступ */
 }
 
 .chat-input {
@@ -448,6 +457,33 @@
     width: auto;
     padding: 0 20px;
   }
+
+  /* уменьшенная высота инпута и кнопки на мобиле */
+  .chat-input {
+  height: 50px;
+  border-radius: 25px;
+  }
+
+  .chat-send {
+  height: 36px;
+  border-radius: 18px;
+  }
+
+    .chat-input-wrapper {
+    padding-bottom: 18px; /* мобильный отступ */
+  }
+
+  .chat-input {
+    height: 50px;
+    border-radius: 25px;
+  }
+
+  .chat-send {
+    height: 36px;
+    border-radius: 18px;
+  }
+
+
 }
 
 /* ===============================
@@ -462,6 +498,8 @@
   background: none;
   border: none;
   cursor: pointer;
+
+  z-index: 31; /* выше шапки */
 }
 
 .burger span {
@@ -476,23 +514,27 @@
     opacity 0.25s ease;
 }
 
+/* делаем симметричный бургер/крест */
+.burger span {
+  top: 50%;
+  transform-origin: center;
+}
+
 .burger span:nth-child(1) {
-  top: 0;
+  transform: translateY(-4px);
 }
 
 .burger span:nth-child(2) {
-  bottom: 0;
+  transform: translateY(4px);
 }
 
-/* active → крест */
 .burger.is-active span:nth-child(1) {
-  transform: rotate(45deg) translateY(3.5px);
+  transform: rotate(45deg);
 }
 
 .burger.is-active span:nth-child(2) {
-  transform: rotate(-45deg) translateY(-3.5px);
+  transform: rotate(-45deg);
 }
-
 
 @media (max-width: 860px) {
 
@@ -506,38 +548,70 @@
   }
 
   .header-center {
-  margin: 0 auto;
+    margin: 0 auto;
   }
 }
 
 /* ===============================
    MOBILE MENU PANEL
+   ВАЖНО: меню открывается НАД шапкой (46px) и НЕ перекрывает её
 ================================ */
 
 .mobile-menu {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: -230px;
-  height: 230px;
+
+  /* закрыто: спрятано под экран, но оставляем место под шапку 46px */
+  bottom: calc(-260px + 46px);
+
+  min-height: 260px;
+  box-sizing: border-box;
+
   background: #eff5fb;
-  transition: bottom 0.35s ease;
-  z-index: 10;
   padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: bottom 0.35s ease;
+
+  /* ниже шапки */
+  z-index: 20;
 }
 
 .mobile-menu.is-open {
-  bottom: 0;
+  /* открыто: верх меню упирается в шапку */
+  bottom: 46px;
+}
+
+/* TOP LINKS */
+.mobile-menu-top {
+  display: flex;
+  flex-direction: column;
 }
 
 .mobile-menu-top a {
-  display: block;
   font-size: 26px;
   line-height: 42px;
   font-weight: 500;
+
+  color: #262626;
+  text-decoration: none;
 }
 
+/* BOTTOM LINKS — ЖЁСТКО ВНИЗ */
 .mobile-menu-bottom {
-  position: absolute;
-  bottom: 18px;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-bottom a {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+
+  color: #262626;
+  text-decoration: none;
 }

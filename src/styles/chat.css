@@ -409,6 +409,7 @@
   .chat-column {
     padding-left: 46px;
     padding-right: 46px;
+    height: calc(100vh - 46px); /* ключевая строка */
   }
 
   /* центральную линию убираем */
