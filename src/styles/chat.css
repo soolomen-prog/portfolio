@@ -535,14 +535,15 @@
   left: 0;
   right: 0;
   bottom: -230px;
+
   height: 230px;
+  box-sizing: border-box;
 
   background: #eff5fb;
   padding: 18px;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
   transition: bottom 0.35s ease;
   z-index: 10;
@@ -553,8 +554,12 @@
 }
 
 /* TOP LINKS */
+.mobile-menu-top {
+  display: flex;
+  flex-direction: column;
+}
+
 .mobile-menu-top a {
-  display: block;
   font-size: 26px;
   line-height: 42px;
   font-weight: 500;
@@ -563,13 +568,14 @@
   text-decoration: none;
 }
 
-/* BOTTOM LINKS */
+/* BOTTOM LINKS — ЖЁСТКО ВНИЗ */
 .mobile-menu-bottom {
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .mobile-menu-bottom a {
-  display: block;
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;
@@ -577,3 +583,4 @@
   color: #262626;
   text-decoration: none;
 }
+
