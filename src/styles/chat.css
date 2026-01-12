@@ -543,3 +543,8 @@
   position: absolute;
   bottom: 18px;
 }
+
+.mobile-menu a {
+  color: #262626;
+  text-decoration: none;
+}
