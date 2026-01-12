@@ -462,6 +462,8 @@
   background: none;
   border: none;
   cursor: pointer;
+
+  z-index: 6; /* ← ВОТ ЭТА СТРОКА */
 }
 
 .burger span {
