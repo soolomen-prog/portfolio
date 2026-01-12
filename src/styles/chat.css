@@ -487,13 +487,27 @@
 }
 
 /* active → крест */
+.burger span {
+  top: 50%;
+  transform-origin: center;
+}
+
+.burger span:nth-child(1) {
+  transform: translateY(-4px);
+}
+
+.burger span:nth-child(2) {
+  transform: translateY(4px);
+}
+
 .burger.is-active span:nth-child(1) {
-  transform: rotate(45deg) translateY(3.5px);
+  transform: rotate(45deg);
 }
 
 .burger.is-active span:nth-child(2) {
-  transform: rotate(-45deg) translateY(-3.5px);
+  transform: rotate(-45deg);
 }
+
 
 
 @media (max-width: 860px) {
