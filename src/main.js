@@ -44,21 +44,22 @@ function updateHeader() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', updateHeader);
+document.addEventListener('DOMContentLoaded', () => {
 
-const burger = document.querySelector('.burger');
-const mobileMenu = document.querySelector('.mobile-menu');
+  const burger = document.querySelector('.burger');
+  const mobileMenu = document.querySelector('.mobile-menu');
 
-if (burger && mobileMenu) {
+  if (!burger || !mobileMenu) return;
+
   burger.addEventListener('click', () => {
     burger.classList.toggle('is-active');
     mobileMenu.classList.toggle('is-open');
-
   });
-}
 
-const chatInput = document.querySelector('.chat-input-field');
+  // отключаем автофокус на мобиле
+  const chatInput = document.querySelector('.chat-input-field');
+  if (chatInput && window.innerWidth <= 1024) {
+    chatInput.blur();
+  }
 
-if (chatInput && window.innerWidth <= 1024) {
-  chatInput.blur();
-}
+});
