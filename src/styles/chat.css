@@ -121,19 +121,13 @@
 .chat-column {
   position: relative;
   padding: 0 46px;
-
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
-
 
 /* ВАЖНО: даём flex-контейнеру возможность "сжиматься" */
 .chat-right {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  min-height: 0; /* КРИТИЧНО для скролла */
+  min-height: 0; /* allow chat-content to shrink and scroll */
 }
 
 /* ===============================
