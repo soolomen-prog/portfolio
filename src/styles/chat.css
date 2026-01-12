@@ -64,8 +64,6 @@
 
 .site-header--chat {
   z-index: 5; /* above lines */
-  position: relative;
-  pointer-events: auto; /* ← ВАЖНО */
 }
 
 /* left side has extra links */
@@ -466,7 +464,6 @@
   cursor: pointer;
 
   z-index: 6; /* ← ВОТ ЭТА СТРОКА */
-  pointer-events: auto; /* ← ОБЯЗАТЕЛЬНО */
 }
 
 .burger span {
