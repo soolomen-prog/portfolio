@@ -463,11 +463,18 @@ html, body {
   }
 
   /* текст в инпуте и бабблах */
-  .chat-input-field,
+  @media (max-width: 500px) {
+
   .chat-bubble {
     font-size: 14px;
     line-height: 22px;
   }
+
+  .chat-input-field {
+    font-size: 16px; /* КЛЮЧЕВО */
+    line-height: 22px;
+  }
+}
 
   /* hint по центру */
   .chat-hint {
