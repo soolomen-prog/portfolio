@@ -62,7 +62,11 @@ function updateHeader() {
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ===== обычные страницы ===== */
-  if (document.querySelector('.site-header')) {
+  const normalHeader = document.querySelector(
+    '.site-header:not(.site-header--chat)'
+  );
+
+  if (normalHeader) {
     updateHeader();
   }
 
