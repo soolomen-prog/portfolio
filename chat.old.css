@@ -142,7 +142,6 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
 
   padding-top: 100px;
   padding-bottom: 28px; /* расстояние от последнего сообщения до поля ввода */
@@ -155,6 +154,12 @@
 .chat-content {
   scrollbar-width: none;
 }
+
+.chat-spacer {
+  flex: 1;
+}
+
+
 
 /* ===============================
    INTRO MESSAGE
@@ -409,6 +414,7 @@
   .chat-column {
     padding-left: 46px;
     padding-right: 46px;
+    height: calc(100vh - 46px); /* ключевая строка */
   }
 
   /* центральную линию убираем */
