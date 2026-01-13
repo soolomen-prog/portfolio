@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     intro.innerHTML = `
       <div class="chat-bot-header">
-        <img src="/src/assets/lukas.svg" alt="Lukas" width="42" height="42" />
+        <img src="public/assets/lukas.svg" alt="Lukas" width="42" height="42" />
       </div>
 
       <p class="chat-intro-text">
