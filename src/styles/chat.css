@@ -104,6 +104,7 @@
 
 .chat-page {
   height: calc(100vh - 46px);
+  min-height: 0;
   position: relative;
   z-index: 3; /* above lines */
 }
@@ -112,6 +113,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100%;
+  min-height: 0;
 }
 
 /* ===============================
@@ -120,31 +122,37 @@
 
 .chat-column {
   position: relative;
-  padding: 0 46px;
+  padding-left: 46px;
+  padding-right: 46px;
+  height: 100%;
+  min-height: 0;
 }
 
 /* ВАЖНО: даём flex-контейнеру возможность "сжиматься" */
 .chat-right {
   display: flex;
   flex-direction: column;
-  min-height: 0; /* allow chat-content to shrink and scroll */
+  height: 100%;
+  min-height: 0;
 }
 
 /* ===============================
    CHAT CONTENT
 ================================ */
 
-/* ВАЖНО: прижимаем контент вниз, и даём 28px до инпута */
 .chat-content {
   flex: 1;
-  min-height: 0; /* required for overflow in flex layouts */
+  min-height: 0;
   overflow-y: auto;
 
   display: flex;
   flex-direction: column;
 
-  padding-top: 100px;
-  padding-bottom: calc(84px + 28px); /* расстояние от последнего сообщения до поля ввода */
+  /* отступ сверху — чтобы приветствие не упиралось в шапку */
+  padding-top: 46px;
+
+  /* отступ снизу — чтобы сообщения НЕ уходили под инпут */
+  padding-bottom: 112px;
 }
 
 /* hide scrollbar */
@@ -153,6 +161,11 @@
 }
 .chat-content {
   scrollbar-width: none;
+}
+
+/* spacer — прижимает сообщения к низу при большой высоте */
+.chat-spacer {
+  flex: 1;
 }
 
 
