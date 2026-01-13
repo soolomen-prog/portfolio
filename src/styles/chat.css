@@ -155,6 +155,11 @@
   scrollbar-width: none;
 }
 
+.chat-spacer {
+  flex: 1;
+}
+
+
 
 /* ===============================
    INTRO MESSAGE
