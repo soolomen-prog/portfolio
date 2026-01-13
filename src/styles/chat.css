@@ -314,7 +314,7 @@ html, body {
   height: 100%;
   border: none;
   background: transparent;
-  padding-left: 34px;
+  padding-left: 18px;
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
@@ -330,7 +330,7 @@ html, body {
 .chat-send {
   width: 180px;
   height: 56px;
-  margin-right: 14px;
+  margin-right: 8px;
   border-radius: 28px;
   border: none;
   background: #262626;
