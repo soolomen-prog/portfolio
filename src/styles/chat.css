@@ -144,7 +144,7 @@
   flex-direction: column;
 
   padding-top: 100px;
-  padding-bottom: 28px; /* расстояние от последнего сообщения до поля ввода */
+  padding-bottom: calc(84px + 28px); /* расстояние от последнего сообщения до поля ввода */
 }
 
 /* hide scrollbar */
@@ -153,10 +153,6 @@
 }
 .chat-content {
   scrollbar-width: none;
-}
-
-.chat-spacer {
-  flex: 1;
 }
 
 
