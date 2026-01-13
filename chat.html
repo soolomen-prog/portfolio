@@ -11,27 +11,22 @@
   <!-- LINES (top + vertical) -->
   <div class="ui-lines" aria-hidden="true">
     <div class="ui-line ui-line--v-center"></div>
-
     <div class="ui-line ui-line--h-left"></div>
     <div class="ui-line ui-line--h-right"></div>
   </div>
 
-  <!-- HEADER (нижняя шапка) -->
-  <!-- Структура взята из index.html и адаптирована под чат-страницу -->
+  <!-- HEADER -->
   <header class="site-header site-header--chat">
     <div class="header-inner">
 
-      <!-- LEFT: name + About + Projects -->
       <div class="header-left header-left--chat">
         <a href="/" class="author-name">Andrei Solomin</a>
-
         <nav class="header-left-nav">
           <a href="/about.html" class="nav-item">About</a>
           <a href="/" class="nav-item">Projects</a>
         </nav>
       </div>
 
-      <!-- CENTER: Let’s talk -->
       <div class="header-center">
         <a href="/chat.html" class="nav-item is-active">
           <svg class="talk-icon" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
@@ -41,14 +36,13 @@
         </a>
       </div>
 
-      <!-- RIGHT: legal -->
       <div class="header-right header-right--chat">
         <a href="/datenschutzerklaerung" class="nav-item nav-item--regular nav-item--legal">Datenschutzerklärung</a>
         <a href="/impressum" class="nav-item nav-item--regular nav-item--legal">Impressum</a>
         <button class="burger" aria-label="Menu">
           <span></span>
           <span></span>
-          </button>
+        </button>
       </div>
 
     </div>
@@ -61,19 +55,10 @@
 
       <!-- LEFT COLUMN -->
       <section class="chat-column chat-left">
-
-        <!-- CONTACT (appears after 20s) -->
         <div class="chat-contact" aria-live="polite">
           <div class="chat-contact-icon">
-          <img
-          src="/src/assets/icons/lukas.svg"
-          alt="Lukas"
-          width="42"
-          height="42"
-          />
-        </div>
-
-
+            <img src="/src/assets/icons/lukas.svg" alt="Lukas" width="42" height="42" />
+          </div>
           <div class="chat-contact-text">
             <p>
               Если вы хотите связаться<br>
@@ -83,82 +68,26 @@
             <a href="mailto:hi@andreisolomin.com">hi@andreisolomin.com</a>
           </div>
         </div>
-
       </section>
 
       <!-- RIGHT COLUMN -->
       <section class="chat-column chat-right">
 
-        <!-- CHAT CONTENT -->
-        <div class="chat-content">
-
-          <div class="chat-spacer"></div>
-
-          <!-- INTRO MESSAGE -->
-          <div class="chat-message chat-message--intro">
-
-            <div class="chat-bot-header">
-            <img
-            src="/src/assets/icons/lukas.svg"
-            alt="Lukas"
-            width="42"
-            height="42"
-            />
-          </div>
-
-
-            <p class="chat-intro-text">
-              Привет! Я Лукас — виртуальный менеджер. Я не человек, а ИИ.<br>
-              Я могу предварительно оценить ваш проект, рассказать об этапах работы, помочь сформировать задачу или принять заказ
-            </p>
-
-            <div class="chat-intro-list">
-              <p class="chat-intro-heading">Основные направления работы:</p>
-              <ul>
-                <li>Веб-дизайн</li>
-                <li>Брендинг и корпоративный стиль</li>
-                <li>Печатные материалы и каталоги</li>
-                <li>Оформление соцсетей</li>
-              </ul>
-            </div>
-
-          </div>
-
-          <!-- DIALOG -->
-          <div class="chat-dialog">
-
-            <!-- BOT MESSAGE -->
-            <div class="chat-message chat-message--bot">
-              <div class="chat-bubble chat-bubble--bot">
-                Добрый день, спасибо за обращение
-              </div>
-              <div class="chat-author">Lukas</div>
-            </div>
-
-            <!-- USER MESSAGE -->
-            <div class="chat-message chat-message--user">
-              <div class="chat-bubble chat-bubble--user">
-                Здравствуйте, подскажите цену на разработку интернет-магазина…
-              </div>
-            </div>
-
-          </div>
-
-        </div>
+        <!-- CHAT CONTENT (ПУСТОЙ, ЗАПОЛНЯЕТСЯ JS) -->
+        <div class="chat-content" id="chatContent"></div>
 
         <!-- INPUT -->
         <div class="chat-input-wrapper">
 
           <div class="chat-input">
-
             <input
               type="text"
               class="chat-input-field"
+              id="chatInput"
               placeholder="Спросите что-нибудь..."
               aria-label="Chat input"
             />
-
-            <button class="chat-send" type="button">Отправить</button>
+            <button class="chat-send" id="chatSend" type="button">Отправить</button>
           </div>
 
           <div class="chat-hint">
@@ -177,18 +106,17 @@
   <!-- APP ENTRY -->
   <script type="module" src="/src/main.js"></script>
 
-<div class="mobile-menu">
-  <div class="mobile-menu-top">
-    <a href="/">Projects</a>
-    <a href="/about.html">About</a>
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-top">
+      <a href="/">Projects</a>
+      <a href="/about.html">About</a>
+    </div>
+    <div class="mobile-menu-bottom">
+      <a href="/impressum">Impressum</a><br>
+      <a href="/datenschutzerklaerung">Datenschutzerklärung</a>
+    </div>
   </div>
-
-  <div class="mobile-menu-bottom">
-    <a href="/impressum">Impressum</a><br>
-    <a href="/datenschutzerklaerung">Datenschutzerklärung</a>
-  </div>
-</div>
-
 
 </body>
 </html>

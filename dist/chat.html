@@ -14,27 +14,22 @@
   <!-- LINES (top + vertical) -->
   <div class="ui-lines" aria-hidden="true">
     <div class="ui-line ui-line--v-center"></div>
-
     <div class="ui-line ui-line--h-left"></div>
     <div class="ui-line ui-line--h-right"></div>
   </div>
 
-  <!-- HEADER (нижняя шапка) -->
-  <!-- Структура взята из index.html и адаптирована под чат-страницу -->
+  <!-- HEADER -->
   <header class="site-header site-header--chat">
     <div class="header-inner">
 
-      <!-- LEFT: name + About + Projects -->
       <div class="header-left header-left--chat">
         <a href="/" class="author-name">Andrei Solomin</a>
-
         <nav class="header-left-nav">
           <a href="/about.html" class="nav-item">About</a>
           <a href="/" class="nav-item">Projects</a>
         </nav>
       </div>
 
-      <!-- CENTER: Let’s talk -->
       <div class="header-center">
         <a href="/chat.html" class="nav-item is-active">
           <svg class="talk-icon" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
@@ -44,14 +39,13 @@
         </a>
       </div>
 
-      <!-- RIGHT: legal -->
       <div class="header-right header-right--chat">
         <a href="/datenschutzerklaerung" class="nav-item nav-item--regular nav-item--legal">Datenschutzerklärung</a>
         <a href="/impressum" class="nav-item nav-item--regular nav-item--legal">Impressum</a>
         <button class="burger" aria-label="Menu">
           <span></span>
           <span></span>
-          </button>
+        </button>
       </div>
 
     </div>
@@ -64,19 +58,10 @@
 
       <!-- LEFT COLUMN -->
       <section class="chat-column chat-left">
-
-        <!-- CONTACT (appears after 20s) -->
         <div class="chat-contact" aria-live="polite">
           <div class="chat-contact-icon">
-          <img
-          src="data:image/svg+xml,%3csvg%20width='42'%20height='42'%20viewBox='0%200%2042%2042'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='21'%20cy='21'%20r='21'%20fill='%23FF0095'/%3e%3cpath%20d='M30%2013C30%2012.8817%2029.9384%2012.7387%2029.7658%2012.6907C28.3559%2012.2963%2027.4723%2011.8464%2026.8129%2011.1871C26.1536%2010.5277%2025.7025%209.64407%2025.3093%208.23416C25.2613%208.06162%2025.1183%208%2025%208C24.8817%208%2024.7387%208.06162%2024.6907%208.23416C24.2963%209.64407%2023.8464%2010.5277%2023.1871%2011.1871C22.5265%2011.8477%2021.6441%2012.2975%2020.2342%2012.6907C20.0616%2012.7387%2020%2012.8817%2020%2013C20%2013.1183%2020.0616%2013.2613%2020.2342%2013.3093C21.6441%2013.7037%2022.5277%2014.1536%2023.1871%2014.8129C23.8477%2015.4735%2024.2975%2016.3559%2024.6907%2017.7658C24.7387%2017.9384%2024.8817%2018%2025%2018C25.1183%2018%2025.2613%2017.9384%2025.3093%2017.7658C25.7037%2016.3559%2026.1536%2015.4723%2026.8129%2014.8129C27.4735%2014.1523%2028.3559%2013.7025%2029.7658%2013.3093C29.9384%2013.2613%2030%2013.1183%2030%2013Z'%20fill='white'/%3e%3cpath%20d='M13.5%2010V25.5H22V28.5H10.5V10H13.5Z'%20fill='white'/%3e%3c/svg%3e"
-          alt="Lukas"
-          width="42"
-          height="42"
-          />
-        </div>
-
-
+            <img src="data:image/svg+xml,%3csvg%20width='42'%20height='42'%20viewBox='0%200%2042%2042'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='21'%20cy='21'%20r='21'%20fill='%23FF0095'/%3e%3cpath%20d='M30%2013C30%2012.8817%2029.9384%2012.7387%2029.7658%2012.6907C28.3559%2012.2963%2027.4723%2011.8464%2026.8129%2011.1871C26.1536%2010.5277%2025.7025%209.64407%2025.3093%208.23416C25.2613%208.06162%2025.1183%208%2025%208C24.8817%208%2024.7387%208.06162%2024.6907%208.23416C24.2963%209.64407%2023.8464%2010.5277%2023.1871%2011.1871C22.5265%2011.8477%2021.6441%2012.2975%2020.2342%2012.6907C20.0616%2012.7387%2020%2012.8817%2020%2013C20%2013.1183%2020.0616%2013.2613%2020.2342%2013.3093C21.6441%2013.7037%2022.5277%2014.1536%2023.1871%2014.8129C23.8477%2015.4735%2024.2975%2016.3559%2024.6907%2017.7658C24.7387%2017.9384%2024.8817%2018%2025%2018C25.1183%2018%2025.2613%2017.9384%2025.3093%2017.7658C25.7037%2016.3559%2026.1536%2015.4723%2026.8129%2014.8129C27.4735%2014.1523%2028.3559%2013.7025%2029.7658%2013.3093C29.9384%2013.2613%2030%2013.1183%2030%2013Z'%20fill='white'/%3e%3cpath%20d='M13.5%2010V25.5H22V28.5H10.5V10H13.5Z'%20fill='white'/%3e%3c/svg%3e" alt="Lukas" width="42" height="42" />
+          </div>
           <div class="chat-contact-text">
             <p>
               Если вы хотите связаться<br>
@@ -86,82 +71,26 @@
             <a href="mailto:hi@andreisolomin.com">hi@andreisolomin.com</a>
           </div>
         </div>
-
       </section>
 
       <!-- RIGHT COLUMN -->
       <section class="chat-column chat-right">
 
-        <!-- CHAT CONTENT -->
-        <div class="chat-content">
-
-          <div class="chat-spacer"></div>
-
-          <!-- INTRO MESSAGE -->
-          <div class="chat-message chat-message--intro">
-
-            <div class="chat-bot-header">
-            <img
-            src="data:image/svg+xml,%3csvg%20width='42'%20height='42'%20viewBox='0%200%2042%2042'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='21'%20cy='21'%20r='21'%20fill='%23FF0095'/%3e%3cpath%20d='M30%2013C30%2012.8817%2029.9384%2012.7387%2029.7658%2012.6907C28.3559%2012.2963%2027.4723%2011.8464%2026.8129%2011.1871C26.1536%2010.5277%2025.7025%209.64407%2025.3093%208.23416C25.2613%208.06162%2025.1183%208%2025%208C24.8817%208%2024.7387%208.06162%2024.6907%208.23416C24.2963%209.64407%2023.8464%2010.5277%2023.1871%2011.1871C22.5265%2011.8477%2021.6441%2012.2975%2020.2342%2012.6907C20.0616%2012.7387%2020%2012.8817%2020%2013C20%2013.1183%2020.0616%2013.2613%2020.2342%2013.3093C21.6441%2013.7037%2022.5277%2014.1536%2023.1871%2014.8129C23.8477%2015.4735%2024.2975%2016.3559%2024.6907%2017.7658C24.7387%2017.9384%2024.8817%2018%2025%2018C25.1183%2018%2025.2613%2017.9384%2025.3093%2017.7658C25.7037%2016.3559%2026.1536%2015.4723%2026.8129%2014.8129C27.4735%2014.1523%2028.3559%2013.7025%2029.7658%2013.3093C29.9384%2013.2613%2030%2013.1183%2030%2013Z'%20fill='white'/%3e%3cpath%20d='M13.5%2010V25.5H22V28.5H10.5V10H13.5Z'%20fill='white'/%3e%3c/svg%3e"
-            alt="Lukas"
-            width="42"
-            height="42"
-            />
-          </div>
-
-
-            <p class="chat-intro-text">
-              Привет! Я Лукас — виртуальный менеджер. Я не человек, а ИИ.<br>
-              Я могу предварительно оценить ваш проект, рассказать об этапах работы, помочь сформировать задачу или принять заказ
-            </p>
-
-            <div class="chat-intro-list">
-              <p class="chat-intro-heading">Основные направления работы:</p>
-              <ul>
-                <li>Веб-дизайн</li>
-                <li>Брендинг и корпоративный стиль</li>
-                <li>Печатные материалы и каталоги</li>
-                <li>Оформление соцсетей</li>
-              </ul>
-            </div>
-
-          </div>
-
-          <!-- DIALOG -->
-          <div class="chat-dialog">
-
-            <!-- BOT MESSAGE -->
-            <div class="chat-message chat-message--bot">
-              <div class="chat-bubble chat-bubble--bot">
-                Добрый день, спасибо за обращение
-              </div>
-              <div class="chat-author">Lukas</div>
-            </div>
-
-            <!-- USER MESSAGE -->
-            <div class="chat-message chat-message--user">
-              <div class="chat-bubble chat-bubble--user">
-                Здравствуйте, подскажите цену на разработку интернет-магазина…
-              </div>
-            </div>
-
-          </div>
-
-        </div>
+        <!-- CHAT CONTENT (ПУСТОЙ, ЗАПОЛНЯЕТСЯ JS) -->
+        <div class="chat-content" id="chatContent"></div>
 
         <!-- INPUT -->
         <div class="chat-input-wrapper">
 
           <div class="chat-input">
-
             <input
               type="text"
               class="chat-input-field"
+              id="chatInput"
               placeholder="Спросите что-нибудь..."
               aria-label="Chat input"
             />
-
-            <button class="chat-send" type="button">Отправить</button>
+            <button class="chat-send" id="chatSend" type="button">Отправить</button>
           </div>
 
           <div class="chat-hint">
@@ -179,18 +108,17 @@
 
   <!-- APP ENTRY -->
 
-<div class="mobile-menu">
-  <div class="mobile-menu-top">
-    <a href="/">Projects</a>
-    <a href="/about.html">About</a>
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-top">
+      <a href="/">Projects</a>
+      <a href="/about.html">About</a>
+    </div>
+    <div class="mobile-menu-bottom">
+      <a href="/impressum">Impressum</a><br>
+      <a href="/datenschutzerklaerung">Datenschutzerklärung</a>
+    </div>
   </div>
-
-  <div class="mobile-menu-bottom">
-    <a href="/impressum">Impressum</a><br>
-    <a href="/datenschutzerklaerung">Datenschutzerklärung</a>
-  </div>
-</div>
-
 
 </body>
 </html>
