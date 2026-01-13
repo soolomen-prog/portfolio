@@ -104,16 +104,14 @@
 
 .chat-page {
   height: calc(100vh - 46px);
-  min-height: 0;
   position: relative;
-  z-index: 3; /* above lines */
+  z-index: 3;
 }
 
 .chat-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100%;
-  min-height: 0;
 }
 
 /* ===============================
@@ -122,37 +120,31 @@
 
 .chat-column {
   position: relative;
-  padding-left: 46px;
-  padding-right: 46px;
-  height: 100%;
-  min-height: 0;
+  padding: 0 46px;
 }
 
-/* ВАЖНО: даём flex-контейнеру возможность "сжиматься" */
+/* ПРАВЫЙ ЧАТ — ОСНОВНОЙ FLEX-КОНТЕЙНЕР */
 .chat-right {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  min-height: 0;
+  height: 100%;       /* КРИТИЧЕСКИ ВАЖНО */
+  min-height: 0;      /* КРИТИЧЕСКИ ВАЖНО */
 }
 
 /* ===============================
-   CHAT CONTENT
+   CHAT CONTENT (SCROLL AREA)
 ================================ */
 
 .chat-content {
-  flex: 1;
-  min-height: 0;
+  flex: 1;                  /* занимает всё пространство над инпутом */
+  min-height: 0;            /* ОБЯЗАТЕЛЬНО для scroll */
   overflow-y: auto;
 
   display: flex;
   flex-direction: column;
 
-  /* отступ сверху — чтобы приветствие не упиралось в шапку */
-  padding-top: 46px;
-
-  /* отступ снизу — чтобы сообщения НЕ уходили под инпут */
-  padding-bottom: 112px;
+  padding-top: 100px;
+  padding-bottom: 28px;     /* нормальный отступ до инпута */
 }
 
 /* hide scrollbar */
@@ -161,11 +153,6 @@
 }
 .chat-content {
   scrollbar-width: none;
-}
-
-/* spacer — прижимает сообщения к низу при большой высоте */
-.chat-spacer {
-  flex: 1;
 }
 
 
