@@ -9,6 +9,8 @@ import './styles/responsive.css';
 import './styles/case.css';
 import './styles/about.css';
 import './styles/chat.css';
+import "./chat.js";
+
 
 /* ===============================
    DATA / I18N
