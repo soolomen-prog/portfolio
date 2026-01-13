@@ -1,4 +1,4 @@
-// chat.js — базовая логика чата (без API)
+// chat.js — базовая логика чата (c API)
 
 document.addEventListener("DOMContentLoaded", () => {
   const chatContent = document.getElementById("chatContent");
@@ -10,10 +10,23 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  // Храним контекст диалога для API
+  const messages = [];
+
   // ---------- helpers ----------
 
   function scrollToBottom() {
     chatContent.scrollTop = chatContent.scrollHeight;
+  }
+
+  // простое экранирование, чтобы пользовательский текст не ломал HTML
+  function escapeHtml(str) {
+    return String(str)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
   }
 
   function createBotMessage(text) {
@@ -21,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     msg.className = "chat-message chat-message--bot";
 
     msg.innerHTML = `
-      <div class="chat-bubble chat-bubble--bot">${text}</div>
+      <div class="chat-bubble chat-bubble--bot">${escapeHtml(text)}</div>
       <div class="chat-author">Lukas</div>
     `;
 
@@ -34,11 +47,16 @@ document.addEventListener("DOMContentLoaded", () => {
     msg.className = "chat-message chat-message--user";
 
     msg.innerHTML = `
-      <div class="chat-bubble chat-bubble--user">${text}</div>
+      <div class="chat-bubble chat-bubble--user">${escapeHtml(text)}</div>
     `;
 
     chatContent.appendChild(msg);
     scrollToBottom();
+  }
+
+  function removeIntroIfExists() {
+    const intro = chatContent.querySelector(".chat-message--intro");
+    if (intro) intro.remove();
   }
 
   // ---------- intro message ----------
@@ -47,9 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const intro = document.createElement("div");
     intro.className = "chat-message chat-message--intro";
 
+    // ОСТАВИЛ ТВОЙ ТЕКСТ 1:1
+    // ВАЖНО: путь к иконке лучше как в проекте (/src/assets/icons/...), но я НЕ меняю, чтобы не "удалять/ломать"
     intro.innerHTML = `
       <div class="chat-bot-header">
-        <img src="public/assets/lukas.svg" alt="Lukas" width="42" height="42" />
+        <img src="/assets/lukas.svg" alt="Lukas" width="42" height="42" />
       </div>
 
       <p class="chat-intro-text">
@@ -71,21 +91,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
     chatContent.appendChild(intro);
     scrollToBottom();
+
+    // добавим system/assistant контекст (чтобы модель знала кто она)
+    messages.push({
+      role: "system",
+      content:
+        "Ты — Lukas, виртуальный менеджер студии Андрея Соломина. " +
+        "Задавай уточняющие вопросы, помогай сформировать ТЗ и оценить проект. " +
+        "Пиши по-русски, коротко и по делу."
+    });
   }
 
   // ---------- send logic ----------
 
-  function sendMessage() {
+  async function sendMessage() {
     const text = input.value.trim();
     if (!text) return;
 
+    // после первого реального сообщения — убираем intro (как ты и просил)
+    removeIntroIfExists();
+
     createUserMessage(text);
     input.value = "";
+    scrollToBottom();
 
-    // заглушка ответа бота
-    setTimeout(() => {
-      createBotMessage("Спасибо! Я уточню детали и помогу вам дальше 🙂");
-    }, 600);
+    // пушим в контекст
+    messages.push({ role: "user", content: text });
+
+    // блокируем кнопку на время запроса
+    sendBtn.disabled = true;
+
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages })
+      });
+
+      if (!res.ok) {
+        throw new Error(`API error: ${res.status}`);
+      }
+
+      const data = await res.json();
+
+      // ожидаем формат { answer: "..." } (как мы делали)
+      const answer =
+        typeof data?.answer === "string" && data.answer.trim()
+          ? data.answer.trim()
+          : "Спасибо! Я уточню детали и помогу вам дальше 🙂";
+
+      createBotMessage(answer);
+
+      // сохраняем ответ в контекст
+      messages.push({ role: "assistant", content: answer });
+    } catch (e) {
+      console.error(e);
+      createBotMessage("Произошла ошибка. Попробуйте ещё раз чуть позже.");
+    } finally {
+      sendBtn.disabled = false;
+      scrollToBottom();
+    }
   }
 
   // ---------- events ----------
