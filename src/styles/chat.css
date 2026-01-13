@@ -314,7 +314,7 @@ html, body {
   height: 100%;
   border: none;
   background: transparent;
-  padding-left: 18px;
+  padding-left: 34px;
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
@@ -330,7 +330,7 @@ html, body {
 .chat-send {
   width: 180px;
   height: 56px;
-  margin-right: 8px;
+  margin-right: 14px;
   border-radius: 28px;
   border: none;
   background: #262626;
@@ -473,6 +473,7 @@ html, body {
   .chat-input-field {
     font-size: 16px; /* КЛЮЧЕВО */
     line-height: 22px;
+    padding-left: 18px;
   }
 }
 
@@ -485,6 +486,7 @@ html, body {
   .chat-send {
     width: auto;
     padding: 0 20px;
+    margin-right: 8px;
   }
 
   /* уменьшенная высота инпута и кнопки на мобиле */
