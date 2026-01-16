@@ -4,7 +4,7 @@ export default {
 
   header: {
     title: 'TOLK',
-    subtitle: 'Corporate Identity eines Immobilienentwicklers',
+    subtitle: 'Immobilienentwickler',
     info: 'Identity / Brandbook',
     year: '2024',
   },

@@ -6,6 +6,7 @@ import has from '../cases/branding/has.js';
 import tolk from '../cases/branding/tolk.js';
 import dius from '../cases/branding/dius.js';
 import dstation from '../cases/webdesign/dstation.js';
+import neweclectic from '../cases/branding/neweclectic.js';
 
 /**
  * ВАЖНО:
@@ -18,6 +19,7 @@ const casesMap = {
   has,
   tolk,
   dius,
+  neweclectic,
 };
 
 /**

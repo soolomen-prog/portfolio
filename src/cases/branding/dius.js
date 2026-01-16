@@ -4,7 +4,7 @@ export default {
 
   header: {
     title: 'DIUS',
-    subtitle: 'Corporate Design eines Businesscenters',
+    subtitle: 'Businesscenter',
     info: 'Identity / Guideline',
     year: '2024',
   },

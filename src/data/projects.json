@@ -59,7 +59,7 @@
     "id": "tolk",
     "category": "branding",
     "title": "TOLK",
-    "subtitle": "Corporate Identity eines Immobilienentwicklers",
+    "subtitle": "Immobilienentwickler",
     "features": ["Identity", "Brandbook"],
     "year": 2024,
     "coverImage": "/img/tolk/cover.jpg",
@@ -71,10 +71,25 @@
   },
 
   {
+    "id": "neweclectic",
+    "category": "branding",
+    "title": "Neweclectic",
+    "subtitle": "Mehrfamilienhaus",
+    "features": ["Identity", "Gideline"],
+    "year": 2023,
+    "coverImage": "/img/neweclectic/cover.jpg",
+    "homeDescription": "Submarke eines neuen Mehrfamilienhauses im Zentrum von Omsk für das Unternehmen Newton. Das visuelle Konzept basiert auf der Idee der Kreuzung zweier Straßen",
+    "side": "right",
+    "visibleOnHome": true,
+    "order": 4
+
+  },
+
+  {
     "id": "dius",
     "category": "branding",
     "title": "DIUS",
-    "subtitle": "Corporate Design eines Businesscenters",
+    "subtitle": "Businesscenter",
     "features": ["Identity", "Guideline"],
     "year": 2024,
     "coverImage": "/img/dius/cover.jpg",
