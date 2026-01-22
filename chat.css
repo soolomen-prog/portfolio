@@ -253,6 +253,7 @@
   font-size: 18px;
   line-height: 24px;
   font-weight: 400; /* REGULAR */
+   white-space: pre-line;
 }
 
 /* BOT */
