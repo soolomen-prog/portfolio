@@ -29,12 +29,17 @@ document.addEventListener("DOMContentLoaded", () => {
       .replaceAll("'", "&#039;");
   }
 
+  function formatBotText(text) {
+  return escapeHtml(text).replace(/\n/g, "<br>");
+  }
+
+
   function createBotMessage(text) {
     const msg = document.createElement("div");
     msg.className = "chat-message chat-message--bot";
 
     msg.innerHTML = `
-      <div class="chat-bubble chat-bubble--bot">${escapeHtml(text)}</div>
+      <div class="chat-bubble chat-bubble--bot">${formatBotText(text)}</div>
       <div class="chat-author">Lukas</div>
     `;
 
