@@ -274,4 +274,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // ---------- init ----------
 
   showIntro();
-});
+
+  async function sendLead(email, summary) {
+  const response = await fetch("/api/send-lead", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email,
+      summary,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error("Email send failed");
+  }
+}
