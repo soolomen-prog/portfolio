@@ -292,3 +292,5 @@ document.addEventListener("DOMContentLoaded", () => {
     throw new Error("Email send failed");
   }
 }
+
+});
