@@ -23,10 +23,33 @@ export default async function handler(req, res) {
       max_tokens: 500,
     });
 
-    const answer = completion.choices[0]?.message?.content;
+    let answer =
+      completion.choices[0]?.message?.content ||
+      "Я не смог сформулировать ответ, попробуйте иначе.";
+
+    // ---------- LEAD PARSING ----------
+    let lead = null;
+
+    const leadMatch = answer.match(
+      /<<<LEAD>>>[\s\S]*?email:\s*(.+)\nsummary:\n([\s\S]*?)<<<END>>>/
+    );
+
+    if (leadMatch) {
+      lead = {
+        email: leadMatch[1].trim(),
+        summary: leadMatch[2].trim(),
+      };
+
+      // убираем служебный блок из ответа пользователю
+      answer = answer
+        .replace(/<<<LEAD>>>[\s\S]*?<<<END>>>/, "")
+        .trim();
+    }
+    // ---------- END LEAD PARSING ----------
 
     return res.status(200).json({
-      answer: answer || "Я не смог сформулировать ответ, попробуйте иначе.",
+      answer,
+      lead,
     });
   } catch (error) {
     console.error("Chat API error:", error);
