@@ -60,14 +60,11 @@ function updateHeader() {
 ================================ */
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ===== обычные страницы ===== */
+  /* ===== HEADER ===== */
   const normalHeader = document.querySelector(
     '.site-header:not(.site-header--chat)'
   );
-
-  if (normalHeader) {
-    updateHeader();
-  }
+  if (normalHeader) updateHeader();
 
   /* ===== CHAT PAGE ===== */
   const chatHeader = document.querySelector('.site-header--chat');
@@ -91,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ===============================
      SCROLL HINT (HOME ONLY)
-  =============================== */
+  ============================== */
 
   const isHome =
     window.location.pathname === '/' ||
@@ -103,13 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (sessionStorage.getItem('scrollHintShown')) return;
   sessionStorage.setItem('scrollHintShown', 'true');
 
-  const web = document
-    .querySelector('#web-projects')
-    ?.closest('.projects-column');
-
-  const branding = document
-    .querySelector('#branding-projects')
-    ?.closest('.projects-column');
+  const web = document.querySelector('.projects-column.web-design');
+  const branding = document.querySelector('.projects-column.branding');
 
   if (!web || !branding) return;
 
@@ -128,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, delay);
   };
 
-  // сначала веб, потом брендинг
   hintScroll(web, 400);
   hintScroll(branding, 1400);
 });
