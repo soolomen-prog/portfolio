@@ -90,12 +90,15 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ===============================
      SCROLL HINT (HOME ONLY)
   ============================== */
-
+console.log('📍 pathname:', window.location.pathname);
+   
   const isHome =
     window.location.pathname === '/' ||
     window.location.pathname.endsWith('/index.html');
 
   if (!isHome) return;
+
+   console.log('🔥 DOMContentLoaded fired');
 
   // только один раз за сессию
   if (sessionStorage.getItem('scrollHintShown')) return;
