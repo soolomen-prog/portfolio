@@ -88,24 +88,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ===============================
-     SCROLL HINT (HOME ONLY)
-  ============================== */
-console.log('📍 pathname:', window.location.pathname);
-   
+   SCROLL HINT (HOME ONLY)
+=============================== */
+
+document.addEventListener('projectsRendered', () => {
   const isHome =
     window.location.pathname === '/' ||
     window.location.pathname.endsWith('/index.html');
 
   if (!isHome) return;
 
-   console.log('🔥 DOMContentLoaded fired');
-
   // только один раз за сессию
   if (sessionStorage.getItem('scrollHintShown')) return;
   sessionStorage.setItem('scrollHintShown', 'true');
 
-  const web = document.querySelector('.projects-column.web-design');
-  const branding = document.querySelector('.projects-column.branding');
+  const web = document.getElementById('web-projects');
+  const branding = document.getElementById('branding-projects');
 
   if (!web || !branding) return;
 
@@ -124,6 +122,9 @@ console.log('📍 pathname:', window.location.pathname);
     }, delay);
   };
 
+  // сначала Web
   hintScroll(web, 400);
+
+  // потом Branding
   hintScroll(branding, 1400);
 });
