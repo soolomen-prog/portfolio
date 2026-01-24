@@ -89,29 +89,4 @@ document.addEventListener('DOMContentLoaded', () => {
   if (chatInput && window.innerWidth <= 1024) {
     chatInput.blur();
   }
-   document.addEventListener("DOMContentLoaded", () => {
-  // чтобы не раздражать при каждом заходе
-  if (sessionStorage.getItem("scrollHintShown")) return;
-  sessionStorage.setItem("scrollHintShown", "true");
-
-  const web = document.querySelector(".projects-column.web-design");
-  const branding = document.querySelector(".projects-column.branding");
-
-  if (!web || !branding) return;
-
-  const hintScroll = (el, delay = 0) => {
-    setTimeout(() => {
-      const start = el.scrollTop;
-      const delta = 80; // насколько "подсказать" скролл
-
-      el.scrollTo({ top: start + delta, behavior: "smooth" });
-
-      setTimeout(() => {
-        el.scrollTo({ top: start, behavior: "smooth" });
-      }, 600);
-    }, delay);
-  };
-
-  hintScroll(web, 400);        // сначала веб
-  hintScroll(branding, 1400);  // потом брендинг
 });
