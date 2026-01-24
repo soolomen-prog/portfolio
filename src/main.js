@@ -1,4 +1,5 @@
 console.log('🔥 main.js loaded');
+
 /* ===============================
    STYLES
 ================================ */
@@ -86,12 +87,15 @@ document.addEventListener('DOMContentLoaded', () => {
   if (chatInput && window.innerWidth <= 1024) {
     chatInput.blur();
   }
+});
 
-  /* ===============================
+/* ===============================
    SCROLL HINT (HOME ONLY)
-=============================== */
-
+   Ждём, пока проекты реально появятся
+================================ */
 document.addEventListener('projectsRendered', () => {
+  console.log('✨ projectsRendered');
+
   const isHome =
     window.location.pathname === '/' ||
     window.location.pathname.endsWith('/index.html');
@@ -122,9 +126,6 @@ document.addEventListener('projectsRendered', () => {
     }, delay);
   };
 
-  // сначала Web
   hintScroll(web, 400);
-
-  // потом Branding
   hintScroll(branding, 1400);
 });
