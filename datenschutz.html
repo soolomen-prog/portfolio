@@ -3,119 +3,271 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Datenschutzerklärung – Andrei Solomin</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E15SGHSW7Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E15SGHSW7Q');
+  </script>
 </head>
 
-<body>
+<body class="page-about">
 
-<!-- BOTTOM HEADER (CHAT STYLE) -->
-<header class="site-header site-header--chat">
-  <div class="header-inner">
-    <div class="header-left">
-      <a href="/" class="author-name">Andrei Solomin</a>
+  <!-- LINES (как на chat) -->
+  <div class="ui-lines" aria-hidden="true">
+    <div class="ui-line ui-line--v-center"></div>
+    <div class="ui-line ui-line--h-left"></div>
+    <div class="ui-line ui-line--h-right"></div>
+  </div>
+
+  <!-- HEADER (как в chat.html) -->
+  <header class="site-header site-header--chat">
+    <div class="header-inner">
+
+      <div class="header-left header-left--chat">
+        <a href="/" class="author-name">Andrei Solomin</a>
+        <nav class="header-left-nav">
+          <a href="/about.html" class="nav-item">About</a>
+          <a href="/" class="nav-item">Projects</a>
+        </nav>
+      </div>
+
+      <div class="header-center">
+        <a href="/chat.html" class="nav-item">
+          <svg class="talk-icon" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
+            <path d="M14 7C14 6.83436 13.9137 6.63421 13.6722 6.56692C11.6983 6.01479 10.4612 5.38501 9.53808 4.46192C8.61499 3.53883 7.98349 2.3017 7.43308 0.327828C7.36579 0.0862706 7.16564 0 7 0C6.83436 0 6.63421 0.0862706 6.56692 0.327828C6.01651 2.3017 5.38501 3.53883 4.46192 4.46192C3.53883 5.38501 2.3017 6.01651 0.327828 6.56692C0.0862706 6.63421 0 6.83436 0 7C0 7.16564 0.0862706 7.36579 0.327828 7.43308C2.3017 7.98349 3.53883 8.61499 4.46192 9.53808C5.38501 10.4612 6.01651 11.6983 6.56692 13.6722C6.63421 13.9137 6.83436 14 7 14C7.16564 14 7.36579 13.9137 7.43308 13.6722C7.98349 11.6983 8.61499 10.4612 9.53808 9.53808C10.4612 8.61499 11.6983 7.98349 13.6722 7.43308C13.9137 7.36579 14 7.16564 14 7Z"/>
+          </svg>
+          <span>Let’s talk</span>
+        </a>
+      </div>
+
+      <div class="header-right header-right--chat">
+        <a href="/datenschutzerklaerung.html" class="nav-item nav-item--regular nav-item--legal is-active">Datenschutzerklärung</a>
+        <a href="/impressum.html" class="nav-item nav-item--regular nav-item--legal">Impressum</a>
+        <button class="burger" aria-label="Menu">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN (структура 1-в-1 как about.html: about-layout + about-left + about-right) -->
+  <main class="about-layout" aria-label="Datenschutzerklärung">
+
+    <!-- LEFT COLUMN (пусто, но структуру как в about сохраняем) -->
+    <div class="about-left">
+      <!-- линия на том же уровне, что линия под заголовком справа -->
+      <div class="about-section about-section--cv about-left-cv" aria-hidden="true">
+        <div class="about-label about-label--ghost">CV</div>
+      </div>
+
+      <!-- вместо фото — пустой блок, но структура не ломается -->
+      <div class="about-section about-section--photo">
+        <div></div>
+        <div></div>
+      </div>
     </div>
 
-    <div class="header-center">
-      <a href="/chat.html" class="nav-item">
-        <span>Let’s talk</span>
-      </a>
-    </div>
+    <!-- RIGHT COLUMN -->
+    <section class="about-right">
 
-    <div class="header-right">
-      <a href="/impressum.html" class="nav-item">Impressum</a>
+      <!-- TITLE (используем about-section--cv как в about) -->
+      <div class="about-section about-section--cv">
+        <div class="about-label">Datenschutzerklärung — Let’s talk (Chat)</div>
+      </div>
+
+      <!-- 1 -->
+      <div class="about-section">
+        <div class="about-label">1. Allgemeine Hinweise</div>
+        <div class="about-text">
+          <p>
+            Der Schutz Ihrer personenbezogenen Daten ist mir ein wichtiges Anliegen.
+            Nachfolgend informiere ich Sie darüber, wie Daten im Rahmen der Nutzung des Chat-Bereichs „Let’s talk“
+            auf dieser Website verarbeitet werden.
+            <br><br>
+            Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO):<br>
+            Andrei Solomin<br>
+            E-Mail: <a href="mailto:hi@andreisolomin.com">hi@andreisolomin.com</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="about-section">
+        <div class="about-label">2. Zweck des Chat-Bereichs</div>
+        <div class="about-text">
+          <p>
+            Der Chat dient der unverbindlichen ersten Kontaktaufnahme sowie der inhaltlichen Orientierung
+            zu möglichen Projekten und Leistungen.<br><br>
+            Die Nutzung des Chats ist grundsätzlich ohne Angabe personenbezogener Daten möglich und vorgesehen.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="about-section">
+        <div class="about-label">3. Verarbeitete Daten</div>
+        <div class="about-text">
+          <p>
+            Bei der Nutzung des Chat-Bereichs können folgende Daten verarbeitet werden:
+            <br><br>
+            Inhalte der eingegebenen Chat-Nachrichten<br>
+            Technische Metadaten (z.&nbsp;B. Zeitpunkt der Anfrage)
+            <br><br>
+            Der Chat ist nicht dafür vorgesehen, personenbezogene oder sensible Daten zu erfassen.
+            Bitte geben Sie insbesondere keine der folgenden Informationen im Chat ein:
+            <br><br>
+            vollständige Namen<br>
+            E-Mail-Adressen<br>
+            Telefonnummern<br>
+            Adress-, Zahlungs- oder sonstige sensible Daten
+            <br><br>
+            Eingegebene Chat-Nachrichten werden nicht dauerhaft gespeichert und nicht einzelnen Personen zugeordnet.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 (zweiter Block wie в макете) -->
+      <div class="about-section">
+        <div class="about-label">3. Verarbeitete Daten</div>
+        <div class="about-text">
+          <p>
+            Die Angabe einer E-Mail-Adresse erfolgt ausschließlich freiwillig und nur nach ausdrücklicher Zustimmung des Nutzers,
+            wenn eine Weiterleitung der Anfrage an den Betreiber gewünscht ist.
+            <br><br>
+            Sofern der Nutzer ausdrücklich zustimmt und eine E-Mail-Adresse angibt, wird diese ausschließlich zum Zweck
+            der Kontaktaufnahme an den Betreiber der Website weitergeleitet.
+            <br><br>
+            Eine darüberhinausgehende Nutzung oder Speicherung der E-Mail-Adresse findet nicht statt.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="about-section">
+        <div class="about-label">4. Einsatz von KI-Technologie (ChatGPT)</div>
+        <div class="about-text">
+          <p>
+            Zur Bereitstellung der Chat-Funktion wird ein KI-basierter Dienst (ChatGPT) verwendet, der auf der Technologie von OpenAI basiert.
+            <br><br>
+            Die von Ihnen eingegebenen Chat-Nachrichten können zur Verarbeitung an Server von OpenAI übermittelt werden.
+            Die Verarbeitung erfolgt gemäß den Datenschutzbestimmungen von OpenAI.
+            <br><br>
+            Weitere Informationen zum Datenschutz bei OpenAI finden Sie unter:<br>
+            <a href="https://openai.com/privacy" target="_blank" rel="noopener noreferrer">https://openai.com/privacy</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="about-section">
+        <div class="about-label">5. Speicherung und Nutzung von Chat-Inhalten</div>
+        <div class="about-text">
+          <p>
+            Die Verarbeitung der Chat-Inhalte erfolgt ausschließlich zur Bereitstellung der Chat-Funktion und nicht zu Trainingszwecken.
+            <br><br>
+            Zur technischen und inhaltlichen Weiterentwicklung des Chat-Systems können ausschließlich anonymisierte und aggregierte
+            Interaktionsdaten in anonymisierter Form gespeichert und ausgewertet werden.
+            <br><br>
+            Dabei erfolgt:<br><br>
+            keine Speicherung von Nutzer-Nachrichten<br>
+            keine Zuordnung zu bestimmten Personen<br>
+            keine Profilbildung
+            <br><br>
+            Die Auswertung dient ausschließlich der Verbesserung der Qualität und Verständlichkeit des Chat-Angebots.
+          </p>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="about-section">
+        <div class="about-label">6. Weitergabe von Daten</div>
+        <div class="about-text">
+          <p>
+            Eine Weitergabe von Chat-Inhalten an Dritte erfolgt nicht, mit Ausnahme der technisch notwendigen Verarbeitung durch den unter Punkt 4
+            genannten KI-Dienstleister.
+            <br><br>
+            Zur Weiterleitung von Anfragen per E-Mail wird ein externer E-Mail-Dienstleister (Resend) eingesetzt.
+            <br><br>
+            Die Verarbeitung erfolgt ausschließlich zur technischen Zustellung der Nachricht und gemäß den geltenden Datenschutzbestimmungen.
+          </p>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="about-section">
+        <div class="about-label">7. Ihre Rechte</div>
+        <div class="about-text">
+          <p>
+            Sofern im Einzelfall personenbezogene Daten verarbeitet wurden, haben Sie gemäß Datenschutz-Grundverordnung (DSGVO) das Recht auf:
+            <br><br>
+            Auskunft über diese Daten<br>
+            Berichtigung unrichtiger Daten<br>
+            Löschung der betreffenden Daten, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen
+            <br><br>
+            Da im Chat selbst keine personenbezogenen Nutzerdaten dauerhaft gespeichert werden, ist eine nachträgliche Löschung in der Regel nicht erforderlich.
+            <br><br>
+            Sollten personenbezogene Daten im Rahmen einer späteren Kontaktaufnahme außerhalb des Chats (z.&nbsp;B. per E-Mail) verarbeitet werden,
+            gelten hierfür die entsprechenden gesetzlichen Datenschutzbestimmungen.
+            <br><br>
+            Anfragen können jederzeit per E-Mail an <a href="mailto:hi@andreisolomin.com">hi@andreisolomin.com</a> gestellt werden.
+          </p>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="about-section">
+        <div class="about-label">8. Cookies und Tracking</div>
+        <div class="about-text">
+          <p>
+            Der Chat-Bereich verwendet keine eigenen Cookies und kein Tracking zur individuellen Nutzeridentifikation.
+            <br><br>
+            Informationen zu eventuell eingesetzten Analyse- oder Statistik-Tools auf dieser Website finden Sie in den entsprechenden Abschnitten dieser Datenschutzerklärung.
+          </p>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="about-section about-section--last">
+        <div class="about-label">9. Hinweis zur Nutzung</div>
+        <div class="about-text">
+          <p>
+            Der Chat stellt kein verbindliches Angebot und keine rechtliche oder geschäftliche Beratung dar.<br>
+            Die Nutzung erfolgt freiwillig und auf eigene Verantwortung.
+          </p>
+        </div>
+      </div>
+
+      <!-- нижний отступ как в about, структуру сохраняем -->
+      <div class="about-section about-section--download">
+        <div></div>
+        <div></div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- APP ENTRY -->
+  <script type="module" src="/src/main.js"></script>
+
+  <!-- MOBILE MENU (как в chat.html) -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-top">
+      <a href="/">Projects</a>
+      <a href="/about.html">About</a>
+    </div>
+    <div class="mobile-menu-bottom">
+      <a href="/impressum.html">Impressum</a><br>
+      <a href="/datenschutzerklaerung.html">Datenschutzerklärung</a>
     </div>
   </div>
-</header>
 
-<main class="about">
-
-  <section class="about-row">
-    <div class="about-col-left"></div>
-    <div class="about-col-right">
-      <h1>Datenschutzerklärung</h1>
-    </div>
-  </section>
-
-  <section class="about-row">
-    <div class="about-col-left">1. Allgemeine Hinweise</div>
-    <div class="about-col-right">
-      <p>
-        Der Schutz Ihrer personenbezogenen Daten ist mir ein wichtiges Anliegen.
-        Nachfolgend informiere ich Sie darüber, wie Daten im Rahmen der Nutzung
-        des Chat-Bereichs „Let’s talk“ auf dieser Website verarbeitet werden.
-      </p>
-
-      <p>
-        Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO):<br>
-        Andrei Solomin<br>
-        E-Mail: hi@andreisolomin.com
-      </p>
-    </div>
-  </section>
-
-  <section class="about-row">
-    <div class="about-col-left">2. Zweck des Chat-Bereichs</div>
-    <div class="about-col-right">
-      <p>
-        Der Chat dient der unverbindlichen ersten Kontaktaufnahme sowie der
-        inhaltlichen Orientierung zu möglichen Projekten und Leistungen.
-      </p>
-      <p>
-        Die Nutzung des Chats ist grundsätzlich ohne Angabe personenbezogener
-        Daten möglich und vorgesehen.
-      </p>
-    </div>
-  </section>
-
-  <section class="about-row">
-    <div class="about-col-left">3. Verarbeitete Daten</div>
-    <div class="about-col-right">
-      <p>Bei der Nutzung des Chat-Bereichs können folgende Daten verarbeitet werden:</p>
-      <p>
-        Inhalte der eingegebenen Chat-Nachrichten<br>
-        Technische Metadaten (z. B. Zeitpunkt der Anfrage)
-      </p>
-      <p>
-        Bitte geben Sie insbesondere keine sensiblen personenbezogenen Daten ein
-        (z. B. vollständige Namen, E-Mail-Adressen, Telefonnummern).
-      </p>
-    </div>
-  </section>
-
-  <section class="about-row">
-    <div class="about-col-left">4. Einsatz von KI-Technologie</div>
-    <div class="about-col-right">
-      <p>
-        Zur Bereitstellung der Chat-Funktion wird ein KI-basierter Dienst
-        (ChatGPT) verwendet.
-      </p>
-      <p>
-        Die Verarbeitung erfolgt gemäß den Datenschutzbestimmungen von OpenAI:
-        <br>
-        <a href="https://openai.com/privacy" target="_blank" rel="noopener">
-          https://openai.com/privacy
-        </a>
-      </p>
-    </div>
-  </section>
-
-  <section class="about-row">
-    <div class="about-col-left">5. Ihre Rechte</div>
-    <div class="about-col-right">
-      <p>
-        Sie haben das Recht auf Auskunft, Berichtigung, Löschung sowie
-        Einschränkung der Verarbeitung Ihrer personenbezogenen Daten.
-      </p>
-      <p>
-        Anfragen können jederzeit per E-Mail an hi@andreisolomin.com gestellt
-        werden.
-      </p>
-    </div>
-  </section>
-
-</main>
-
-<script type="module" src="/src/main.js"></script>
 </body>
 </html>
-
