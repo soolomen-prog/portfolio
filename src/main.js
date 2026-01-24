@@ -9,8 +9,7 @@ import './styles/responsive.css';
 import './styles/case.css';
 import './styles/about.css';
 import './styles/chat.css';
-import "./chat.js";
-
+import './chat.js';
 
 /* ===============================
    DATA / I18N
@@ -26,7 +25,7 @@ window.t = de;
 ================================ */
 function updateHeader() {
   const header = document.querySelector('.site-header');
-  if (!header) return; // ⛔️ ВАЖНО
+  if (!header) return;
 
   const navLink = header.querySelector('.header-right .nav-item');
   const nameEl = header.querySelector('.author-name');
@@ -89,4 +88,49 @@ document.addEventListener('DOMContentLoaded', () => {
   if (chatInput && window.innerWidth <= 1024) {
     chatInput.blur();
   }
+
+  /* ===============================
+     SCROLL HINT (HOME ONLY)
+  ============================== */
+
+  const isHome =
+    window.location.pathname === '/' ||
+    window.location.pathname.endsWith('/index.html');
+
+  if (!isHome) return;
+
+  // 👉 показываем подсказку только один раз за сессию
+  if (sessionStorage.getItem('scrollHintShown')) return;
+  sessionStorage.setItem('scrollHintShown', 'true');
+
+  const web = document.querySelector('.projects-column.web-design');
+  const branding = document.querySelector('.projects-column.branding');
+
+  if (!web || !branding) return;
+
+  const hintScroll = (el, delay = 0) => {
+    // если скролла нет — не дергаем
+    if (el.scrollHeight <= el.clientHeight) return;
+
+    setTimeout(() => {
+      const start = el.scrollTop;
+      const delta = 80;
+
+      el.scrollTo({
+        top: start + delta,
+        behavior: 'smooth'
+      });
+
+      setTimeout(() => {
+        el.scrollTo({
+          top: start,
+          behavior: 'smooth'
+        });
+      }, 600);
+    }, delay);
+  };
+
+  // сначала Web design, потом Branding
+  hintScroll(web, 400);
+  hintScroll(branding, 1400);
 });
