@@ -8,7 +8,10 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         about: resolve(__dirname, 'about.html'),
         chat: resolve(__dirname, 'chat.html'),
-        admin: resolve(__dirname, 'admin.html')
+        admin: resolve(__dirname, 'admin.html'),
+        datenschutz: resolve(__dirname, 'datenschutz.html'),
+        impressum: resolve(__dirname, 'impressum.html')
+        
       }
     }
   }
