@@ -188,3 +188,6 @@ renderProjects();
 initCaseRouter();
 openCaseFromHash();
 window.addEventListener('hashchange', openCaseFromHash);
+
+// projects.js
+document.dispatchEvent(new Event('projectsRendered'));
