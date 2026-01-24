@@ -31,9 +31,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function formatBotText(text) {
   return escapeHtml(text)
-    .replace(/\n{2,}/g, "\n") // схлопываем пустые строки
+    // схлопываем 3+ переводов строк в 2
+    .replace(/\n{3,}/g, "\n\n")
+    // 2 перевода строки = новый абзац
+    .replace(/\n\n/g, "<br><br>")
+    // 1 перевод строки = перенос
     .replace(/\n/g, "<br>");
 }
+
 
 
   function createBotMessage(text) {
