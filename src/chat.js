@@ -30,8 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function formatBotText(text) {
-  return escapeHtml(text).replace(/\n/g, "<br>");
-  }
+  return escapeHtml(text)
+    .replace(/\n{2,}/g, "\n") // схлопываем пустые строки
+    .replace(/\n/g, "<br>");
+}
 
 
   function createBotMessage(text) {
