@@ -259,16 +259,42 @@ summary:
 
       const data = await res.json();
 
-      // ожидаем формат { answer: "..." } (как мы делали)
-      const answer =
-        typeof data?.answer === "string" && data.answer.trim()
-          ? data.answer.trim()
-          : "Спасибо! Я уточню детали и помогу вам дальше 🙂";
+// 1️⃣ сначала получаем ответ модели
+const answer =
+  typeof data?.answer === "string" && data.answer.trim()
+    ? data.answer.trim()
+    : "Спасибо! Я уточню детали и помогу вам дальше 🙂";
 
-      createBotMessage(answer);
+let cleanAnswer = answer;
 
-      // сохраняем ответ в контекст
-      messages.push({ role: "assistant", content: answer });
+// 2️⃣ обработка LEAD-блока
+const leadMatch = answer.match(
+  /<<<LEAD>>>[\s\S]*?email:\s*(.+?)\nsummary:\n([\s\S]*?)<<<END>>>/
+);
+
+if (leadMatch) {
+  const email = leadMatch[1].trim();
+  const summary = leadMatch[2].trim();
+
+  try {
+    await sendLead(email, summary);
+  } catch (e) {
+    console.error("Send lead error", e);
+  }
+
+  // убираем служебный блок из текста для пользователя
+  cleanAnswer = answer.replace(
+    /<<<LEAD>>>[\s\S]*?<<<END>>>/,
+    ""
+  ).trim();
+}
+
+// 3️⃣ показываем пользователю
+createBotMessage(cleanAnswer);
+
+// 4️⃣ сохраняем в контекст
+messages.push({ role: "assistant", content: cleanAnswer });
+
     } catch (e) {
       console.error(e);
       createBotMessage("Произошла ошибка. Попробуйте ещё раз чуть позже.");
