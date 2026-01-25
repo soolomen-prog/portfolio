@@ -111,22 +111,18 @@ document.addEventListener('projectsRendered', () => {
 
   if (!web || !branding) return;
 
- const hintScroll = (el, delay = 0) => {
-    if (el.scrollHeight <= el.clientHeight) return;
+const hintMove = (el, delay = 0) => {
+  setTimeout(() => {
+    el.style.transition = 'transform 0.6s ease';
+    el.style.transform = 'translateY(-40px)';
 
     setTimeout(() => {
-      const start = el.scrollTop;
-      const delta = 80;
+      el.style.transform = 'translateY(0)';
+    }, 600);
+  }, delay);
+};
 
-      el.scrollTo({ top: start + delta, behavior: 'smooth' });
-
-      setTimeout(() => {
-        el.scrollTo({ top: start, behavior: 'smooth' });
-      }, 600);
-    }, delay);
-  };
-
-  hintScroll(web, 400);
-  hintScroll(branding, 1400);
+hintMove(web, 400);
+hintMove(branding, 1400);
 
 });
