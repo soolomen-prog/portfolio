@@ -42,22 +42,28 @@ export default async function handler(req, res) {
       en: "Answer strictly in English. Do not mix languages.",
     }[lang];
 
-    // добавляем system-инструкцию перед всей историей
-    const messagesWithSystem = [
-      {
-        role: "system",
-        content: `
+   // оставляем только user-сообщения
+const userOnlyMessages = messages.filter(
+  (m) => m.role === "user"
+);
+
+// system + только user
+const messagesWithSystem = [
+  {
+    role: "system",
+    content: `
 Ты — профессиональный ассистент студии дизайна.
 ${languageInstruction}
 
 ВАЖНО:
 — Используй ТОЛЬКО этот язык
-— Не переключайся на другой язык сам
-— Не добавляй фразы на других языках
-        `.trim(),
-      },
-      ...messages,
-    ];
+— Не переключайся на другой язык
+— Если пользователь продолжает диалог, язык НЕ меняется
+    `.trim(),
+  },
+  ...userOnlyMessages,
+];
+
     // --- end language ---
 
     const completion = await client.chat.completions.create({
