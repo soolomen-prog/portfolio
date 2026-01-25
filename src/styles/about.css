@@ -205,6 +205,6 @@ body::-webkit-scrollbar {
 }
 
 .about-text a:hover {
-  color: #e94b7c; /* тот же розовый, что в навигации */
+  color: #ff0095; /* тот же розовый, что в навигации */
 }
 
