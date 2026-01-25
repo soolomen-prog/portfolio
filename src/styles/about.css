@@ -192,3 +192,9 @@ body::-webkit-scrollbar {
   height: auto;
   display: block;
 }
+
+/* Datenschutz: убрать двойную линию под главным заголовком */
+.about-section--cv + .about-section {
+  border-top: none;
+}
+
