@@ -42,7 +42,7 @@
       40%,100% { opacity: 0; }
     }
 
-    /* ===== УЛЫБКА (базовая анимация) ===== */
+    /* ===== УЛЫБКА (ускоренное появление и уход) ===== */
     .smile {
       stroke-dasharray: 40;
       stroke-dashoffset: 40;
@@ -54,20 +54,21 @@
       0%   { stroke-dashoffset: 40; }
       18%  { stroke-dashoffset: 40; }
 
-      /* появляется */
-      28%  { stroke-dashoffset: 0; }
+      /* появляется (в 2 раза быстрее) */
+      23%  { stroke-dashoffset: 0; }
 
-      /* держится */
+      /* держится (как было) */
       39%  { stroke-dashoffset: 0; }
 
-      /* уходит */
-      52%  { stroke-dashoffset: -40; }
+      /* уходит (в 2 раза быстрее) */
+      45.5% { stroke-dashoffset: -40; }
+
       100% { stroke-dashoffset: -40; }
     }
 
-    /* ===== ВТОРАЯ УЛЫБКА — ПОСЛЕ ДЛИННОЙ ПАУЗЫ ===== */
+    /* ===== ВТОРАЯ УЛЫБКА — после длинной паузы ===== */
     #smileArc2 {
-      animation-delay: 15s; /* нейтральное лицо ~8–9 сек */
+      animation-delay: 15s;
     }
 
     @media (prefers-reduced-motion: reduce) {
