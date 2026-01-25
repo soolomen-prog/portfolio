@@ -14,19 +14,19 @@ export default async function handler(req, res) {
   }
 
   try {
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: "Studio <no-reply@andreisolomin.com>",
       to: ["soolomen@gmail.com"],
-      replyTo: [email], // <-- ВАЖНО
+      reply_to: email, // ВАЖНО: строка, не массив
       subject: "Новый запрос с сайта",
       text: summary,
-  });
+    });
 
-    console.log("RESEND RESPONSE:", data);
+    console.log("RESEND RESULT:", result);
 
-    res.status(200).json({ success: true });
+    return res.status(200).json({ success: true });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Email failed" });
+    console.error("RESEND ERROR:", error);
+    return res.status(500).json({ error: "Email failed" });
   }
 }
