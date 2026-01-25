@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <li>Webdesign</li>
           <li>Branding und Corporate Design</li>
           <li>Printmaterialien und Kataloge</li>
-          <li>Gestaltung von Social-Media-Inhalten</li>
+          <li>Design für Social Media</li>
         </ul>
       </div>
     `;
