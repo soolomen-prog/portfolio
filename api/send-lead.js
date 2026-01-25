@@ -22,6 +22,7 @@ export default async function handler(req, res) {
       text: summary,
   });
 
+    console.log("RESEND RESPONSE:", data);
 
     res.status(200).json({ success: true });
   } catch (error) {
