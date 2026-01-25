@@ -39,7 +39,7 @@
   grid-template-columns: 1fr 1fr;
   column-gap: var(--gap-xs);
 
-  border-top: 1.5px solid var(--line);
+  border-top: 1px solid var(--line);
   padding-top: 8px;
 }
 
