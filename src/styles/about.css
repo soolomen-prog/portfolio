@@ -198,3 +198,13 @@ body::-webkit-scrollbar {
   border-top: none;
 }
 
+.about-text a {
+  color: #000;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.about-text a:hover {
+  color: #e94b7c; /* тот же розовый, что в навигации */
+}
+
