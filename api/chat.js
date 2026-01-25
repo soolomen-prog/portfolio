@@ -1,5 +1,16 @@
 import OpenAI from "openai";
 
+function detectLanguage(text = "") {
+  // Русский (кириллица)
+  if (/[а-яА-ЯёЁ]/.test(text)) return "ru";
+
+  // Немецкий (умляуты/ß) — если есть, считаем немецким
+  if (/[äöüÄÖÜß]/.test(text)) return "de";
+
+  // Английский/латиница по умолчанию
+  return "en";
+}
+
 const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
@@ -16,9 +27,42 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "Invalid messages format" });
     }
 
+    // --- language detect from last user message ---
+    const lastUserMessage =
+      messages
+        .slice()
+        .reverse()
+        .find((m) => m?.role === "user")?.content || "";
+
+    const lang = detectLanguage(lastUserMessage);
+
+    const languageInstruction = {
+      ru: "Отвечай строго на русском языке. Не смешивай языки.",
+      de: "Antworte strikt auf Deutsch. Mische keine Sprachen.",
+      en: "Answer strictly in English. Do not mix languages.",
+    }[lang];
+
+    // добавляем system-инструкцию перед всей историей
+    const messagesWithSystem = [
+      {
+        role: "system",
+        content: `
+Ты — профессиональный ассистент студии дизайна.
+${languageInstruction}
+
+ВАЖНО:
+— Используй ТОЛЬКО этот язык
+— Не переключайся на другой язык сам
+— Не добавляй фразы на других языках
+        `.trim(),
+      },
+      ...messages,
+    ];
+    // --- end language ---
+
     const completion = await client.chat.completions.create({
       model: "gpt-4o-mini",
-      messages,
+      messages: messagesWithSystem,
       temperature: 0.6,
       max_tokens: 500,
     });
@@ -34,28 +78,29 @@ export default async function handler(req, res) {
       /<<<LEAD>>>[\s\S]*?email:\s*(.+)\nsummary:\n([\s\S]*?)<<<END>>>/
     );
 
-if (leadMatch) {
-  const lead = {
-    email: leadMatch[1].trim(),
-    summary: leadMatch[2].trim(),
-  };
+    if (leadMatch) {
+      // ВАЖНО: НЕ const, а присваиваем внешней переменной lead
+      lead = {
+        email: leadMatch[1].trim(),
+        summary: leadMatch[2].trim(),
+      };
 
-  console.log("LEAD FOUND:", lead);
+      console.log("LEAD FOUND:", lead);
 
-  await fetch("https://www.andreisolomin.com/api/send-lead", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(lead),
-  });
+      // отправляем лид на send-lead
+      await fetch("https://www.andreisolomin.com/api/send-lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(lead),
+      });
 
-  console.log("SEND-LEAD CALLED");
+      console.log("SEND-LEAD CALLED");
 
-  answer = answer
-    .replace(/<<<LEAD>>>[\s\S]*?<<<END>>>/, "")
-    .trim();
-}
+      // убираем служебный блок из ответа пользователю
+      answer = answer.replace(/<<<LEAD>>>[\s\S]*?<<<END>>>/, "").trim();
+    }
     // ---------- END LEAD PARSING ----------
 
     return res.status(200).json({
