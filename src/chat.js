@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </p>
 
       <div class="chat-intro-list">
-        <p class="chat-intro-heading">Wichtigsten Tätigkeitsbereiche::</p>
+        <p class="chat-intro-heading">Wichtigsten Tätigkeitsbereiche:</p>
         <ul>
           <li>Webdesign</li>
           <li>Branding und Corporate Design</li>
