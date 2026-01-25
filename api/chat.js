@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     }
 
     const completion = await client.chat.completions.create({
-      model: "gpt-4o-mini", // оптимально по цене/качеству
+      model: "gpt-4o-mini",
       messages,
       temperature: 0.6,
       max_tokens: 500,
@@ -39,6 +39,19 @@ export default async function handler(req, res) {
         email: leadMatch[1].trim(),
         summary: leadMatch[2].trim(),
       };
+
+      // 🔥 ВАЖНО: отправка письма ТУТ
+      console.log("LEAD FOUND:", lead);
+
+      await fetch("https://www.andreisolomin.com/api/send-lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(lead),
+      });
+
+      console.log("SEND-LEAD CALLED");
 
       // убираем служебный блок из ответа пользователю
       answer = answer
