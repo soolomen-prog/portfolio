@@ -1,13 +1,19 @@
 import OpenAI from "openai";
 
-function detectLanguage(text = "") {
-  // Русский (кириллица)
-  if (/[а-яА-ЯёЁ]/.test(text)) return "ru";
+function detectLanguage(text) {
+  const t = text.toLowerCase();
 
-  // Немецкий (умляуты/ß) — если есть, считаем немецким
-  if (/[äöüÄÖÜß]/.test(text)) return "de";
+  // русский
+  if (/[а-яё]/i.test(t)) return "ru";
 
-  // Английский/латиница по умолчанию
+  // немецкий — по словам
+  if (
+    /\b(ich|und|sie|nicht|mit|für|eine|alles|liegt|ihrem|bitte|hallo)\b/i.test(t)
+  ) {
+    return "de";
+  }
+
+  // английский — по умолчанию
   return "en";
 }
 
