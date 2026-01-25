@@ -34,30 +34,28 @@ export default async function handler(req, res) {
       /<<<LEAD>>>[\s\S]*?email:\s*(.+)\nsummary:\n([\s\S]*?)<<<END>>>/
     );
 
-    if (leadMatch) {
-      lead = {
-        email: leadMatch[1].trim(),
-        summary: leadMatch[2].trim(),
-      };
+if (leadMatch) {
+  const lead = {
+    email: leadMatch[1].trim(),
+    summary: leadMatch[2].trim(),
+  };
 
-      // 🔥 ВАЖНО: отправка письма ТУТ
-      console.log("LEAD FOUND:", lead);
+  console.log("LEAD FOUND:", lead);
 
-      await fetch("https://www.andreisolomin.com/api/send-lead", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(lead),
-      });
+  await fetch("https://www.andreisolomin.com/api/send-lead", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(lead),
+  });
 
-      console.log("SEND-LEAD CALLED");
+  console.log("SEND-LEAD CALLED");
 
-      // убираем служебный блок из ответа пользователю
-      answer = answer
-        .replace(/<<<LEAD>>>[\s\S]*?<<<END>>>/, "")
-        .trim();
-    }
+  answer = answer
+    .replace(/<<<LEAD>>>[\s\S]*?<<<END>>>/, "")
+    .trim();
+}
     // ---------- END LEAD PARSING ----------
 
     return res.status(200).json({
