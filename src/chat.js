@@ -85,19 +85,18 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
 
       <p class="chat-intro-text">
-        Привет! Я Лукас — виртуальный менеджер.<br>
-        Я не человек, а ИИ.<br>
-        Я могу предварительно оценить ваш проект, рассказать об этапах работы,
-        помочь сформировать задачу или принять заказ
+        Hallo! Ich bin Lukas – ein virtueller Projektmanager.<br>
+        Ich bin kein Mensch, sondern eine KI.<br>
+        Ich kann Ihr Projekt vorab einschätzen, die einzelnen Arbeitsschritte erklären, bei der Formulierung der Aufgabenstellung helfen oder eine Anfrage entgegennehmen.
       </p>
 
       <div class="chat-intro-list">
-        <p class="chat-intro-heading">Основные направления работы:</p>
+        <p class="chat-intro-heading">Wichtigsten Tätigkeitsbereiche::</p>
         <ul>
-          <li>Веб-дизайн</li>
-          <li>Брендинг и корпоративный стиль</li>
-          <li>Печатные материалы и каталоги</li>
-          <li>Оформление соцсетей</li>
+          <li>Webdesign</li>
+          <li>Branding und Corporate Design</li>
+          <li>Printmaterialien und Kataloge</li>
+          <li>Gestaltung von Social-Media-Inhalten</li>
         </ul>
       </div>
     `;
