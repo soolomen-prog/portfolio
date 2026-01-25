@@ -17,10 +17,11 @@ export default async function handler(req, res) {
     await resend.emails.send({
       from: "Studio <no-reply@andreisolomin.com>",
       to: ["soolomen@gmail.com"],
-      reply_to: email,
+      replyTo: [email], // <-- ВАЖНО
       subject: "Новый запрос с сайта",
       text: summary,
-    });
+  });
+
 
     res.status(200).json({ success: true });
   } catch (error) {
