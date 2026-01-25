@@ -106,59 +106,23 @@ document.addEventListener('projectsRendered', () => {
   if (sessionStorage.getItem('scrollHintShown')) return;
   sessionStorage.setItem('scrollHintShown', 'true');
 
-  // ✅ двигаем именно колонки (так анимация стабильнее в Chrome mobile)
-  const web = document.querySelector('.projects-column.web-design');
-  const branding = document.querySelector('.projects-column.branding');
+  const web = document.getElementById('web-projects');
+  const branding = document.getElementById('branding-projects');
 
   if (!web || !branding) return;
 
-  const prefersReduced =
-    window.matchMedia &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const hintMove = (el, delay = 0) => {
+  setTimeout(() => {
+    el.style.transition = 'transform 0.6s ease';
+    el.style.transform = 'translateY(-40px)';
 
-  if (prefersReduced) return;
-
-  const hintMove = (el, delay = 0) => {
     setTimeout(() => {
-      const distance = 46;
+      el.style.transform = 'translateY(0)';
+    }, 600);
+  }, delay);
+};
 
-      // ✅ самый надежный вариант (Chrome mobile тоже плавно)
-      if (el.animate) {
-        el.animate(
-          [
-            { transform: 'translate3d(0,0,0)' },
-            { transform: `translate3d(0,-${distance}px,0)` },
-            { transform: 'translate3d(0,0,0)' }
-          ],
-          {
-            duration: 1200,
-            easing: 'cubic-bezier(0.2, 0.8, 0.2, 1)',
-            iterations: 1
-          }
-        );
-        return;
-      }
+hintMove(web, 400);
+hintMove(branding, 1400);
 
-      // Фолбэк, если animate недоступен
-      el.style.willChange = 'transform';
-      el.style.transition = 'transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)';
-      el.style.transform = 'translate3d(0,0,0)';
-
-      requestAnimationFrame(() => {
-        el.style.transform = `translate3d(0,-${distance}px,0)`;
-
-        setTimeout(() => {
-          el.style.transform = 'translate3d(0,0,0)';
-
-          setTimeout(() => {
-            el.style.transition = '';
-            el.style.willChange = '';
-          }, 650);
-        }, 600);
-      });
-    }, delay);
-  };
-
-  hintMove(web, 400);
-  hintMove(branding, 1600);
 });
