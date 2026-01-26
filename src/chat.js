@@ -108,7 +108,6 @@ intro.innerHTML = `
     Ich kann Ihr Projekt vorab einschätzen, die einzelnen Arbeitsschritte erklären,
     bei der Formulierung der Aufgabenstellung helfen oder eine Anfrage entgegennehmen.
   </p>
-
   <div class="chat-intro-list">
     <p class="chat-intro-heading">Wichtigsten Tätigkeitsbereiche:</p>
     <ul>
