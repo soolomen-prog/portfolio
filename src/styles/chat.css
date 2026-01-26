@@ -648,12 +648,16 @@ html, body {
 }
 
 /* по умолчанию — desktop */
+.chat-bot-icon__desktop {
+  display: block;
+}
+
 .chat-bot-icon__mobile {
   display: none;
 }
 
-/* mobile + tablet */
-@media (max-width: 1024px) {
+/* реальные touch-устройства (mobile + tablet) */
+@media (hover: none) and (pointer: coarse) {
   .chat-bot-icon__desktop {
     display: none;
   }
