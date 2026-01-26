@@ -81,13 +81,32 @@ document.addEventListener("DOMContentLoaded", () => {
     // ВАЖНО: путь к иконке лучше как в проекте (/src/assets/icons/...), но я НЕ меняю, чтобы не "удалять/ломать"
 intro.innerHTML = `
   <div class="chat-bot-header">
-    <img src="/assets/lukas.svg" alt="Lukas" width="42" height="42" />
+    <span class="chat-bot-icon">
+      <!-- desktop: animated svg -->
+      <img
+        class="chat-bot-icon__desktop"
+        src="/assets/lukas.svg"
+        alt="Lukas"
+        width="42"
+        height="42"
+      />
+
+      <!-- mobile / tablet: static svg -->
+      <img
+        class="chat-bot-icon__mobile"
+        src="/assets/lukas-static.svg"
+        alt="Lukas"
+        width="42"
+        height="42"
+      />
+    </span>
   </div>
 
   <p class="chat-intro-text">
     Hallo! Ich bin Lukas – ein virtueller Projektmanager.<br>
     Ich bin kein Mensch, sondern eine KI.<br>
-    Ich kann Ihr Projekt vorab einschätzen, die einzelnen Arbeitsschritte erklären, bei der Formulierung der Aufgabenstellung helfen oder eine Anfrage entgegennehmen.
+    Ich kann Ihr Projekt vorab einschätzen, die einzelnen Arbeitsschritte erklären,
+    bei der Formulierung der Aufgabenstellung helfen oder eine Anfrage entgegennehmen.
   </p>
 
   <div class="chat-intro-list">
