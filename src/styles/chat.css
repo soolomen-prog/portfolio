@@ -647,22 +647,9 @@ html, body {
   display: block;
 }
 
-/* по умолчанию — desktop */
-.chat-bot-icon__desktop {
-  display: block;
-}
-
-.chat-bot-icon__mobile {
-  display: none;
-}
-
-/* реальные touch-устройства (mobile + tablet) */
 @media (hover: none) and (pointer: coarse) {
-  .chat-bot-icon__desktop {
-    display: none;
-  }
-
-  .chat-bot-icon__mobile {
-    display: block;
+  .chat-bot-icon svg *,
+  .chat-bot-icon svg {
+    animation: none !important;
   }
 }
