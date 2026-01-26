@@ -82,19 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
 intro.innerHTML = `
   <div class="chat-bot-header">
     <span class="chat-bot-icon">
-      <!-- desktop: animated -->
       <img
-        class="chat-bot-icon__desktop"
         src="/assets/lukas.svg"
-        alt="Lukas"
-        width="42"
-        height="42"
-      />
-
-      <!-- mobile / tablet: static -->
-      <img
-        class="chat-bot-icon__mobile"
-        src="/assets/lukas-static.svg"
         alt="Lukas"
         width="42"
         height="42"
@@ -104,7 +93,8 @@ intro.innerHTML = `
 
   <p class="chat-intro-text">
     Hallo! Ich bin Lukas – ein virtueller Projektmanager.<br>
-    Ich unterstütze Sie bei der Projekteinschätzung, erkläre die nächsten Schritte und nehme Ihre Anfrage entgegen
+    Ich unterstütze Sie bei der Projekteinschätzung, erkläre die nächsten Schritte
+    und nehme Ihre Anfrage entgegen
   </p>
 
   <div class="chat-intro-list">
