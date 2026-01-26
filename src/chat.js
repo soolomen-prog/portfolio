@@ -79,27 +79,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ОСТАВИЛ ТВОЙ ТЕКСТ 1:1
     // ВАЖНО: путь к иконке лучше как в проекте (/src/assets/icons/...), но я НЕ меняю, чтобы не "удалять/ломать"
-    intro.innerHTML = `
-      <div class="chat-bot-header">
-        <img src="/assets/lukas.svg" alt="Lukas" width="42" height="42" />
-      </div>
+intro.innerHTML = `
+  <div class="chat-bot-header">
+    <span class="chat-bot-icon">
+      <!-- SVG (desktop) -->
+      <img
+        class="chat-bot-icon__svg"
+        src="/assets/lukas.svg"
+        alt="Lukas"
+        width="42"
+        height="42"
+      />
 
-      <p class="chat-intro-text">
-        Hallo! Ich bin Lukas – ein virtueller Projektmanager.<br>
-        Ich bin kein Mensch, sondern eine KI.<br>
-        Ich kann Ihr Projekt vorab einschätzen, die einzelnen Arbeitsschritte erklären, bei der Formulierung der Aufgabenstellung helfen oder eine Anfrage entgegennehmen.
-      </p>
+      <!-- MP4 (mobile / tablet) -->
+      <video
+        class="chat-bot-icon__video"
+        src="/video/lukas.mp4"
+        muted
+        playsinline
+        autoplay
+        loop
+        preload="auto"
+        width="42"
+        height="42"
+      ></video>
+    </span>
+  </div>
 
-      <div class="chat-intro-list">
-        <p class="chat-intro-heading">Wichtigsten Tätigkeitsbereiche:</p>
-        <ul>
-          <li>Webdesign</li>
-          <li>Branding und Corporate Design</li>
-          <li>Printmaterialien und Kataloge</li>
-          <li>Design für Social Media</li>
-        </ul>
-      </div>
-    `;
+  <p class="chat-intro-text">
+    Hallo! Ich bin Lukas – ein virtueller Projektmanager.<br>
+    Ich bin kein Mensch, sondern eine KI.<br>
+    Ich kann Ihr Projekt vorab einschätzen, die einzelnen Arbeitsschritte erklären,
+    bei der Formulierung der Aufgabenstellung helfen oder eine Anfrage entgegennehmen.
+  </p>
+
+  <div class="chat-intro-list">
+    <p class="chat-intro-heading">Wichtigsten Tätigkeitsbereiche:</p>
+    <ul>
+      <li>Webdesign</li>
+      <li>Branding und Corporate Design</li>
+      <li>Printmaterialien und Kataloge</li>
+      <li>Design für Social Media</li>
+    </ul>
+  </div>
+`;
 
     chatContent.appendChild(intro);
     scrollToBottom();
