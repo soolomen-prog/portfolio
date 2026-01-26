@@ -104,9 +104,7 @@ intro.innerHTML = `
 
   <p class="chat-intro-text">
     Hallo! Ich bin Lukas – ein virtueller Projektmanager.<br>
-    Ich bin kein Mensch, sondern eine KI.<br>
-    Ich kann Ihr Projekt vorab einschätzen, die einzelnen Arbeitsschritte erklären,
-    bei der Formulierung der Aufgabenstellung helfen oder eine Anfrage entgegennehmen.
+    Ich unterstütze Sie bei der Projekteinschätzung, erkläre die nächsten Schritte und nehme Ihre Anfrage entgegen
   </p>
   <div class="chat-intro-list">
     <p class="chat-intro-heading">Wichtigsten Tätigkeitsbereiche:</p>
