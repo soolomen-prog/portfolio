@@ -72,3 +72,133 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: inherit;
   margin: 0;
 }
+
+/* ===============================
+   MOBILE HEADER
+================================ */
+
+.burger {
+  display: none;
+  position: relative;
+  width: 22px;
+  height: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  z-index: 31; /* выше шапки */
+}
+
+.burger span {
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 1px;
+  background: #000;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+/* делаем симметричный бургер/крест */
+.burger span {
+  top: 50%;
+  transform-origin: center;
+}
+
+.burger span:nth-child(1) {
+  transform: translateY(-4px);
+}
+
+.burger span:nth-child(2) {
+  transform: translateY(4px);
+}
+
+.burger.is-active span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.burger.is-active span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 860px) {
+
+  .header-left-nav,
+  .header-right--chat a {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .header-center {
+    margin: 0 auto;
+  }
+}
+
+/* ===============================
+   MOBILE MENU PANEL
+   ВАЖНО: меню открывается НАД шапкой (46px) и НЕ перекрывает её
+================================ */
+
+.mobile-menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+
+  /* закрыто: спрятано под экран, но оставляем место под шапку 46px */
+  bottom: calc(-260px + 46px);
+
+  min-height: 260px;
+  box-sizing: border-box;
+
+  background: #eff5fb;
+  padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: bottom 0.35s ease;
+
+  /* ниже шапки */
+  z-index: 20;
+}
+
+.mobile-menu.is-open {
+  /* открыто: верх меню упирается в шапку */
+  bottom: 46px;
+}
+
+/* TOP LINKS */
+.mobile-menu-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-top a {
+  font-size: 26px;
+  line-height: 42px;
+  font-weight: 500;
+
+  color: #262626;
+  text-decoration: none;
+}
+
+/* BOTTOM LINKS — ЖЁСТКО ВНИЗ */
+.mobile-menu-bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-bottom a {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+
+  color: #262626;
+  text-decoration: none;
+}
