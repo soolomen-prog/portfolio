@@ -631,3 +631,35 @@ html, body {
   color: #262626;
   text-decoration: none;
 }
+
+.chat-bot-icon {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+}
+
+.chat-bot-icon__svg,
+.chat-bot-icon__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.chat-bot-icon__video {
+  display: none;
+  object-fit: cover;
+}
+
+/* Mobile + Tablet */
+@media (max-width: 1024px) {
+  .chat-bot-icon__svg {
+    display: none;
+  }
+
+  .chat-bot-icon__video {
+    display: block;
+  }
+}
