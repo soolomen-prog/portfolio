@@ -87,15 +87,14 @@ intro.innerHTML = `
   </div>
 
   <p class="chat-intro-text">
-    Hallo! Ich bin ein KI-Assistent für Andreis Portfolio.<br>
-    Sie können mir Fragen zu Andreis Projekten, Arbeitsweise, UX/UI-Design oder Designprozessen stellen.
+    Hallo! Ich bin Lukas ein KI-Assistent für Andreis Portfolio.<br>
+    Sie können mir Fragen zu Andreis Projekten.
   </p>
 
   <div class="chat-intro-list">
     <p class="chat-intro-heading">Zum Beispiel:</p>
     <ul>
       <li>Welche Projekte zeigt dieses Portfolio?</li>
-      <li>Was war die Idee hinter einem bestimmten Case?</li>
       <li>Wie arbeitet Andrei an UX/UI-Aufgaben?</li>
       <li>Welche Erfahrung und Fähigkeiten bringt Andrei mit?</li>
     </ul>
