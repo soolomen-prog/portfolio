@@ -87,8 +87,7 @@ intro.innerHTML = `
   </div>
 
   <p class="chat-intro-text">
-    Hallo! Ich bin Lukas ein KI-Assistent für Andreis Portfolio.<br>
-    Sie können mir Fragen zu Andreis Projekten.
+    Hallo! Ich bin Lukas ein KI-Assistent für Andreis Portfolio. Sie können mir Fragen zu Andreis Projekten.
   </p>
 
   <div class="chat-intro-list">
